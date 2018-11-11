@@ -8,49 +8,49 @@
 \contentsline {section}{\numberline {1.6}Variedades con borde}{17}{section.1.6}
 \contentsline {chapter}{\numberline {2}El espacio tangente}{19}{chapter.2}
 \contentsline {section}{\numberline {2.1}Espacio tangente a una variedad sumergida}{19}{section.2.1}
-\contentsline {section}{\numberline {2.2}Espacio tangente como velocidades de curvas}{19}{section.2.2}
-\contentsline {section}{\numberline {2.3}Derivaciones}{19}{section.2.3}
-\contentsline {section}{\numberline {2.4}El funtor tangente}{19}{section.2.4}
-\contentsline {chapter}{\numberline {3}Fibrados vectoriales}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}La categor\IeC {\'\i }a de los fibrados vectoriales}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2}Secciones de un fibrado vectorial}{21}{section.3.2}
-\contentsline {section}{\numberline {3.3}El fibrado tangente y el fibrado cotangente}{21}{section.3.3}
-\contentsline {chapter}{\numberline {4}Campos y flujos}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Campos en variedades?}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Flujos completos}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Flujos}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}Integraci\IeC {\'o}n de campos}{23}{section.4.4}
-\contentsline {section}{\numberline {4.5}Derivada de Lie}{23}{section.4.5}
-\contentsline {section}{\numberline {4.6}Campos coordenados}{23}{section.4.6}
-\contentsline {chapter}{\numberline {5}Grupos y \IeC {\'a}lgebras de Lie}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Grupos de Lie}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}El \IeC {\'a}lgebra de Lie de un grupo de Lie}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}La aplicaci\IeC {\'o}n exponencial}{25}{section.5.3}
-\contentsline {chapter}{\numberline {6}Tensores}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Producto tensorial}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}El \IeC {\'a}lgebra de tensores de un espacio vectorial}{27}{section.6.2}
-\contentsline {section}{\numberline {6.3}Tensores en variedades}{27}{section.6.3}
-\contentsline {section}{\numberline {6.4}Derivada de Lie de un tensor}{27}{section.6.4}
-\contentsline {section}{\numberline {6.5}Tensores sim\IeC {\'e}tricos y antisim\IeC {\'e}tricos}{27}{section.6.5}
-\contentsline {chapter}{\numberline {7}Formas diferenciales}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Determinantes}{29}{section.7.1}
-\contentsline {section}{\numberline {7.2}Formas en variedades}{29}{section.7.2}
-\contentsline {section}{\numberline {7.3}Diferencial exterior}{29}{section.7.3}
-\contentsline {section}{\numberline {7.4}F\IeC {\'o}rmulas de Cartan}{29}{section.7.4}
-\contentsline {section}{\numberline {7.5}Cohomolog\IeC {\'\i }a de de Rham}{29}{section.7.5}
-\contentsline {section}{\numberline {7.6}Lema de Poincar\IeC {\'e}}{29}{section.7.6}
-\contentsline {section}{\numberline {7.7}Cohomolog\IeC {\'\i }a de las esferas}{29}{section.7.7}
-\contentsline {chapter}{\numberline {8}Orientaci\IeC {\'o}n}{31}{chapter.8}
-\contentsline {section}{\numberline {8.1}Orientaci\IeC {\'o}n de un espacio vectorial}{31}{section.8.1}
-\contentsline {section}{\numberline {8.2}Orientaci\IeC {\'o}n de variedades}{31}{section.8.2}
-\contentsline {section}{\numberline {8.3}Orientaci\IeC {\'o}n de hipersuperficies}{31}{section.8.3}
-\contentsline {section}{\numberline {8.4}Orientaci\IeC {\'o}n del borde}{31}{section.8.4}
-\contentsline {chapter}{\numberline {9}Integraci\IeC {\'o}n}{33}{chapter.9}
-\contentsline {section}{\numberline {9.1}Integral de una forma diferencial}{33}{section.9.1}
-\contentsline {section}{\numberline {9.2}Teorema de Stokes}{33}{section.9.2}
-\contentsline {section}{\numberline {9.3}Los teoremas cl\IeC {\'a}sicos}{33}{section.9.3}
-\contentsline {chapter}{\numberline {10}Introducci\IeC {\'o}n a la teor\IeC {\'\i }a del grado}{35}{chapter.10}
-\contentsline {section}{\numberline {10.1}Cohomolog\IeC {\'\i }a con soportes compactos}{35}{section.10.1}
-\contentsline {section}{\numberline {10.2}Cohomolog\IeC {\'\i }a de grado m\IeC {\'a}ximo}{35}{section.10.2}
-\contentsline {section}{\numberline {10.3}Grado de una aplicaci\IeC {\'o}n diferenciable}{35}{section.10.3}
-\contentsline {section}{\numberline {10.4}Dos teoremas de Brouwer}{35}{section.10.4}
+\contentsline {section}{\numberline {2.2}Derivaciones}{20}{section.2.2}
+\contentsline {section}{\numberline {2.3}Derivada de una aplicaci\IeC {\'o}n diferenciable}{22}{section.2.3}
+\contentsline {chapter}{\numberline {3}Fibrados vectoriales}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}La categor\IeC {\'\i }a de los fibrados vectoriales}{25}{section.3.1}
+\contentsline {section}{\numberline {3.2}Secciones de un fibrado vectorial}{25}{section.3.2}
+\contentsline {section}{\numberline {3.3}El fibrado tangente y el fibrado cotangente}{25}{section.3.3}
+\contentsline {chapter}{\numberline {4}Campos y flujos}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Campos en variedades?}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Flujos completos}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Flujos}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Integraci\IeC {\'o}n de campos}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}Derivada de Lie}{27}{section.4.5}
+\contentsline {section}{\numberline {4.6}Campos coordenados}{27}{section.4.6}
+\contentsline {chapter}{\numberline {5}Grupos y \IeC {\'a}lgebras de Lie}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Grupos de Lie}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}El \IeC {\'a}lgebra de Lie de un grupo de Lie}{29}{section.5.2}
+\contentsline {section}{\numberline {5.3}La aplicaci\IeC {\'o}n exponencial}{29}{section.5.3}
+\contentsline {chapter}{\numberline {6}Tensores}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Producto tensorial}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}El \IeC {\'a}lgebra de tensores de un espacio vectorial}{31}{section.6.2}
+\contentsline {section}{\numberline {6.3}Tensores en variedades}{31}{section.6.3}
+\contentsline {section}{\numberline {6.4}Derivada de Lie de un tensor}{31}{section.6.4}
+\contentsline {section}{\numberline {6.5}Tensores sim\IeC {\'e}tricos y antisim\IeC {\'e}tricos}{31}{section.6.5}
+\contentsline {chapter}{\numberline {7}Formas diferenciales}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Determinantes}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}Formas en variedades}{33}{section.7.2}
+\contentsline {section}{\numberline {7.3}Diferencial exterior}{33}{section.7.3}
+\contentsline {section}{\numberline {7.4}F\IeC {\'o}rmulas de Cartan}{33}{section.7.4}
+\contentsline {section}{\numberline {7.5}Cohomolog\IeC {\'\i }a de de Rham}{33}{section.7.5}
+\contentsline {section}{\numberline {7.6}Lema de Poincar\IeC {\'e}}{33}{section.7.6}
+\contentsline {section}{\numberline {7.7}Cohomolog\IeC {\'\i }a de las esferas}{33}{section.7.7}
+\contentsline {chapter}{\numberline {8}Orientaci\IeC {\'o}n}{35}{chapter.8}
+\contentsline {section}{\numberline {8.1}Orientaci\IeC {\'o}n de un espacio vectorial}{35}{section.8.1}
+\contentsline {section}{\numberline {8.2}Orientaci\IeC {\'o}n de variedades}{35}{section.8.2}
+\contentsline {section}{\numberline {8.3}Orientaci\IeC {\'o}n de hipersuperficies}{35}{section.8.3}
+\contentsline {section}{\numberline {8.4}Orientaci\IeC {\'o}n del borde}{35}{section.8.4}
+\contentsline {chapter}{\numberline {9}Integraci\IeC {\'o}n}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}Integral de una forma diferencial}{37}{section.9.1}
+\contentsline {section}{\numberline {9.2}Teorema de Stokes}{37}{section.9.2}
+\contentsline {section}{\numberline {9.3}Los teoremas cl\IeC {\'a}sicos}{37}{section.9.3}
+\contentsline {chapter}{\numberline {10}Introducci\IeC {\'o}n a la teor\IeC {\'\i }a del grado}{39}{chapter.10}
+\contentsline {section}{\numberline {10.1}Cohomolog\IeC {\'\i }a con soportes compactos}{39}{section.10.1}
+\contentsline {section}{\numberline {10.2}Cohomolog\IeC {\'\i }a de grado m\IeC {\'a}ximo}{39}{section.10.2}
+\contentsline {section}{\numberline {10.3}Grado de una aplicaci\IeC {\'o}n diferenciable}{39}{section.10.3}
+\contentsline {section}{\numberline {10.4}Dos teoremas de Brouwer}{39}{section.10.4}
+\contentsline {chapter}{\numberline {A}Topolog\IeC {\'\i }a de variedades}{41}{appendix.Alph1}

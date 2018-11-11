@@ -47,6 +47,7 @@
 \def\HH{\mathbb{H}}
 \def\PP{\mathbb{P}}
 \def\id{\mathrm{id}}
+\def\im{\mathrm{im}}
 \def\pr{\mathrm{pr}}
 \def\cc{\mathbf{c}}
 \def\xx{\mathtt{x}}
@@ -296,7 +297,7 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 	   \varphi(U)\subset \RR^m\arrow{rr}[anchor=south]{\tilde{f}} && \psi(V) \subset \RR^n.
 	 \end{tikzcd}
        \end{center}
-       Es decir, $\tilde{f}=\psi^{-1}\circ f \circ \varphi$.
+       Es decir, $\tilde{f}=\psi \circ f \circ \varphi^{-1}$.
     \end{defn}
     \begin{defn}
       Una aplicación $f:M\rightarrow N$ entre dos variedades diferenciables $M$ y $N$ es \emph{diferenciable} si, para todo $x\in M$ y para cualesquiera dos cartas $(U,\varphi)$, $(V,\psi)$ en $x$ y $f(x)$, respectivamente,  su localización $\tilde{f}=\psi^{-1}\circ f \circ \varphi$ es diferenciable. Es decir, si $\tilde{f} \in \mathbf{CartSp}(\varphi(U),\psi(V))$.
@@ -397,15 +398,15 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 	  \begin{defn}
 	    Una $C^\infty$\emph{-variedad} es un par $(M,C^\infty_M)$, donde $M$ es una variedad topológica y $C^\infty_M$ es un subhaz del haz $C(M)$ de forma que, para todo punto $x\in M$ existe una carta $(U,\varphi)$ en $x$ tal que la aplicación
 	    \begin{align*}
-	      \varphi_* :C^\infty_M(U)&\longrightarrow C^{\infty}(\varphi(U))\\ 
-	      s &\longmapsto s\circ \varphi^{-1} 
+	      \varphi^* :C^{\infty}(\varphi(U))&\longrightarrow C^\infty_M(U)\\ 
+	      s &\longmapsto s\circ \varphi 
 	      \end{align*}
 	      es biyectiva.
 	  \begin{center}
 	    \begin{tikzcd}
-	      M \supset U \arrow{rr}{s} \arrow{dd}{\varphi}  &&\RR	      \\ 
+	      M \supset U \arrow{rr}{s\circ \varphi} \arrow{dd}{\varphi}  &&\RR	      \\ 
 	      \\
-	      \RR^n \supset \varphi(U). \arrow{rruu}{s\circ \varphi^{-1}}
+	      \RR^n \supset \varphi(U). \arrow{rruu}{s}
 	    \end{tikzcd}
 	  \end{center}
 
@@ -431,7 +432,7 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 
 	  Estas definiciones nos permiten considerar una nueva categoría $C^\infty\mathbf{-Man}$ cuyos objetos son las $C^\infty$-variedades y sus morfismos son los $C^\infty$-morfismos.
 
-	  \begin{prop}
+	  \begin{prop}\label{equiv1}
 	    Existe una equivalencia de categorías 
 	    \begin{align*}
 	      \mathbf{Diff}&\longrightarrow C^{\infty}\mathbf{-Man}.
@@ -559,12 +560,12 @@ U	  \arrow{r}{F} & V \\
 
     Hemos visto que toda subvariedad regular es una variedad diferenciable, pero el recíproco también es cierto. El teorema de inmersión de variedades abstractas garantiza que toda variedad diferenciable $M$ es difeomorfa a alguna subvariedad regular $\hat{M} \subset \RR^p$, para algún $p\in \NN$. Esto nos permite demostrar el siguiente teorema:
 
-    \begin{thm}
+    \begin{prop}
       Existe una equivalencia de categorías
       \begin{align*}
 	\mathbf{Diff}&\longrightarrow \mathbf{RegMan}.
 	\end{align*}
-    \end{thm}
+    \end{prop}
     \begin{proof}
       Si $M$ es una variedad diferenciable denotamos $\hat{M} \subset \RR^p$ y $\varphi_M:M \rightarrow \hat{M}$ la subvariedad regular y el difeomorfismo dados por el teorema de inmersión de variedades abstractas. Podemos definir un funtor que asigne, a cada variedad diferenciable $M$, la subvariedad regular $\hat{M}$ y, a cada aplicación diferenciable $f:M \rightarrow N$, la aplicación $\hat{f}:\hat{M} \rightarrow \hat{N}$ que cierra el diagrama
       \begin{center}
@@ -613,9 +614,189 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
 
 	  \chapter{El espacio tangente}
 	  \section{Espacio tangente a una variedad sumergida}
-	  \section{Espacio tangente como velocidades de curvas}
+	  Sean $M\subset \RR^p$ una subvariedad regular de dimensión $n$, $x\in M$ y $(U,\varphi)$ una carta en $x$. La aplicación $\psi=\varphi^{-1}$ se dice que es una \emph{parametrización local} de $M$ por el dominio de coordenadas $U$. Si llamamos $V=\varphi(U)$ y $a=\varphi(x)$, esta parametrización es una aplicación diferenciable $\psi:V\rightarrow \RR^p$, de modo que tiene una derivada en $a$, que es una aplicación lineal $d_a\psi:\RR^n \rightarrow \RR^p$. La imagen de esta aplicación lineal no depende de la parametrización ya que, si $\bar{\psi}:W \rightarrow \RR^p$ es otra parametrización y llamamos $b=\psi^{-1}(x)$, entonces
+	  \begin{equation*}
+	    d_a(\bar{\psi}^{-1}\circ \psi)=(d_b \bar{\psi})^{-1} \circ d_a \psi.
+	  \end{equation*}
+	  De modo que
+	  \begin{equation*}
+	    d_a \psi=(d_b \bar{\psi})\circ d_a(\bar{\psi}^{-1}\circ \psi)
+	  \end{equation*}
+	  y, como $d_a(\bar{\psi}^{-1}\circ \psi)$ es un isomorfismo lineal (ya que el cambio de coordenadas es un difeomorfismo) entonces $d_a\psi$ y $d_b\tilde{\psi}$ deben tener la misma imagen.
+	  Así, sin pérdida de generalidad podemos definir el \emph{espacio tangente a $M$ en $x$} como $T_xM = \im(d_a\psi)$. Los elementos $\ve{u}\in T_xM$ se llaman \emph{vectores tangentes a $M$ en $x$}. Además, como las derivada de $\psi$ es inyectiva, este espacio tangente es un espacio vectorial de dimensión $n=\dim M$.
+
+	  Un vector $\ve{u} \in T_xM = \im(d_a \psi)$ es de la forma 
+	  \begin{equation*}
+	    \ve{u}=
+	    \left(
+	    \begin{array}{ccc}
+	      \frac{\partial \psi^1}{\partial x^1}(a) & \cdots & \frac{\partial \psi^1}{\partial x^n}(a)\\
+	      \vdots & \vdots & \vdots \\
+	      \frac{\partial \psi^p}{\partial x^1}(a) & \cdots & \frac{\partial \psi^p}{\partial x^n}(a)
+	    \end{array}
+	    \right)
+	    \left( 
+	    \begin{array}{c}
+	      u^1 \\
+	      \vdots \\
+	      u^n 
+	    \end{array}
+	    \right),
+	  \end{equation*}
+	  donde $\psi=(\psi^1,\dots,\psi^p)$ es la expresión en componentes de $\psi$ y $u^1,\dots,u^n\in \RR^n$. Es decir, los vectores
+	  \begin{equation*}
+	    \frac{\partial \psi}{\partial x^i}(a) := \left( \frac{\partial \psi^1}{\partial x^i}(a),\dots,\frac{\partial \psi^p}{\partial x^i}(a) \right) 
+	  \end{equation*}
+	  forman una base del espacio tangente $T_xM$ y podemos escribir $\ve{u}=\sum_i u^i\frac{\partial \psi}{\partial x^i}(a)$.
+
+	  Otra forma «dual» de obtener el espacio tangente en ciertos casos es por medio del teorema de la función implícita. Consideremos un abierto $U\subset \RR^p$ y una aplicación diferenciable $F:U\rightarrow \RR^q$. Si tenemos un punto $a\in U$ en el que $d_aF$ es sobreyectiva tenemos un difeomorfismo local $h:U\rightarrow \RR^p$ que transforma, en un entorno $B$ de $a$, el conjunto 
+	  \begin{equation*}
+M=	    \left\{ x\in B: F(x)=F(a) \right\}
+	  \end{equation*}
+	  en $\left\{ F(a) \right\}\times \RR^{p-q}$. Vimos además que $d_ah=(d_aF, g)$, de modo que, si consideramos la parametrización $h^{-1}$,
+	  \begin{equation*}
+	    T_aM=\im d_{h(a)} (h^{-1}) = (d_{a}h)^{-1}(\left\{ 0 \right\}\times \RR^{p-q}) = \ker d_a F.
+	  \end{equation*}
+
+	  \begin{ejemplo}
+	    Volviendo al ejemplo de la esfera $\SF^n=\left\{ x\in \RR^{n+1}: \norm{x} =1 \right\}$. Llamando $F(x)=\norm{x}^2$, vimos que la derivada de $F$ en un punto $a\in \RR^{n+1}$ es $d_aF(\ve{u})=2\esc{a,\ve{u}}$. Tenemos entonces que, si $\norm{a}=1$,
+	    \begin{equation*}
+	      T_a \SF^n = \ker d_a F = \left\{ \ve{u} \in \RR^{n+1}: \esc{a,\ve{u}}=0 \right\}.
+	    \end{equation*}
+	    Es decir, los vectores tangentes a $\SF^n$ en un punto $a$ son precisamente los perpendiculares al radio vector que une el origen con $a$.
+	    \qed
+	  \end{ejemplo}
+
+	  Finalmente, podemos definir la \textit{derivada} de una aplicación diferenciable entre subvariedades regulares. Sean $M\subset \RR^p$ y $N\subset \RR^q$ subvariedades regulares y $f:M\rightarrow N$ una aplicación diferenciable. Por definición, existen dos abiertos $U\subset \RR^p$ y $V\subset \RR^q$ y una extensión $F:U\rightarrow V$ diferenciable de $f$. Si tomamos un punto $x\in M$ y escogemos los abiertos $U$ y $V$ tales que $(U\cap M,\varphi)$ y $(V\cap M,\psi)$ son cartas en $x$ y en $f(x)$, respectivamente, podemos considerar la localización $\tilde{f}=\psi\circ f \circ \varphi^{-1}$. Esta localización es una aplicación diferenciable que cumple $F \circ \varphi^{-1} =\psi^{-1}\circ \tilde{f}$ luego, por la regla de la cadena, 
+	  \begin{equation*}
+	    d_x F \circ (d_{x}\varphi)^{-1} = (d_{f(x)}\psi)^{-1} \circ d_{\varphi(x)}\tilde{f}.
+	  \end{equation*}
+	  Ahora, $\im (d_{x}\varphi)^{-1} = T_xM$ e $\im (d_{f(x)}\psi)^{-1}=T_{f(x)}N$, por tanto, tenemos que $$d_xF(T_xM)\subset T_{f(x)}N.$$ Además, 
+	  \begin{equation*}
+	    d_xF|_{T_xM}= (d_{f(x)}\psi)^{-1}\circ d_{\varphi(x)}\tilde{f} \circ d_x \varphi,
+	  \end{equation*}
+	  que no depende de la extensión $F$. Por tanto, podemos definir 
+	  \begin{align*}
+	    d_xf=d_xF|_{T_x M}:T_xM&\longrightarrow T_{f(x)}N 
+	    \end{align*}
+	   la \emph{derivada de $f$ en $x$}.
 	  \section{Derivaciones}
-	  \section{El funtor tangente}
+	  Hemos definido el espacio tangente para variedades sumergidas, pero cabe preguntarse ahora si se puede hacer una construcción análoga para el caso de una variedad diferenciable cualquiera, en principio no sumergida. Esta construcción puede hacerse, usando el concepto de \textit{derivación} de un álgebra.
+
+	    Sea $\FF$ un prehaz sobre un espacio topológico $X$. Consideramos un punto $x\in X$ y el sistema directo de los entornos de $x$ respecto a la inclusión. Se define la \emph{espiga} de $\FF$ en $x$ como
+	    \begin{equation*}
+	      \FF_x = \varinjlim_{p\in U \subset M} \FF(U).
+	    \end{equation*}
+	    En el caso en que nos incumbe, si $M$ es una variedad diferenciable de dimensión $n$ y $C^\infty_M$ denota su haz de funciones diferenciables, entonces la espiga de $C^\infty_M$ en un punto $x\in M$ es simplemente el conjunto de las funciones $f:M\rightarrow \RR$ que son diferenciables en algún entorno de $x$. Este conjunto se denota $C^\infty_{M,x}$ y se llama el \emph{álgebra de gérmenes de funciones diferenciables en $x$}. Cada conjunto $C^\infty_M(U)$ es una $\RR$-álgebra, donde las operaciones son simplemente la suma y el producto de funciones. Por tanto, las espigas $C^\infty_{M,x}$ también serán $\RR$-álgebras. 
+
+	    \begin{defn}
+	      Una \emph{derivación} en $x\in M$ es una aplicación lineal $D:C^\infty_{M,x} \rightarrow \RR$ que satisface la \emph{regla de Leibniz}:
+	      \begin{equation*}
+		D(fg)=f(x)D(g)+g(x)D(f),
+	      \end{equation*}
+	      para cualesquiera $f,g \in C^\infty_{M,x}$.
+	      Llamamos \emph{espacio tangente a $M$ en $x$} al espacio vectorial $T_xM$ formado por las derivaciones en $x$.
+	    \end{defn}
+
+	    \begin{obs}
+	      Si $f\in C^\infty_{M,a}$ es un germen de una función constante, entonces para cualquier derivación $D\in T_xM$, $D(f)=0$. En efecto, si $f\equiv c$, con $c$ una constante, por linealidad $D(f)=cD(1)$. Ahora, por la regla de Leibniz $D(1)=D(1\cdot 1)=2D(1)$, con lo que $D(1)=0$. 
+	    \end{obs}
+
+	    Como $M$ es una variedad diferenciable, podemos encontrar una carta $(U,\varphi)$ en $x$ tal que la aplicación 
+	    \begin{align*}
+	      \varphi^* :C^\infty(\varphi(U))&\longrightarrow C^\infty_M(U) \\ 
+	      s &\longmapsto s \circ \varphi 
+	      \end{align*}
+	      es biyectiva. Claramente, esta aplicación es también un isomorfismo de álgebras, que en las espigas induce un isomorfismo entre $C^\infty_{M,x}$ y $C^{\infty}_{\varphi(x)}$. De modo que $T_xM$ es isomorfo al espacio $T_{\varphi(x)}\RR^n$ de las derivaciones en $\varphi(x)\in \RR^n$. Explícitamente, este isomorfismo está dado por $\varphi_{*,x}:T_xM \rightarrow T_{\varphi(x)}\RR^n$, de modo que, si $s\in C^\infty_{\varphi(x)}$ y $D\in T_xM$,
+	      \begin{equation*}
+		(\varphi_{*,x} D) (s) = D(s\circ \varphi).
+	      \end{equation*}
+
+	      \begin{prop}
+		Sea un punto $a=(a^1,\dots,a^n)\in \RR^n$. Las aplicaciones
+		\begin{align*}
+		   \partial_i|_a:C^\infty_a&\longrightarrow \RR\\ 
+		   f &\longmapsto \frac{\partial f}{\partial x^i}(a),
+		  \end{align*}
+		  con $i=1,\dots,n$, son derivaciones en $a$ y forman una base de $T_a \RR^n$. En consecuencia, $T_a \RR^n \cong \RR^n$.
+	      \end{prop}
+
+	      \begin{proof}
+		Que son derivaciones es inmediato, puesto que la regla de Leibniz es simplemente la regla del producto de las derivadas. Veamos que son una base. 
+
+		En primer lugar, tenemos que probar que son linealmente independientes, es decir, que si existe un vector $\ve{u}=(u^1,\dots,u^n)\in \RR^n$ tal que $\sum_i u^i \partial_i|_a =0$, entonces $\ve{u}=0$. Para ver esto, consideremos las proyecciones $\pr_j: \RR^n \rightarrow \RR$, para $j=1,\dots,n$. Entonces, $$0=\sum_i u^i \partial_i|_a (\pr_j)= \sum_i u^i \frac{\partial x^j}{\partial x^i}(a)= u_j$$. Tenemos entonces que $u_j=0$ para todo $j=1,\dots,n$, es decir, $\ve{u}=0$.
+
+		Veamos ahora que son un sistema de generadores. Si $f\in C^\infty_a$ es un germen de una función diferenciable, entonces existe un entorno $U$ de $a$ donde $f$ es diferenciable y donde podemos hacer un desarrollo de Taylor, si $x\in U$,
+		\begin{equation*}
+		  f(x)=f(a)+ \sum_i (x^i - a^i)\frac{\partial f}{\partial x^i}(a) + O(( x^i-a^i )^2).
+		\end{equation*}
+		Entonces, si $D\in T_a \RR^n$ es una derivación en $a$,
+		\begin{equation*}
+		  D(f)=D(f(a))+\sum_i D(x^i-a^i) \frac{\partial f}{\partial x^i}(a) + \sum_i (x^i-a^i)|_{x=a} D\left(\frac{\partial f}{\partial x^i}\right) + D(O( (x^i-a^i)^2 )).
+		\end{equation*}
+		Ahora, $(x^i-a^i)|_{x=a}=(a^i-a^i)=0$, mientras que, como $D$ es lineal, se comporta bien con los límites y 
+		\begin{equation*}
+		  D(O( (x^i-a^i)^2))=O(D( (x^i-a^i)^2))= O(2(x^i-a^i) (x^i-a^i)|_{x=a})=0.
+		\end{equation*}
+		Eliminando los términos que son derivaciones de constantes, obtenemos
+		\begin{equation*}
+		  D(f)=\sum_i D(x^i) \frac{\partial f}{\partial x_i}(a).
+		\end{equation*}
+		Por tanto, podemos escribir 
+		\begin{equation*}
+		  D=\sum_i D(x^i) \partial_i |_a,
+		\end{equation*}
+		con lo que las derivaciones $\left\{ \partial_1 |_a,\dots,\partial_n|_a \right\}$ generan $T_a \RR^n$.
+	      \end{proof}
+
+	      Tenemos entonces que el espacio tangente $T_xM$ a un punto $x$ en una variedad diferenciable $M$ es un espacio vectorial real de dimensión $n=\dim M$.
+
+	  \section{Derivada de una aplicación diferenciable}
+	  Veamos ahora cómo podemos definir la noción de derivada de una aplicación diferenciable entre dos variedades abstractas.
+
+	  En primer lugar, consideremos el caso en que $M\subset \RR^p$ es una variedad sumergida y $f:M\rightarrow \RR$ es una función diferenciable. En tal caso la derivada de $f$ en un punto $x\in M$ es simplemente
+	  \begin{equation*}
+	    d_x f = d_{\varphi(x)} \tilde{f} \circ d_x\varphi:T_xM \rightarrow \RR,
+	  \end{equation*}
+	  donde $(U,\varphi)$ es una carta en $x$ y $\tilde{f}$ es la localización $\tilde{f}=f\circ \varphi^{-1}$. Ahora, un vector $\ve{u}\in T_xM$ es de la forma $\ve{u}=d_{\varphi(x)}\varphi^{-1}(u^1,\dots,u^n)$. Por tanto, si $(x^1,\dots,x^n)$ son coordenadas en $U$ tenemos que
+	  \begin{equation*}
+	    d_xf (\ve{u})=d_{\varphi(x)}\tilde{f} \circ d_x\varphi \circ d_{\varphi(x)}\varphi^{-1}(u^1,\dots,u^n)=d_{\varphi(x)}\tilde{f}(u^1,\dots,u^n)=\sum_i \frac{\partial \tilde{f}}{\partial x^i}(\varphi(x)) u^i.
+	  \end{equation*}
+
+	  Podemos intentar imitar esta construcción en una variedad diferenciable abstracta $M$. En este caso, consideramos una carta $(U,\varphi)$ en torno a un punto $x\in M$ y una función diferenciable $f\in C^\infty_M(U)$. Consideramos también la localización $\tilde{f}=f\circ \varphi^{-1}$. Si llamamos $a=\varphi(x)$ y tomamos $D$ una derivación en $x$, entonces $\varphi_{*,x} D=\sum_i u^i \partial_i|_a\in T_a \RR^n$ es una derivación en $a$ y  podemos definir, de manera análoga al caso de variedades sumergidas
+	  \begin{equation*}
+	    d_xf (D):=\sum_i \frac{\partial \tilde{f}}{\partial x^i}(a) u^i=\sum_i u^i \partial_i|_a (f\circ \varphi^{-1}) =\varphi_{*,x}D (f\circ \varphi^{-1}) = D(f).
+	  \end{equation*}
+
+	  En general, como ya vimos en la demostración de la Proposición \ref{equiv1}, una aplicación diferenciable $f:M\rightarrow N$ entre dos variedades diferenciables $M$ y $N$ induce, para cada abierto $V\subset N$, una aplicación
+	  \begin{align*}
+	    f^*_V :C^\infty_N(V)&\longrightarrow C^\infty_M(f^{-1}(V))\\ 
+	      s &\longmapsto s\circ f. 
+	    \end{align*}
+	    Esta aplicación desciende a las espigas y permite definir una aplicación lineal $f_{*,x}:T_xM \rightarrow T_{f(x)} N$ de forma que, si $s\in C^\infty_{N,f(x)}$ y $D\in T_xM$,
+	    \begin{equation*}
+	      (f_{*,x} D)(s)=D(s\circ f).
+	    \end{equation*}
+	    Definimos entonces la \emph{derivada de $f$ en $x$} simplemente como la aplicación lineal $$d_xf=f_{*,x}:T_xM \rightarrow T_{f(x)}N.$$
+
+	    Finalmente, es inmediato obtener una relación canónica entre el espacio tangente \textit{abstracto} $T_xM$, es decir, el definido como espacio de derivaciones y el espacio tangente \textit{sumergido}, definido como la imagen de la derivada de una parametrización. Por un momento denotaremos $\widetilde{T_xM}$ al espacio tangente sumergido. Podemos definir un isomorfismo entre $T_xM$ y $\widetilde{T_xM}$ simplemente enviando los vectores $\varphi_{*,x}(\partial_i|_{\varphi(x)})$ a los vectores $\frac{\partial \psi}{\partial x^i}$, con $\psi=\varphi^{-1}$. Tenemos entonces, para cada aplicación diferenciable $f:M\rightarrow N$, el siguiente diagrama conmutativo
+	    \begin{center}
+	      \begin{tikzcd}
+		\widetilde{T_xM}		\arrow{rr}{d_xf}\arrow{dd} && \widetilde{T_{f(x)}N}\arrow{dd} \\ 
+		 && \\
+		 T_xM\arrow{rr}[anchor=south]{f_{*,x}} && T_xN,
+	       \end{tikzcd}
+	     \end{center}
+	     donde las flechas verticales representan el isomorfismo canónico recién definido y $d_xf$ se entiende como la diferencial en el caso sumergido.
+
+	     Es inmediato comprobar que en ambos casos la regla de la cadena se sigue cumpliendo, es decir $d_x(g\circ f)=d_{f(x)}g \circ d_xf$. Por tanto, si consideramos la categoría $\mathbf{Diff}_*$ de las variedades diferenciables \emph{con punto base} cuyos objetos son los pares $(M,x)$, con $M$ una variedad diferenciable y $x\in M$ y tal que los morfismos entre $(M,x)$ y $(N,y)$ son las aplicaciones diferenciables $f:M\rightarrow N$ tales que $f(x)=y$, entonces tenemos un funtor covariante
+	     \begin{align*}
+	       T :\mathbf{Diff}_*&\longrightarrow \mathbf{Vect}_\RR
+	       \end{align*}
+	       que a cada par $(M,x)$ le asigna el espacio vectorial $T_xM$ y a cada aplicación diferenciable $f:(M,x)\rightarrow (N,f(x))$ le asigna la aplicación lineal $d_xf:T_xM \rightarrow T_{f(x)}N$.
+
+
+
 	  \chapter{Fibrados vectoriales}
 	  \section{La categoría de los fibrados vectoriales}
 	  \section{Secciones de un fibrado vectorial}
@@ -661,6 +842,9 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
 	  \section{Grado de una aplicación diferenciable}
 	  \section{Dos teoremas de Brouwer}
 
+	  
+	  \appendix
+	  \chapter{Topología de variedades}
 		      \end{document}
 
 
