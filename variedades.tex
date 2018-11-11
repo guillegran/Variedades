@@ -44,12 +44,14 @@
 \def\SF{\mathbb{S}}
 \def\TT{\mathbb{T}}
 \def\NN{\mathbb{N}}
+\def\HH{\mathbb{H}}
 \def\PP{\mathbb{P}}
 \def\id{\mathrm{id}}
 \def\pr{\mathrm{pr}}
 \def\cc{\mathbf{c}}
 \def\xx{\mathtt{x}}
 \def\FF{\mathscr{F}}
+\def\eps{\varepsilon}
 \newcommand{\ve}[1]{\mathbf{#1}}
 
 \DeclarePairedDelimiter\esc{\langle}{\rangle}
@@ -126,7 +128,7 @@ De nuevo, la regla de la cadena garantiza que $d_x(g\circ f)=d_{f(x)}g \circ d_x
   \end{center}
   Dos abiertos $U \subset \RR^n$, $V \subset \RR^m$ se dicen \emph{difeomorfos} si existe un difeomorfismo entre ellos. 
 
-  \begin{prop}\label{dimension}
+  \begin{prop}[Invariancia diferenciable de la dimensión] \label{dimension}
    Si dos abiertos $U \subset \RR^n$, $V \subset \RR^m$ son difeomorfos entonces $n=m$.
   \end{prop}
   \begin{proof}
@@ -310,7 +312,7 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
        \end{center}
        La regla de la cadena garantiza que, si $\tilde{f}$ y $\tilde{g}$ son diferenciables, entonces $\widetilde{(g\circ f)}=\tilde{g}\circ \tilde{f}$ es diferenciable, luego $g\circ f$ es diferenciable.
 
-       Podemos por tanto definir la categoría de las variedades diferenciables, que denotamos $\mathbf{Diff}$, cuyos objetos son las variedades diferenciables y sus morfismos son las aplicaciones diferenciables entre ellas.
+       Podemos por tanto definir la categoría de las variedades diferenciables, que denotamos $\mathbf{Diff}$, cuyos objetos son las variedades diferenciables y sus morfismos son las aplicaciones diferenciables entre ellas. Los isomorfismos de esta categoría también se llaman \emph{difeomorfismo}. Es decir, un difeomorfismo entre dos variedades diferenciables $M$ y $N$ es una aplicación diferenciable $f:M\rightarrow N$ biyectiva y con inversa diferenciable.
 
        \begin{ejemplo}
 	 Una homografía $h:\PP^n_\RR \rightarrow \PP^m_\RR$ es una aplicación diferenciable. Basta tomar un hiperplano $H \subset \PP^n_\RR$, de modo que su imagen $h(H)\subset \PP^m_\RR$ es también un hiperplano, y considerar la localización a las cartas $(D(H),\varphi_H)$, $(D(h(H)),\varphi_{h(H)})$
@@ -324,10 +326,36 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
        Por ser $h$ una homografía, su localización $\tilde{h}$ es una aplicación afín, luego es diferenciable. Por tanto, $h$ es diferenciable.
        \end{ejemplo}
 
-    \begin{ejemplo}
-      Estructuras diferenciables distintas son difeomorfas
-      \qed
-    \end{ejemplo}
+       \begin{obs}
+	 En una observación al final de la sección anterior vimos como una misma variedad topológica puede fácilmente admitir estructuras diferenciables distintas. Vimos concretamente el ejemplo de $\RR$ con la carta dada por la identidad y la dada por la función elevar al cubo. Sin embargo, aunque estas dos estructuras son diferentes, son difeomorfas. En efecto, basta considerar la aplicación
+	 \begin{align*}
+	   f :\RR&\longrightarrow \RR\\ 
+	   t &\longmapsto t^3. 
+	   \end{align*}
+	   La localización de esta aplicación a las cartas $(\RR,\id_\RR)$ y $(\RR,\varphi)$ viene dada por el diagrama
+      \begin{center}
+	\begin{tikzcd}
+\RR	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\id} && \RR\arrow{dd}[anchor=west]{\varphi} \\ 
+	   && \\
+	   \RR\arrow{rr}[anchor=south]{\tilde{f}} && \RR.
+	 \end{tikzcd}
+       \end{center}
+       Es decir, 
+       \begin{equation*}
+	 \tilde{f}(t)=\varphi^{-1}\circ \tilde{f} \circ \id (t)= \sqrt[3]{t^3}=t.
+       \end{equation*}
+       Por tanto, $\tilde{f}=\id$, luego es diferenciable. De hecho, es un difeomorfismo, luego $f$ es un difeomorfismo y $(\RR,\id_\RR)$ es difeomorfa a $(\RR,\varphi)$.
+       \end{obs}
+
+       Cabe preguntarse entonces si una misma variedad topológica admite diferentes estructuras diferenciables no difeomorfas, si es que admite alguna. Es decir, consideramos el problema de la \emph{clasificación de las variedades diferenciables}. Sea $M$ una variedad diferenciable conexa. Se tiene que:
+       \begin{itemize}
+	 \item Si $\dim M=0$, entonces $M$ es difeomorfa a un punto.
+	 \item Si $\dim M = 1$, entonces la clasificación coincide con la clasificación de las curvas topológicas: $M$ es difeomorfa a la recta real $\RR$ si no es compacta o a la circunferencia $\SF^1$ si es compacta.
+	 \item Si $\dim M = 2$ entonces la clasificación también coincide con la clasificación de las superficies topológicas, con lo que, si $M$ es compacta entonces es difeomorfa a una suma conexa de toros $\Sigma_g$, si es orientable o a una suma conexa de espacios proyectivos $X_k$ si no lo es.
+	 \item Si $\dim M = 3$ la clasificación también coincide con el caso topológico, aunque en este caso la clasificación en el caso topológico no está completa.
+	 \item En dimensión $\dim M \geq 4$ las cosas se complican, ya que aparecen variedades topológicas que admiten varias estructuras diferenciables no difeomorfas. Si $M$ es compacta y $\dim M \geq 5$, entonces $M$ puede admitir varias estructuras diferenciables no difeomorfas, aunque una cantidad finita. Por ejemplo, la esfera $\SF^7$ admite 28 estructuras diferenciables no difeomorfas entre sí («esferas exóticas»). En el caso en que $\dim M = 4$ entonces una variedad compacta $M$ puede admitir una cantidad infinita numerable de estructuras diferenciables. En el caso no compacto aparecen resultados realmente sorprendentes. Por ejemplo, mientras que $\RR^n$ admite una única estructura diferenciable salvo difeomorfismo si $n\neq 4$, $\RR^4$ admite una cantidad \textit{infinita no numerable} de estructuras diferenciables no difeomorfas. Estas variedades se conocen como los «falsos $\RR^4$».
+       \end{itemize}
+
     \section{Haces y $C^\infty$-variedades}
 
     Sea $X$ un espacio topológico. Denotamos por $\mathbf{Op}(X)$ a la categoría cuyos objetos son los subconjuntos abiertos $U\subset X$ y tal que, si $U\subset X$ y $V\subset X$ son abiertos de $X$, entonces el conjunto de morfismos de $U$ a $V$, $\mathbf{Op}(X) (U,V)$ consta de:
@@ -550,6 +578,39 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
 
     En resumen, a lo largo de este capítulo hemos definido tres categorías: $\mathbf{Diff}$, $C^\infty\mathbf{-Man}$ y $\mathbf{RegMan}$, que han resultado ser equivalentes. Es decir, las tres categorías representan el mismo concepto matemático: espacios localmente modelados por $\mathbf{CartSp}$, o sea, espacios donde se puede hacer cálculo diferencial. A la vista de esto, a lo largo del texto, trabajaremos con las tres categorías indistintamente: una variedad diferenciable significará para nosotros un objeto de alguna de estas tres categorías, según nos sea conveniente.
 	  \section{Variedades con borde}
+	  Para terminar el capítulo, vamos a considerar una clase de objetos ligeramente más general que las variedades diferenciables. En esta clase queremos incluir objetos que puedan «tener borde». Intuitivamente estamos pensando en objetos como un semiplano que contiene a la recta delimitante, discos con frontera, cilindros, bandas, etc. 
+
+	En este caso el modelo local son los abiertos $U$ del \emph{semiespacio cerrado}
+	\begin{equation*}
+	  \HH^n = \left\{ (x^1,\dots,x^n) \in \RR^n : x^1 \geq 0 \right\},
+	\end{equation*}
+	cuyo \emph{borde} es simplemente la frontera topológica
+	\begin{equation*}
+	  \partial \HH^n = \left\{ (x^1,\dots,x^n) \in \RR^n: x^1=0 \right\}.
+	\end{equation*}
+
+	\begin{prop}[Invariancia diferenciable del borde]\label{borde}
+	Sean dos abiertos $U\subset \HH^n$, $V\subset \HH^n$ y un difeomorfismo $f:U\rightarrow V$. Entonces $f(U\cap \partial \HH^n)= V \cap \partial \HH^n$.
+	\end{prop}
+	\begin{proof}
+	  Probamos uno de los contenidos, el otro es análogo considerando $f^{-1}$, ya que $f$ es un difeomorfismo. Supongamos que existe un punto $x\not \in U\cap \partial \HH^n$ tal que $f(x) \in V\cap \partial \HH^n$. Como $x$ está en el interior de $U$, entonces existe un $\eps >0$ tal que la bola $B_\eps (x) \subset U$. Por tanto, para cualquier vector unitario $\ve{u}\in \RR^n$, la imagen de la curva $\gamma(t)=x+t\ve{u}$ está contenida en $U$ si $t\in (-\eps,\eps)$. Podemos considerar entonces una aplicación $g:\RR\rightarrow \RR$ que a cada tiempo $t$ nos diga «a qué altura» se encuentra la imagen por $f$ de $\gamma(t)$ del borde. Es decir, definimos la aplicación $g=\pr_1 \circ f \circ \gamma$, cuya derivada es simplemente 
+	  \begin{equation*}
+	    g'(t)=\esc{\nabla f_1(x+t\ve{u}),\ve{u}},
+	  \end{equation*}
+	  donde $f=(f_1,\dots,f_n)$ y hemos aplicado la regla de la cadena. Ahora, como $f(y) \in \HH^n$ para todo $y\in U$, $\pr_1(f(y))\geq 0$ y, como $f(x)\in \partial \HH^n$, $\pr_1(f(x))=0$, luego $g$ alcanza un mínimo local en $t=0$. Por tanto, $g'(0)=0$, luego $\esc{\nabla f_1(x), \ve{u}}$. Como esto es cierto para todos los vectores unitarios $\ve{u}$, tenemos que $\nabla f_1(x)=0$, lo que contradice que $f$ es un difeomorfismo.
+	\end{proof}
+
+
+
+	Por el buen comportamiento de la derivada en la frontera, el cálculo diferencial se puede generalizar fácilmente a esta nueva clase de espacios, lo que nos permite considerar una nueva clase de variedades.
+	\begin{defn}
+	  Una \emph{variedad topológica con borde} es un espacio topológico $M$ Hausdorff y segundo axioma de numerabilidad que es localmente homeomorfo a un abierto de un semiespacio cerrado. Es decir, para todo $x\in M$ existe un entorno abierto $U\subset M$ de $x$, un abierto $V\subset \HH^n$ para cierto $n\in \NN$ y un homeomorfismo $\varphi:U\rightarrow V$. El par $(U,\varphi)$ se llama una \emph{carta} de $M$ en $x$.
+
+	  Una variedad topológica con borde es una \emph{variedad diferenciable con borde} si, para todo punto $x\in M$ y para cualesquiera dos cartas $(U_1,\varphi_1)$, $(U_2,\varphi_2)$, el cambio de coordenadas $(\varphi_2 \circ \varphi_1^{-1})|_{\varphi_1(U_1\cap U_2)}$ es un difeomorfismo. El \emph{borde} de $M$, que se denota $\partial M$, es el conjunto de los puntos que corresponden por cartas a puntos del borde del semiespacio cerrado.
+	\end{defn}
+
+	El hecho de que los cambios de coordenadas sean difeomorfismos junto con la Proposición \ref{borde} garantizan que el que un punto esté en el borde no depende de la elección de cartas. Es inmediato comprobar que el borde $\partial M$ de una variedad diferenciable $M$ de dimensión $n$ es una variedad diferenciable sin borde de dimensión $n-1$.
+
 	  \chapter{El espacio tangente}
 	  \section{Espacio tangente a una variedad sumergida}
 	  \section{Espacio tangente como velocidades de curvas}
@@ -580,13 +641,16 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
 	  \section{Determinantes}
 	  \section{Formas en variedades}
 	  \section{Diferencial exterior}
+	  \section{Fórmulas de Cartan}
 	  \section{Cohomología de de Rham}
 	  \section{Lema de Poincaré}
 	  \section{Cohomología de las esferas}
+	  Invariancia topológica de la dimensión y del borde.
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
 	  \section{Orientación de variedades}
 	  \section{Orientación de hipersuperficies}
+	  \section{Orientación del borde}
 	  \chapter{Integración}
 	  \section{Integral de una forma diferencial}
 	  \section{Teorema de Stokes}
