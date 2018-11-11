@@ -41,13 +41,19 @@
 \def\CC{\mathbb{C}}
 \def\ZZ{\mathbb{Z}}
 \def\RR{\mathbb{R}}
-\def\TT{\mathcal{T}}
+\def\SF{\mathbb{S}}
+\def\TT{\mathbb{T}}
 \def\NN{\mathbb{N}}
+\def\PP{\mathbb{P}}
 \def\id{\mathrm{id}}
 \def\pr{\mathrm{pr}}
 \def\cc{\mathbf{c}}
 \def\xx{\mathtt{x}}
 \def\FF{\mathscr{F}}
+\newcommand{\ve}[1]{\mathbf{#1}}
+
+\DeclarePairedDelimiter\esc{\langle}{\rangle}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
 
 		      \let\emph\relax
 		      \DeclareTextFontCommand{\emph}{\it\bfseries}
@@ -56,7 +62,7 @@
 		      \newcommand\gen[1]{\left\langle #1 \right\rangle}
 		      \newcommand\ngen[1]{\left\langle\left\langle #1 \right\rangle \right\rangle}
 
-		      \title{Variedades diferenciables }
+		      \title{VARIEDADES DIFERENCIABLES}
 		      \author{Guillermo Gallego Sánchez}
 		      \date{Última versión: \today}
 		      %\titlepic{\includegraphics{imagen.png}}
@@ -85,7 +91,7 @@ Sean $U \subset \RR^n$ y $V \subset \RR^m$ conjuntos abiertos y una aplicación 
     V \arrow{rruu}{g},
   \end{tikzcd}
 \end{center}
-es una aplicación diferenciable. Así, tenemos una categoría, que denotaremos $\mathbf{CartSp}$ y llamaremos \emph{espacios cartesianos} o \emph{espacios de coordenadas abstractos} cuyos objetos son los abiertos de los espacios afines y sus morfismos son las aplicaciones diferenciables entre ellos. 
+es una aplicación diferenciable. Así, tenemos una categoría, que denotaremos $\mathbf{CartSp}$ y llamaremos \emph{espacios cartesianos} o \emph{espacios de coordenadas abstractos} cuyos objetos son los abiertos de los espacios afines y sus morfismos son las aplicaciones diferenciables entre ellos. Si $U\subset \RR^n$ es un abierto, denotamos por $C^\infty (U)$ a las funciones diferenciables $U\rightarrow \RR$, es decir, $C^\infty(U)=\mathbf{CartSp}(U,\RR)$.
 
 Sea $V \subset \RR^m$ abierto. Se definen las \emph{funciones coordenadas} como las funciones
 \begin{align*}
@@ -175,18 +181,6 @@ De nuevo, la regla de la cadena garantiza que $d_x(g\circ f)=d_{f(x)}g \circ d_x
 
   \end{defn}
 
-    Nótese que esencialmente lo que pedimos a una variedad topológica $M$ para que sea variedad diferenciable es que admita un conjunto de cartas $\mathcal{U}$ tal que
-\begin{itemize}
-  \item los dominios de coordenadas recubran $M$, es decir, $M=\bigcup_{U\in \mathcal{U}}U$ y,
-  \item los cambios de coordenadas sean difeomorfismos.
-\end{itemize}
-
-Un conjunto de cartas de estas características se denomina un \emph{atlas} de $M$. Así, dotar a $M$ de la estructura de variedad diferenciable es simplemente dar un atlas de $M$. Dos cartas se dicen \emph{compatibles} si el cambio de coordenadas entre ellas es un difeomorfismo. Dos atlas se dicen \emph{compatibles} si todas las cartas de uno lo son con las del otro, es decir, si su unión es de nuevo un atlas. No es difícil comprobar que la compatibilidad entre atlas es una relación de equivalencia. De aquí se deduce que todo atlas es compatible con (es decir, está contenido en) un atlas maximal único, aquel que tiene todas las cartas compatibles con las del primero. Así, en vez de dar un atlas cualquiera, podemos considerar el atlas maximal correspondiente, de forma que tiene sentido decir que un atlas maximal es una \emph{estructura diferenciable}. Podemos entonces redefinir variedad diferenciable de la siguiente forma:
-
-\begin{defn}
-  Una variedad diferenciable es un par $(M,\mathcal{U}_M)$, donde $M$ es una variedad topológica y $\mathcal{U}_M$ es una estructura diferenciable (es decir, un atlas maximal) en $M$.
-\end{defn}
-
  Una consecuencia inmediata de la definición de variedad diferenciable y de la Proposición \ref{dimension}, es que todos los dominios de coordenadas en un punto $x \in M$ de una variedad diferenciable $M$ son abiertos del mismo $\RR^n$. Este $n$ se denomina \emph{dimensión de $M$ en $x$} y se denota $\dim_xM$. Nótese además que, de hecho, si $U_1$ y $U_2$ son dominios de coordenadas en $x$, todos los puntos de $U_1\cap U_2$ tienen la misma dimensión, luego, si consideramos la aplicación
   \begin{align*}
     \dim :M&\longrightarrow \NN\\ 
@@ -195,31 +189,145 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
     y consideramos en $\NN$ la topología discreta, la aplicación $\dim$ es continua, ya que el conjunto $\dim^{-1}(\dim_x M)$ contiene a $U_1 \cap U_2$. Más aún, como la imagen continua de un conexo es un conexo, la dimensión es constante en cada componente conexa de $M$. Así, si $M$ es una variedad diferenciable conexa podemos hablar con propiedad de la \emph{dimensión} de $M$, $\dim M$, que será el número $\dim_x M$ para cualquier $x\in M$. Las variedades diferenciables de dimensión 1 se llaman \emph{curvas} y las de dimensión 2, \emph{superficies}. 
 
     \begin{ejemplo}
-      Rn
+      Un primer ejemplo trivial es el propio $\RR^n$ con la topología usual, con la carta
+      \begin{align*}
+	\id_{\RR^n} :\RR^n&\longrightarrow \RR^n\\ 
+	  x &\longmapsto x. 
+	\end{align*}
+	De la misma forma, cualquier abierto $U\subset \RR^n$ es también una variedad diferenciable de dimensión $n$.
       \qed
     \end{ejemplo}
 
     \begin{ejemplo}
-      Esferas
+      Consideramos la \emph{esfera $n$-dimensional}
+      \begin{equation*}
+	\SF^n=\left\{ x\in \RR^{n+1} : \norm{x}=1 \right\}.
+      \end{equation*}
+      Podemos considerar los abiertos $U_1=\SF^n-\{p_N\}$ y $U_2=\SF^n-\{p_S\}$, con $p_N=(0,\dots,0,1)$ y $p_S=(0,\dots,0,-1)$ los polos norte y sur de la esfera. Estos abiertos son homeomorfos a $\RR^n$ mediante las aplicaciones $\varphi_S:U_1\rightarrow \RR^n$ la proyección estereográfica centrada en el polo sur y $\varphi_N:U_2\rightarrow \RR^n$ la proyección estereográfica centrada en el polo norte. No es difícil comprobar que el cambio de coordenadas $(\varphi_N \circ \varphi_S^{-1})|_{\varphi_S(\SF^n-\left\{ p_N,p_S \right\})}$ es un difeomorfismo, de modo que $\SF^n$ es una variedad diferenciable.
       \qed
     \end{ejemplo}
      
     \begin{ejemplo}
-      Proyectivos
+      Consideramos el espacio proyectivo real $\PP_\RR^n$. Los conjuntos de la forma
+      \begin{equation*}
+	D(x_i)=\left\{ (x_0:\dots:x_n): x_i \neq 0 \right\}
+      \end{equation*}
+      son abiertos homeomorfos a $\RR^n$ por medio de 
+      \begin{align*}
+	\varphi_i :D(x_i) &\longrightarrow \RR^n\\ 
+	(x_0:\dots:x_{i}:\dots:x_n) &\longmapsto \left(\frac{x_0}{x_i},\dots,\frac{x_{i-1}}{x_i},\frac{x_{i+1}}{x_i},\dots,\frac{x_n}{x_i}\right). 
+	\end{align*}
+
+	Los cambios de coordenadas vienen dados por
+	\begin{equation*}
+	  \psi_{ij}=(\varphi_j\circ \varphi_i^{-1})|_{\varphi_i(D(x_i)\cap D(x_j))},
+	\end{equation*}
+	que son de la forma
+	\begin{equation*}
+	  \psi\left( \frac{x_0}{x_i},\dots,\frac{x_n}{x_i} \right)=\left( \frac{x_0}{x_j},\dots,\frac{x_n}{x_j} \right)
+	  	\end{equation*}
+		y son claramente difeomorfismos.
       \qed
     \end{ejemplo}
 
-    \begin{ejemplo}
-      Estructuras diferenciables distintas
-      \qed
-    \end{ejemplo}
+    Regresando a la definición de variedad diferenciable. Nótese que esencialmente lo que pedimos a una variedad topológica $M$ para que sea variedad diferenciable es que admita un conjunto de cartas $\mathcal{U}$ tal que
+\begin{itemize}
+  \item los dominios de coordenadas recubran $M$, es decir, $M=\bigcup_{U\in \mathcal{U}}U$ y,
+  \item los cambios de coordenadas sean difeomorfismos.
+\end{itemize}
+
+Un conjunto de cartas de estas características se denomina un \emph{atlas} de $M$. Así, dotar a $M$ de la estructura de variedad diferenciable es simplemente dar un atlas de $M$. Cabría preguntarse entonces si la elección de las cartas influirá en la estructura de variedad diferenciable que estamos dando. Dos cartas se dicen \emph{compatibles} si el cambio de coordenadas entre ellas es un difeomorfismo. Dos atlas se dicen \emph{compatibles} si todas las cartas de uno lo son con las del otro, es decir, si su unión es de nuevo un atlas. No es difícil comprobar que la compatibilidad entre atlas es una relación de equivalencia. De aquí se deduce que todo atlas es compatible con (es decir, está contenido en) un atlas maximal único, aquel que tiene todas las cartas compatibles con las del primero. Así, en vez de dar un atlas cualquiera, podemos considerar el atlas maximal correspondiente, de forma que tiene sentido decir que un atlas maximal es una \emph{estructura diferenciable}. Podemos entonces redefinir variedad diferenciable de la siguiente forma:
+
+\begin{defn}
+  Una variedad diferenciable es un par $(M,\mathcal{U}_M)$, donde $M$ es una variedad topológica y $\mathcal{U}_M$ es una estructura diferenciable (es decir, un atlas maximal) en $M$.
+\end{defn}
+
+\begin{obs}
+  En ninguno de los ejemplos anteriores los atlas considerados eran maximales.
+\end{obs}
+  
+\begin{ejemplo}
+  En el caso del espacio proyectivo real $\PP^n_\RR$ cabría preguntarse si el atlas definido $\left\{ (D(x_i),\varphi_i) \right\}$ depende de la elección de coordenadas homogéneas. Esto no es así, ya que para cualquier hiperplano 
+  \begin{equation*}
+    H=\left\{ (x_0:\dots:x_n) \in \PP^n_\RR | F(x_0,\dots,x_n)=0 \right\},
+  \end{equation*}
+  con $F\in \RR[X_0,\dots,X_n]_1$ un polinomio homogéneo de grado 1, podemos considerar la carta $(D(H),\varphi_H)$, con $D(H)=\PP^n_\RR - H$ un abierto homeomorfo a un espacio afín 
+  \begin{equation*}
+    \mathbb{A}_\RR^n=\left\{ (x_0,\dots,x_n) \in \RR^{n+1} | F(x_0,\dots,x_1)=1 \right\}
+  \end{equation*}
+  por
+  \begin{align*}
+    \varphi_H :D(H)&\longrightarrow \mathbb{A}_\RR^n\\ 
+    (x_0:\dots:x_n) &\longmapsto \frac{1}{F(x_0,\dots,x_n)}(x_0,\dots,x_n).
+    \end{align*}
+\end{ejemplo}
+
+    \begin{obs}
+      Cabe preguntarse ahora si será posible dotar a una misma variedad topológica de estructuras diferenciables diferentes. En efecto, esto puede hacerse: basta considerar dos atlas que no sean compatibles. Por ejemplo, consideramos en $\RR$ los homeomorfismos
+      \begin{align*}
+	\id_\RR:\RR&\longrightarrow \RR\\ 
+	  t &\longmapsto t, 
+	\end{align*}
+	y
+	\begin{align*}
+	  \varphi :\RR&\longrightarrow \RR\\ 
+	    t &\longmapsto t^3. 
+	  \end{align*}
+	  Cada una de estas cartas define un atlas por sí sola, es decir, $\mathcal{U}_1=\left\{ (\RR,\id_{\RR}) \right\}$ y $\mathcal{U}_2=\left\{ (\RR,\varphi) \right\}$. Pero estos atlas no son compatibles, ya que el cambio de coordenadas es
+	  \begin{equation*}
+	    \psi(t)=\varphi\circ \id^{-1} (t)= t^3,
+	  \end{equation*}
+	  que no es un difeomorfismo, ya que su inversa
+	  \begin{equation*}
+	    \psi^{-1}(t)=\sqrt[3]{t}
+	  \end{equation*}
+	  no es diferenciable en $t=0$. Por tanto, $\mathcal{U}_1$ y $\mathcal{U}_2$ darán dos estructuras diferenciables diferentes.
+    \end{obs}
 
     \section{Aplicaciones diferenciables}
+    \begin{defn}
+      Sean dos variedades topológicas $M$ y $N$ y una aplicación continua $f:M\rightarrow N$. Sean $x\in M$, $(U,\varphi)$ una carta en $x$ y $(V,\psi)$ una carta en $f(x)$. Se llama \emph{localización} de $f$ a las cartas $(U,\varphi)$, $(V,\psi)$ a la aplicación $\tilde{f}$ que cierra el siguiente diagrama
+      \begin{center}
+	\begin{tikzcd}
+U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{dd}[anchor=west]{\psi} \\ 
+	   && \\
+	   \varphi(U)\subset \RR^m\arrow{rr}[anchor=south]{\tilde{f}} && \psi(V) \subset \RR^n.
+	 \end{tikzcd}
+       \end{center}
+       Es decir, $\tilde{f}=\psi^{-1}\circ f \circ \varphi$.
+    \end{defn}
+    \begin{defn}
+      Una aplicación $f:M\rightarrow N$ entre dos variedades diferenciables $M$ y $N$ es \emph{diferenciable} si, para todo $x\in M$ y para cualesquiera dos cartas $(U,\varphi)$, $(V,\psi)$ en $x$ y $f(x)$, respectivamente,  su localización $\tilde{f}=\psi^{-1}\circ f \circ \varphi$ es diferenciable. Es decir, si $\tilde{f} \in \mathbf{CartSp}(\varphi(U),\psi(V))$.
+    \end{defn}
+
+    Si $M$, $N$ y $P$ son variedades diferenciables y $f:M\rightarrow N$ y $g:N\rightarrow P$ son aplicaciones diferenciables, entonces la localización de $(g\circ f)$ a unas cartas $(U,\varphi)$, $(W,\eta)$ es la aplicación $\widetilde{(g\circ f)}$ dada por el siguiente diagrama
+      \begin{center}
+	\begin{tikzcd}
+	  U\subset M	  \arrow{rr}{f}\arrow[bend left]{rrrr}{g\circ f} \arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{dd}[anchor=west]{\psi} \arrow{rr}{g} && W \subset P \arrow{dd}{\eta}\\ 
+	   && \\
+	   \varphi(U)\subset \RR^m\arrow{rr}[anchor=south]{\tilde{f}} \arrow[bend right]{rrrr}{\widetilde{(g\circ f)}}&& \psi(V) \subset \RR^n \arrow{rr}{\tilde{g}} && \eta(W) \subset \RR^p.
+	 \end{tikzcd}
+       \end{center}
+       La regla de la cadena garantiza que, si $\tilde{f}$ y $\tilde{g}$ son diferenciables, entonces $\widetilde{(g\circ f)}=\tilde{g}\circ \tilde{f}$ es diferenciable, luego $g\circ f$ es diferenciable.
+
+       Podemos por tanto definir la categoría de las variedades diferenciables, que denotamos $\mathbf{Diff}$, cuyos objetos son las variedades diferenciables y sus morfismos son las aplicaciones diferenciables entre ellas.
+
+       \begin{ejemplo}
+	 Una homografía $h:\PP^n_\RR \rightarrow \PP^m_\RR$ es una aplicación diferenciable. Basta tomar un hiperplano $H \subset \PP^n_\RR$, de modo que su imagen $h(H)\subset \PP^m_\RR$ es también un hiperplano, y considerar la localización a las cartas $(D(H),\varphi_H)$, $(D(h(H)),\varphi_{h(H)})$
+      \begin{center}
+	\begin{tikzcd}
+	  D(H)	  \arrow{rr}{h}\arrow{dd}[anchor=east]{\varphi_H} && D(h(H))\arrow{dd}[anchor=west]{\varphi_{h(H)}} \\ 
+	   && \\
+	   \mathbb{A}_\RR^n \arrow{rr}[anchor=south]{\tilde{h}} && \mathbb{A}_\RR^m.
+	 \end{tikzcd}
+       \end{center}
+       Por ser $h$ una homografía, su localización $\tilde{h}$ es una aplicación afín, luego es diferenciable. Por tanto, $h$ es diferenciable.
+       \end{ejemplo}
+
     \begin{ejemplo}
       Estructuras diferenciables distintas son difeomorfas
       \qed
     \end{ejemplo}
-    \section{Variedades sumergidas}
     \section{Haces y $C^\infty$-variedades}
 
     Sea $X$ un espacio topológico. Denotamos por $\mathbf{Op}(X)$ a la categoría cuyos objetos son los subconjuntos abiertos $U\subset X$ y tal que, si $U\subset X$ y $V\subset X$ son abiertos de $X$, entonces el conjunto de morfismos de $U$ a $V$, $\mathbf{Op}(X) (U,V)$ consta de:
@@ -259,9 +367,9 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 	  \end{defn}
 
 	  \begin{defn}
-	    Una $C^\infty$\emph{-variedad} es un par $(M,\FF_M)$, donde $M$ es una variedad topológica y $\FF_M$ es un subhaz del haz $C(M)$ de forma que, para todo punto $x\in M$ existe una carta $(U,\varphi)$ en $x$ tal que la aplicación
+	    Una $C^\infty$\emph{-variedad} es un par $(M,C^\infty_M)$, donde $M$ es una variedad topológica y $C^\infty_M$ es un subhaz del haz $C(M)$ de forma que, para todo punto $x\in M$ existe una carta $(U,\varphi)$ en $x$ tal que la aplicación
 	    \begin{align*}
-	      \varphi_* :\FF_M(U)&\longrightarrow C^{\infty}(\varphi(U))\\ 
+	      \varphi_* :C^\infty_M(U)&\longrightarrow C^{\infty}(\varphi(U))\\ 
 	      s &\longmapsto s\circ \varphi^{-1} 
 	      \end{align*}
 	      es biyectiva.
@@ -272,13 +380,15 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 	      \RR^n \supset \varphi(U). \arrow{rruu}{s\circ \varphi^{-1}}
 	    \end{tikzcd}
 	  \end{center}
+
+	  El haz $C^\infty_M$ se denomina \emph{haz de funciones diferenciables} o \emph{haz de estructura} de $M$.
 	  \end{defn}
 
 	  \begin{defn}
-	    Un $C^\infty$\emph{-morfismo} entre dos $C^\infty$-variedades $(M,\FF_M)$ y $(N,\FF_N)$ es una aplicación continua $f:M\rightarrow N$ 
+	    Un $C^\infty$\emph{-morfismo} entre dos $C^\infty$-variedades $(M,C^\infty_M)$ y $(N,C^\infty_N)$ es una aplicación continua $f:M\rightarrow N$ 
 	      tal que, si $V \subset N$, es un abierto, entonces existe una aplicación
 	      \begin{align*}
-		f^*_V : \FF_N(V) &\longrightarrow \FF_M(f^{-1}(V)) \\ 
+		f^*_V : C^\infty_N(V) &\longrightarrow C^\infty_M(f^{-1}(V)) \\ 
 		  s &\longmapsto s\circ f. 
 		\end{align*}
 		
@@ -303,17 +413,17 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 	  \begin{proof}
 	    En primer lugar, debemos definir el funtor que nos dará la equivalencia de categorías. A cada variedad diferenciable $(M,\mathcal{U}_M)$ es necesario asignarle una $C^\infty$-variedad $(M,\mathscr{F}_M)$. Claramente, a la variedad topológica le asociaremos ella misma. Podemos definir un prehaz a partir de $\mathcal{U}_M$ de la siguiente manera. Para cada $U\subset M$ tal que existe un sistema de coordenadas $\varphi$ tal que $(U,\varphi)\in \mathcal{U}_M$ consideramos el conjunto
 	    \begin{equation*}
-	      \FF_M (U) = \left\{ f \circ \varphi : f \in C^{\infty}(\varphi(U))  \right\}.
+	      C^\infty_M (U) = \left\{ f \circ \varphi : f \in C^{\infty}(\varphi(U))  \right\}.
 	    \end{equation*}
 	    Si $U$ no es un dominio de coordenadas del altas $\mathcal{U}_M$, entonces existe un conjunto de dominios de coordenadas $\mathcal{V}\subset \mathcal{U}_M$ tal que $U=\bigcup_{V\in \mathcal{V}} V$ y puedo considerar
 	    \begin{equation*}
-	      \FF_M (U) = \left\{f \in C(U) : f|_{V} \in \FF_M(V) \text{ para todo } V\in \mathcal{V}  \right\}.
+	      C^\infty_M (U) = \left\{f \in C(U) : f|_{V} \in C^\infty_M(V) \text{ para todo } V\in \mathcal{V}  \right\}.
 	    \end{equation*}
-	    Es inmediato que esta asignación $\FF_M$ así definida es, de hecho un haz sobre $M$.
+	    Es inmediato que esta asignación $C^\infty_M$ así definida es, de hecho un haz sobre $M$.
 
 	    En cuanto a los morfismos, si $f:M \rightarrow N$ es una aplicación diferenciable, su $C^\infty$-morfismo asociado es simplemente la propia aplicación $f$, que claramente induce una aplicación de la forma
 	      \begin{align*}
-		f^*_V : \FF_N(V) &\longrightarrow \FF_M(f^{-1}(V)) \\ 
+		f^*_V : C^\infty_N(V) &\longrightarrow C^\infty_M(f^{-1}(V)) \\ 
 		  s &\longmapsto s\circ f, 
 		\end{align*}
 		con $V\subset N$ abierto.
@@ -324,21 +434,121 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 		  \item que el funtor es plenamente fiel, es decir, que, dadas dos variedades diferenciables $M$ y $N$, existe una biyección entre las aplicaciones diferenciables entre $M$ y $N$ y los $C^\infty$-morfismos entre las $C^\infty$-variedades asociadas.
 		\end{enumerate}
 
-		    Veamos 1. Sea $(M,\FF_M)$ una $C^{\infty}$-variedad. Para cada punto $x\in M$ consideremos la carta $(U_x,\varphi_x)$ que aparece en la definición de $C^{\infty}$-variedad y definimos el conjunto
+		    Veamos 1. Sea $(M,C^\infty_M)$ una $C^{\infty}$-variedad. Para cada punto $x\in M$ consideremos la carta $(U_x,\varphi_x)$ que aparece en la definición de $C^{\infty}$-variedad y definimos el conjunto
 		    \begin{equation*}
 		      \mathcal{U}_M=\left\{ (U_x,\varphi_x): x\in M \right\}.
 		    \end{equation*}
-		    Veamos que $\mathcal{U}_M$ es un atlas en $M$. Dadas dos cartas $(U_1,\varphi_1), (U_2,\varphi_2) \in \mathcal{U}_M$, con $U_1 \cap U_2 \neq \varnothing$, tenemos que ver que $\varphi_2 \circ \varphi_1^{-1}$ es un difeomorfismo. La biyectividad está clara, así que basta ver que tanto ella como su inversa son diferenciables. Tan solo probaremos la diferenciabilidad de ella, ya que para la de su inversa la demostración es análoga. Para ver esto, basta considerar las aplicaciones
+		    Veamos que $\mathcal{U}_M$ es un atlas en $M$. Dadas dos cartas $(U_1,\varphi_1), (U_2,\varphi_2) \in \mathcal{U}_M$, con $U_1 \cap U_2 \neq \varnothing$, tenemos que ver que $\varphi_2 \circ \varphi_1^{-1}$ es un difeomorfismo. La biyectividad está clara, así que basta ver que tanto ella como su inversa son diferenciables. Tan solo probaremos la diferenciabilidad de ella, ya que para la de su inversa la demostración es análoga. Para ver esto, basta considerar las funciones coordenadas
 		    \begin{align*}
 		      \pr_i :\varphi_2(U_2)&\longrightarrow \RR\\ 
-		        (y_1,\dots,y_n) &\longmapsto y_i, 
+		        (y^1,\dots,y^n) &\longmapsto y^i, 
 		      \end{align*}
-		      para cada $i=1,\dots,n$, con $n=\dim M$ (en la componente conexa que corresponda). Estas aplicaciones son claramente diferenciables, es decir, $\pr_i \in C^{\infty}(\varphi_2(U_2))$. Pero $\pr_i = \pr_i \circ \varphi_2 \circ \varphi_2^{-1}$, luego $\pr_i \circ \varphi_2 \in \FF_M(U_2)$ y, por ser prehaz, $\pr_i \circ \varphi_2|_{U_1 \cap U_2} \in \FF_M(U_1 \cap U_2)$. Pero, de nuevo, por la definición de $C^{\infty}$-variedad, $\pr_{i} \circ \varphi_2 \circ \varphi_1^{-1} \in \FF_M(\varphi_1(U_1 \cap U_2))$. Por tanto, $\varphi_2 \circ \varphi_1^{-1}$ es diferenciable coordenada a coordenada, luego es diferenciable. Tenemos entonces que $\mathcal{U}_M$ es un atlas en $M$ y, tomando el maximal que lo contiene, dotamos a $M$ de una estructura diferenciable.
+		      para cada $i=1,\dots,n$, con $n=\dim M$ (en la componente conexa que corresponda). Estas aplicaciones son claramente diferenciables, es decir, $\pr_i \in C^{\infty}(\varphi_2(U_2))$. Pero $\pr_i = \pr_i \circ \varphi_2 \circ \varphi_2^{-1}$, luego $\pr_i \circ \varphi_2 \in C^\infty_M(U_2)$ y, por ser prehaz, $\pr_i \circ \varphi_2|_{U_1 \cap U_2} \in C^\infty_M(U_1 \cap U_2)$. Pero, de nuevo, por la definición de $C^{\infty}$-variedad, $\pr_{i} \circ \varphi_2 \circ \varphi_1^{-1} \in C^\infty_M(\varphi_1(U_1 \cap U_2))$. Por tanto, $\varphi_2 \circ \varphi_1^{-1}$ es diferenciable coordenada a coordenada, luego es diferenciable. Tenemos entonces que $\mathcal{U}_M$ es un atlas en $M$ y, tomando el maximal que lo contiene, dotamos a $M$ de una estructura diferenciable.
 
-		      Finalmente, veamos 2. La inyectividad está clara ya que aplicaciones diferenciables distintas $M\rightarrow N$ inducen $C^{\infty}$-morfismos distintos. Basta ver entonces que, si $f:M\rightarrow N$ es un $C^{\infty}$-morfismo, entonces es una aplicación diferenciable respecto de la estructura diferenciable que acabamos de construir.		      En efecto, si $x\in M$ es un punto y $(V,\psi)$ es una carta de $N$ en $f(x)$ como la de la definición de $C^{\infty}$-variedad, entonces, para $i=1,\dots,n$, con $n=\dim N$, $\pr_i=(\pr_i\circ \psi)\circ \psi^{-1}$ es una función diferenciable en $\psi(V)$, es decir $\pr_i \in C^\infty(\psi(V)$, luego $\pr_i \circ \psi \in \FF_N (V)$. Ahora, por ser $f$ un $C^\infty$-morfismo, $f^*_V(\pr_i \circ \psi)=\pr_i \circ \psi \circ f \in \FF_M(f^{-1}(V))$. Si tomamos ahora una carta $(U,\varphi)$ de $M$ en $x$ como la de la definición de $C^\infty$-variedad y tal que $U \subset f^{-1}(V)$, entonces $\pr_i \circ \psi \circ f \in \FF_M(U)$, luego $\pr_i \circ \psi \circ f \circ \varphi^{-1} \in C^\infty (\varphi(U))$. Hemos visto entonces que, para cada punto $x\in M$ existen cartas $(U,\varphi)$ y $(V,\psi)$ en $M$ y $N$ respectivamente, con $f(U)\subset V$ y tales que cada componente de la localización (y por tanto, la localización) $\psi \circ f \circ \varphi^{-1}$ es diferenciable, luego, por la definición de aplicación diferenciable, $f$ es diferenciable.  
+		      Finalmente, veamos 2. La inyectividad está clara ya que aplicaciones diferenciables distintas $M\rightarrow N$ inducen $C^{\infty}$-morfismos distintos. Basta ver entonces que, si $f:M\rightarrow N$ es un $C^{\infty}$-morfismo, entonces es una aplicación diferenciable respecto de la estructura diferenciable que acabamos de construir.		      En efecto, si $x\in M$ es un punto y $(V,\psi)$ es una carta de $N$ en $f(x)$ como la de la definición de $C^{\infty}$-variedad, entonces, para $i=1,\dots,n$, con $n=\dim N$, $\pr_i=(\pr_i\circ \psi)\circ \psi^{-1}$ es una función diferenciable en $\psi(V)$, es decir $\pr_i \in C^\infty(\psi(V)$, luego $\pr_i \circ \psi \in C^\infty_N (V)$. Ahora, por ser $f$ un $C^\infty$-morfismo, $f^*_V(\pr_i \circ \psi)=\pr_i \circ \psi \circ f \in C^\infty_M(f^{-1}(V))$. Si tomamos ahora una carta $(U,\varphi)$ de $M$ en $x$ como la de la definición de $C^\infty$-variedad y tal que $U \subset f^{-1}(V)$, entonces $\pr_i \circ \psi \circ f \in C^\infty_M(U)$, luego $\pr_i \circ \psi \circ f \circ \varphi^{-1} \in C^\infty (\varphi(U))$. Hemos visto entonces que, para cada punto $x\in M$ existen cartas $(U,\varphi)$ y $(V,\psi)$ en $M$ y $N$ respectivamente, con $f(U)\subset V$ y tales que cada componente de la localización (y por tanto, la localización) $\psi \circ f \circ \varphi^{-1}$ es diferenciable, luego, por la definición de aplicación diferenciable, $f$ es diferenciable.  
 	  \end{proof}
 
 
+    \section{Variedades sumergidas}
+    \begin{defn}\label{difsumergida}
+      Sean $X \subset \RR^n$, $Y\subset \RR^m$ dos conjuntos. Una aplicación $f:X\rightarrow Y$ se dice \emph{diferenciable} si existen dos abiertos $U \subset \RR^n$ y $V \subset \RR^m$, con $X\subset U$ e $Y \subset V$ y una aplicación diferenciable $F:U \rightarrow V$ tal que el siguiente diagrama conmuta
+      \begin{center}
+	\begin{tikzcd}
+U	  \arrow{r}{F} & V \\ 
+	   X\arrow{r}[anchor=south]{f} \arrow[hook]{u}& Y.\arrow[hook]{u}
+	 \end{tikzcd}
+       \end{center}
+       Análogamente, decimos que $f$ es un difeomorfismo si es biyectiva y su inversa es diferenciable (en el mismo sentido que acabamos de definir).
+    \end{defn}
+    \begin{defn}
+      Un subconjunto $M\subset \RR^p$ se llama una \emph{subvariedad regular} de $\RR^p$ o una \emph{variedad diferenciable sumergida} en $\RR^p$ si es localmente difeomorfo a un abierto de un espacio afín. Es decir, para todo $x\in M$ existe un entorno abierto $U \subset \RR^p$ de $x$, un abierto $V \subset \RR^n$, para cierto $n\in \NN$ y un difeomorfismo $\varphi: U \cap M \rightarrow V$. 
+    \end{defn}
+
+    Nótese que todo subconjunto $M\subset \RR^p$ se puede dotar de la topología relativa: los abiertos de $M$ son los conjuntos de la forma $U \cap M$, con $U \subset \RR^p$ abierto de $\RR^p$. Por tanto, si $M$ es una subvariedad regular de $\RR^p$, entonces es una variedad topológica con la topología relativa y, para cada $x\in M$ tenemos una carta $\varphi_x: U_x \cap M \rightarrow V \subset \RR^n$. De hecho, como las cartas $\varphi$ son difeomorfismos, los cambios de coordenadas $\varphi_2 \circ \varphi_1^{-1}$ también son difeomorfismos, luego las cartas son compatibles y forman un atlas. Tenemos entonces que toda subvariedad regular es una variedad diferenciable. 
+
+    Los ejemplos no triviales más simples de variedades sumergidas vienen dados por el teorema de la función implícita: 
+    \begin{prop}[Teorema de la función implícita]
+    Sean $U\subset \RR^p$ un conjunto abierto y $F: U \rightarrow \RR^q$ una aplicación diferenciable. Supongamos que existe un punto $a\in U$ en el que $d_a F$ es sobreyectiva. Entonces existe un entorno abierto $B\subset U$ de $a$ tal que
+    \begin{equation*}
+      M=\left\{ x\in B: F(x)=F(a) \right\},
+    \end{equation*}
+    es una subvariedad regular de $\RR^p$ de dimensión $p-q$.
+    \end{prop}
+    \begin{proof}
+      Como $d_a F:\RR^p \rightarrow \RR^q$ es sobreyectiva, $p>q$ y $\dim \ker d_a F =p-q$, luego existe un isomorfismo lineal $\psi:\ker d_a F \rightarrow \RR^{p-q}$ que nos permite definir una aplicación lineal sobreyectiva $g:\RR^p \rightarrow \RR^{p-q}$ por
+      \begin{equation*}
+	g(x)=
+	\begin{cases}
+	  \psi(x) & \text{ si } x \in \ker d_aF \\
+	  0 & \text{ en caso contrario.}
+	\end{cases}
+      \end{equation*}
+      Definimos entonces
+      \begin{align*}
+	h :U&\longrightarrow \RR^p=\RR^q \times \RR^{p-q}\\ 
+	  x &\longmapsto (F(x),g(x)). 
+	\end{align*}
+	Ahora, $d_a h=(d_a F, g):\RR^p \rightarrow \RR^p$ es inyectiva ya que si $d_a h (\ve{u})=0$ entonces $d_a F(\ve{u})=0$, luego $\ve{u}\in \ker d_a F$. Pero entonces $g(\ve{u})=\psi(\ve{u})=0$ si y sólo si $\ve{u}=0$, ya que $\psi$ es un isomorfismo lineal. Por tanto, $d_a h$ es un isomorfismo lineal y, por el teorema de la función inversa, existen un entorno $B\subset U$ de $a$ y un entorno $V\subset \RR^p$ de $h(a)=(F(a),g(a))$ tales que $h:B\rightarrow V$ es un difeomorfismo. Finalmente, $M$ es difeomorfo a $h(M)=(\left\{ f(a) \right\}\times \RR^{p-q}) \cap V\subset \RR^p$, que es claramente una subvariedad regular de dimensión $p-q$. 
+    \end{proof}
+
+    \begin{ejemplo}
+      Un ejemplo muy sencillo de subvariedad regular dada por el teorema de la función implícita es la esfera. En efecto, consideramos la función
+      \begin{align*}
+	F :\RR^{n+1}&\longrightarrow \RR\\ 
+	(x^1,\dots,x^{n+1}) &\longmapsto (x^1)^2+\dots+(x^n)^2. 
+	\end{align*}
+	La derivada de $F$ en un punto $a\in \RR^{n+1}$ es
+	\begin{align*}
+	  d_aF :\RR^{n+1}&\longrightarrow \RR\\ 
+	  \ve{u} &\longmapsto 2 \esc{a,\ve{u}},
+	  \end{align*}
+	  que es sobreyectiva si $a\neq 0$.
+	  Por tanto, la \emph{esfera $n$-dimensional de radio $\sqrt{F(a)}$},
+	  \begin{equation*}
+	    \SF^{n}_{\sqrt{F(a)}}=\left\{ x \in \RR^{n+1}: F(x)=F(a) \right\},    
+	  \end{equation*}
+	  es una subvariedad regular de $\RR^p$ de dimensión $n$. En el caso que $F(a)=1$ (es decir, si $\norm{a}=1$) la denotamos $\SF^n$ y la llamamos simplemente \emph{esfera $n$-dimensional}. Claramente, todas las esferas de la misma dimensión son difeomorfas, basta considerar la homotecia
+	  \begin{align*}
+	     \SF^n_r&\longrightarrow \SF^n\\ 
+	     x &\longmapsto \frac{x}{r}. 
+	    \end{align*}
+      \qed
+    \end{ejemplo}
+
+    Las aplicaciones diferenciables entre dos subvariedades regulares $M \subset \RR^p$ y $N \subset \RR^q$ son simplemente aplicaciones diferenciables $M\rightarrow N$ en el sentido de la Definición \ref{difsumergida}. Así, podemos considerar una nueva categoría, que llamaremos $\mathbf{RegMan}$ cuyos objetos son las subvariedades regulares y sus morfismos, las aplicaciones diferenciables entre ellas.
+    
+    Nótese también que, en el caso de las subvariedades regulares, podemos dotar a $M\subset \RR^p$ de un haz de funciones diferenciables de manera trivial: como los abiertos de $M$ son de la forma $U\cap M$, con $U\subset \RR^p$ abierto, consideramos simplemente
+    \begin{equation*}
+      C^\infty_M (U \cap M)= \left\{U\cap M \rightarrow \RR \text{ diferenciables}\right\},
+    \end{equation*}
+    donde la diferenciabilidad se entiende en el sentido de la definición \ref{difsumergida}.
+    Claramente, como $M$ es una subvariedad regular, para todo punto $x\in M$ existe un abierto $U \subset \RR^p$ y un difeomorfismo $\varphi:U\cap M \rightarrow V$, con $V\subset \RR^n$ abierto, para cierto $n\in \NN$. Pero entonces, la aplicación
+    \begin{align*}
+      \varphi_* :C^{\infty}_M(U\cap M)&\longrightarrow C^\infty(V)\\ 
+      s &\longmapsto s\circ \varphi^{-1}, 
+      \end{align*}
+      es biyectiva y $(M,C^\infty_M)$ es una $C^\infty$-variedad.
+
+    Hemos visto que toda subvariedad regular es una variedad diferenciable, pero el recíproco también es cierto. El teorema de inmersión de variedades abstractas garantiza que toda variedad diferenciable $M$ es difeomorfa a alguna subvariedad regular $\hat{M} \subset \RR^p$, para algún $p\in \NN$. Esto nos permite demostrar el siguiente teorema:
+
+    \begin{thm}
+      Existe una equivalencia de categorías
+      \begin{align*}
+	\mathbf{Diff}&\longrightarrow \mathbf{RegMan}.
+	\end{align*}
+    \end{thm}
+    \begin{proof}
+      Si $M$ es una variedad diferenciable denotamos $\hat{M} \subset \RR^p$ y $\varphi_M:M \rightarrow \hat{M}$ la subvariedad regular y el difeomorfismo dados por el teorema de inmersión de variedades abstractas. Podemos definir un funtor que asigne, a cada variedad diferenciable $M$, la subvariedad regular $\hat{M}$ y, a cada aplicación diferenciable $f:M \rightarrow N$, la aplicación $\hat{f}:\hat{M} \rightarrow \hat{N}$ que cierra el diagrama
+      \begin{center}
+	\begin{tikzcd}
+M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\varphi_N} \\ 
+	   \hat{M}\arrow{r}[anchor=south]{\hat{f}} & \hat{N}.
+	 \end{tikzcd}
+       \end{center}
+       La funtorialidad es inmediata y la asignación entre morfismos es claramente biyectiva por ser $\varphi_M$ y $\varphi_N$ difeomorfismos. Por tanto, el funtor es plenamente fiel. Que es esencialmente sobreyectivo es inmediato también porque toda subvariedad regular $M$ es ya una variedad diferenciable, es decir $M=\hat{M}$. Por tanto, tenemos una equivalencia de categorías.
+    \end{proof}
+
+    En resumen, a lo largo de este capítulo hemos definido tres categorías: $\mathbf{Diff}$, $C^\infty\mathbf{-Man}$ y $\mathbf{RegMan}$, que han resultado ser equivalentes. Es decir, las tres categorías representan el mismo concepto matemático: espacios localmente modelados por $\mathbf{CartSp}$, o sea, espacios donde se puede hacer cálculo diferencial. A la vista de esto, a lo largo del texto, trabajaremos con las tres categorías indistintamente: una variedad diferenciable significará para nosotros un objeto de alguna de estas tres categorías, según nos sea conveniente.
 	  \section{Variedades con borde}
 	  \chapter{El espacio tangente}
 	  \section{Espacio tangente a una variedad sumergida}
@@ -371,6 +581,8 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 	  \section{Formas en variedades}
 	  \section{Diferencial exterior}
 	  \section{Cohomología de de Rham}
+	  \section{Lema de Poincaré}
+	  \section{Cohomología de las esferas}
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
 	  \section{Orientación de variedades}
@@ -383,6 +595,7 @@ Un conjunto de cartas de estas características se denomina un \emph{atlas} de $
 	  \section{Cohomología con soportes compactos}
 	  \section{Cohomología de grado máximo}
 	  \section{Grado de una aplicación diferenciable}
+	  \section{Dos teoremas de Brouwer}
 
 		      \end{document}
 
