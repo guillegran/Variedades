@@ -613,7 +613,7 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
 	El hecho de que los cambios de coordenadas sean difeomorfismos junto con la Proposición \ref{borde} garantizan que el que un punto esté en el borde no depende de la elección de cartas. Es inmediato comprobar que el borde $\partial M$ de una variedad diferenciable $M$ de dimensión $n$ es una variedad diferenciable sin borde de dimensión $n-1$.
 
 	  \chapter{El espacio tangente}
-	  \section{Espacio tangente a una variedad sumergida}
+	  \section{El espacio tangente a una variedad sumergida}
 	  Sean $M\subset \RR^p$ una subvariedad regular de dimensión $n$, $x\in M$ y $(U,\varphi)$ una carta en $x$. La aplicación $\psi=\varphi^{-1}$ se dice que es una \emph{parametrización local} de $M$ por el dominio de coordenadas $U$. Si llamamos $V=\varphi(U)$ y $a=\varphi(x)$, esta parametrización es una aplicación diferenciable $\psi:V\rightarrow \RR^p$, de modo que tiene una derivada en $a$, que es una aplicación lineal $d_a\psi:\RR^n \rightarrow \RR^p$. La imagen de esta aplicación lineal no depende de la parametrización ya que, si $\bar{\psi}:W \rightarrow \RR^p$ es otra parametrización y llamamos $b=\psi^{-1}(x)$, entonces
 	  \begin{equation*}
 	    d_a(\bar{\psi}^{-1}\circ \psi)=(d_b \bar{\psi})^{-1} \circ d_a \psi.
@@ -724,7 +724,7 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	      \begin{proof}
 		Que son derivaciones es inmediato, puesto que la regla de Leibniz es simplemente la regla del producto de las derivadas. Veamos que son una base. 
 
-		En primer lugar, tenemos que probar que son linealmente independientes, es decir, que si existe un vector $\ve{u}=(u^1,\dots,u^n)\in \RR^n$ tal que $\sum_i u^i \partial_i|_a =0$, entonces $\ve{u}=0$. Para ver esto, consideremos las proyecciones $\pr_j: \RR^n \rightarrow \RR$, para $j=1,\dots,n$. Entonces, $$0=\sum_i u^i \partial_i|_a (\pr_j)= \sum_i u^i \frac{\partial x^j}{\partial x^i}(a)= u_j$$. Tenemos entonces que $u_j=0$ para todo $j=1,\dots,n$, es decir, $\ve{u}=0$.
+		En primer lugar, tenemos que probar que son linealmente independientes, es decir, que si existe un vector $\ve{u}=(u^1,\dots,u^n)\in \RR^n$ tal que $\sum_i u^i \partial_i|_a =0$, entonces $\ve{u}=0$. Para ver esto, consideremos las proyecciones $\pr_j: \RR^n \rightarrow \RR$, para $j=1,\dots,n$. Entonces, $$0=\sum_i u^i \partial_i|_a (\pr_j)= \sum_i u^i \frac{\partial x^j}{\partial x^i}(a)= u_j.$$ Tenemos entonces que $u_j=0$ para todo $j=1,\dots,n$, es decir, $\ve{u}=0$.
 
 		Veamos ahora que son un sistema de generadores. Si $f\in C^\infty_a$ es un germen de una función diferenciable, entonces existe un entorno $U$ de $a$ donde $f$ es diferenciable y donde podemos hacer un desarrollo de Taylor, si $x\in U$,
 		\begin{equation*}
@@ -797,12 +797,51 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 
 
 
+	       \section{El espacio cotangente}
+	       \begin{defn}
+		 Sea $M$ una variedad diferenciable y $x\in M$. Llamamos \emph{espacio cotangente a $M$ en $x$} al dual del espacio tangente a $M$ en $x$, es decir, a $T^*_xM:=(T_xM)^*$.
+	       \end{defn}
+
+	       Recordemos que si $V$ es un espacio vectorial y $\left\{ \ve{e}_1,\dots,\ve{e}_n \right\}$ es una base de $V$, entonces podemos considerar su \emph{base dual}, $\left\{ \eps^1,\dots,\eps^n \right\}$, con $\eps^i(\ve{e}_j)=\delta^i_j$, que es una base de $V^*$. Recordemos también que, si $W$ es otro espacio vectorial y $f:V\rightarrow W$ es una aplicación lineal, podemos definir su aplicación traspuesta 
+	       \begin{align*}
+		 f^* :W^*&\longrightarrow V^*\\ 
+		   \alpha  &\longmapsto \alpha \circ f. 
+		 \end{align*}
+	       Es decir, a cada forma lineal $\alpha:W\rightarrow \RR$ la aplicación traspuesta le asocia la forma $(f^*\alpha)$ tal que, si $\ve{u} \in V$, 
+	       \begin{equation*}
+		 (f^*\alpha)(\ve{u})=\alpha(f(\ve{u})).
+	       \end{equation*}
+
+	       Consideramos ahora el espacio cotangente $T_a^*\RR^n$ en cierto punto $a\in \RR^n$ y denotamos por $\left\{ dx^1_a,\dots,dx^n_a \right\}$ a la base dual de $\left\{ \partial_1|_a,\dots,\partial_n|_a \right\}$. Una forma $\alpha \in T_a^*\RR^n$ puede entonces escribirse como 
+	       \begin{equation*}
+		 \alpha=\sum_i \alpha_i(a) dx^i_a,
+	       \end{equation*}
+	       con $\alpha_i(a)=\alpha(\partial_i|_a)$.
+	       Ahora, si $M$ es una variedad diferenciable de dimensión $n$ y $T^*_xM$ es el espacio cotangente a $M$ en un punto $x\in M$, la aplicación traspuesta del isomorfismo $\varphi_{*,x}:T_xM \rightarrow T_{\varphi(x)}\RR^n$, inducido canónicamente por una carta $(U,\varphi)$, es un isomorfismo
+	       \begin{align*}
+		 \varphi^*_x :T_{\varphi(x)}\RR^n &\longrightarrow T_x M\\ 
+		 \alpha &\longmapsto \alpha \circ \varphi_{*,x}. 
+		 \end{align*}
+
+		 Así, toda forma lineal $\alpha \in T_x^*M$ tiene el aspecto
+		 \begin{equation*}
+		   \alpha = \varphi^*_x\left(\sum_i \alpha_i(\varphi(x)) dx^i_{\varphi(x)}\right)=\sum_i \alpha_i(\varphi(x)) \varphi^*_x(dx^i_{\varphi(x)})=\sum_i \alpha_i (\varphi(x)) dx^i_{\varphi(x)} \circ \varphi_{*,x}.
+		 \end{equation*}
+		 Más concretamente, si tenemos una derivación $D\in T_xM$ tal que $\varphi_{*,x} D=\sum_i u^i\partial_i |_{\varphi(x)}$, entonces
+		 \begin{equation*}
+		   \alpha(D) = \sum_i \alpha_i(\varphi(x)) dx^i_{\varphi(x)}(\varphi_{*,x} D) = \sum_i \alpha_i(\varphi(x)) dx^i_{\varphi(x)}\left(\sum_j u^j \partial_j|_{\varphi(x)}\right)= \sum_i u^i \alpha_i(\varphi(x)).
+		 \end{equation*}
+
+
 	  \chapter{Fibrados vectoriales}
 	  \section{La categoría de los fibrados vectoriales}
 	  \section{Secciones de un fibrado vectorial}
+	  (Haces de módulos y fibrados vectoriales)
 	  \section{El fibrado tangente y el fibrado cotangente}
-	  \chapter{Campos y flujos}
-	  \section{Campos en variedades?}
+	  (Campos y 1-formas)
+	  \section{Referencias móviles}
+
+	  \chapter{Ecuaciones diferenciales}
 	  \section{Flujos completos}
 	  \section{Flujos}
 	  \section{Integración de campos}
@@ -811,14 +850,17 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  \chapter{Grupos y álgebras de Lie}
 	  \section{Grupos de Lie}
 	  \section{El álgebra de Lie de un grupo de Lie}
+	  (Todo grupo de Lie es paralelizable)
 	  \section{La aplicación exponencial}
 	  \chapter{Tensores}
 	  \section{Producto tensorial}
 	  \section{El álgebra de tensores de un espacio vectorial}
 	  \section{Tensores en variedades}
 	  \section{Derivada de Lie de un tensor}
-	  \section{Tensores simétricos y antisimétricos}
+	  \section{Métricas riemmanianas}
+
 	  \chapter{Formas diferenciales}
+	  \section{El producto antisimétrico}
 	  \section{Determinantes}
 	  \section{Formas en variedades}
 	  \section{Diferencial exterior}
@@ -826,7 +868,6 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  \section{Cohomología de de Rham}
 	  \section{Lema de Poincaré}
 	  \section{Cohomología de las esferas}
-	  Invariancia topológica de la dimensión y del borde.
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
 	  \section{Orientación de variedades}
@@ -835,12 +876,12 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  \chapter{Integración}
 	  \section{Integral de una forma diferencial}
 	  \section{Teorema de Stokes}
+	  \section{Elemento de volumen}
 	  \section{Los teoremas clásicos}
 	  \chapter{Introducción a la teoría del grado}
 	  \section{Cohomología con soportes compactos}
 	  \section{Cohomología de grado máximo}
 	  \section{Grado de una aplicación diferenciable}
-	  \section{Dos teoremas de Brouwer}
 
 	  
 	  \appendix

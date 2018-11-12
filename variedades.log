@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  11 NOV 2018 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  12 NOV 2018 23:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1600,89 +1600,89 @@ LaTeX Info: Redefining \% on input line 744.
 LaTeX Info: Redefining \. on input line 780.
 LaTeX Info: Redefining \% on input line 780.
  [22]
-LaTeX Info: Redefining \. on input line 800.
-LaTeX Info: Redefining \% on input line 800.
+LaTeX Info: Redefining \. on input line 818.
+LaTeX Info: Redefining \% on input line 818.
  [23]
-LaTeX Info: Redefining \. on input line 800.
-LaTeX Info: Redefining \% on input line 800.
- [24
+LaTeX Info: Redefining \. on input line 836.
+LaTeX Info: Redefining \% on input line 836.
+ [24]
+Cap\'{\i }tulo 3.
+[25
 
 ]
-Cap\'{\i }tulo 3.
-[25]
-LaTeX Info: Redefining \. on input line 804.
-LaTeX Info: Redefining \% on input line 804.
+LaTeX Info: Redefining \. on input line 844.
+LaTeX Info: Redefining \% on input line 844.
  [26
 
 ]
 Cap\'{\i }tulo 4.
 [27]
-LaTeX Info: Redefining \. on input line 811.
-LaTeX Info: Redefining \% on input line 811.
+LaTeX Info: Redefining \. on input line 850.
+LaTeX Info: Redefining \% on input line 850.
  [28
 
 ]
 Cap\'{\i }tulo 5.
 [29]
-LaTeX Info: Redefining \. on input line 815.
-LaTeX Info: Redefining \% on input line 815.
+LaTeX Info: Redefining \. on input line 855.
+LaTeX Info: Redefining \% on input line 855.
  [30
 
 ]
 Cap\'{\i }tulo 6.
 [31]
-LaTeX Info: Redefining \. on input line 821.
-LaTeX Info: Redefining \% on input line 821.
+LaTeX Info: Redefining \. on input line 862.
+LaTeX Info: Redefining \% on input line 862.
  [32
 
 ]
 Cap\'{\i }tulo 7.
 [33]
-LaTeX Info: Redefining \. on input line 830.
-LaTeX Info: Redefining \% on input line 830.
+LaTeX Info: Redefining \. on input line 871.
+LaTeX Info: Redefining \% on input line 871.
  [34
 
 ]
 Cap\'{\i }tulo 8.
 [35]
-LaTeX Info: Redefining \. on input line 835.
-LaTeX Info: Redefining \% on input line 835.
+LaTeX Info: Redefining \. on input line 876.
+LaTeX Info: Redefining \% on input line 876.
  [36
 
 ]
 Cap\'{\i }tulo 9.
 [37]
-LaTeX Info: Redefining \. on input line 839.
-LaTeX Info: Redefining \% on input line 839.
+LaTeX Info: Redefining \. on input line 881.
+LaTeX Info: Redefining \% on input line 881.
  [38
 
 ]
 Cap\'{\i }tulo 10.
 [39]
-LaTeX Info: Redefining \. on input line 847.
-LaTeX Info: Redefining \% on input line 847.
+LaTeX Info: Redefining \. on input line 888.
+LaTeX Info: Redefining \% on input line 888.
  [40
 
 ]
 Ap\'{e}ndice A.
 [41]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 848.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 848.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 889.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 889.
  (./variedades.aux
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 848.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 848.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 889.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 889.
 Package rerunfilecheck Info: File `variedades.out' has not changed.
-(rerunfilecheck)             Checksum: 9AD927C60457C768ADBB8FF826E09214;3869.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 848.
+(rerunfilecheck)             Checksum: 561159D86368CE8EB46B40B7F56EE0FE;4001.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 889.
  ) 
 Here is how much of TeX's memory you used:
- 23422 strings out of 494850
- 432080 string characters out of 6178023
+ 23427 strings out of 494850
+ 432135 string characters out of 6178023
  485471 words of memory out of 5000000
- 26084 multiletter control sequences out of 15000+600000
+ 26086 multiletter control sequences out of 15000+600000
  101913 words of font info for 188 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  56i,14n,84p,1469b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1708,10 +1708,10 @@ y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr
 ive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on variedades.pdf (41 pages, 319921 bytes).
+Output written on variedades.pdf (41 pages, 322654 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 128 named destinations out of 1000 (max. 500000)
- 453 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 632 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 469 words of extra memory for PDF output out of 10000 (max. 10000000)
 
