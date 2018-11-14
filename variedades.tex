@@ -477,6 +477,89 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 		      Finalmente, veamos 2. La inyectividad está clara ya que aplicaciones diferenciables distintas $M\rightarrow N$ inducen $C^{\infty}$-morfismos distintos. Basta ver entonces que, si $f:M\rightarrow N$ es un $C^{\infty}$-morfismo, entonces es una aplicación diferenciable respecto de la estructura diferenciable que acabamos de construir.		      En efecto, si $x\in M$ es un punto y $(V,\psi)$ es una carta de $N$ en $f(x)$ como la de la definición de $C^{\infty}$-variedad, entonces, para $i=1,\dots,n$, con $n=\dim N$, $\pr_i=(\pr_i\circ \psi)\circ \psi^{-1}$ es una función diferenciable en $\psi(V)$, es decir $\pr_i \in C^\infty(\psi(V)$, luego $\pr_i \circ \psi \in C^\infty_N (V)$. Ahora, por ser $f$ un $C^\infty$-morfismo, $f^*_V(\pr_i \circ \psi)=\pr_i \circ \psi \circ f \in C^\infty_M(f^{-1}(V))$. Si tomamos ahora una carta $(U,\varphi)$ de $M$ en $x$ como la de la definición de $C^\infty$-variedad y tal que $U \subset f^{-1}(V)$, entonces $\pr_i \circ \psi \circ f \in C^\infty_M(U)$, luego $\pr_i \circ \psi \circ f \circ \varphi^{-1} \in C^\infty (\varphi(U))$. Hemos visto entonces que, para cada punto $x\in M$ existen cartas $(U,\varphi)$ y $(V,\psi)$ en $M$ y $N$ respectivamente, con $f(U)\subset V$ y tales que cada componente de la localización (y por tanto, la localización) $\psi \circ f \circ \varphi^{-1}$ es diferenciable, luego, por la definición de aplicación diferenciable, $f$ es diferenciable.  
 	  \end{proof}
 
+	  Más aún, podemos probar que podemos recuperar toda la información sobre la variedad a partir del conjunto de sus funciones diferenciables:
+	  \begin{prop}[Ejercicio de Milnor]
+ Sea $M$ una variedad diferenciables y $C^\infty(M):=C_M^\infty(M)$ la $\RR$-álgebra de funciones diferenciables $M\rightarrow \RR$.  La aplicación
+  \begin{align*}
+    M&\longrightarrow C^{\infty}(M)^*\\ 
+    x &\longmapsto \bar{x}, 
+    \end{align*}
+    con
+    \begin{align*}
+      \bar{x} :C^{\infty}(M)&\longrightarrow \RR\\ 
+        f &\longmapsto f(x),
+      \end{align*}
+      es biyectiva.
+\end{prop}
+\begin{proof}\leavevmode
+
+  Sean $x,y \in M$, $x\neq y$. Para probar la inyectividad basta tomar una función separante $\theta\in C^{\infty}(M)$ tal que $\theta(x)=1$ y $\theta(y)=0$. Para probar la sobreyectividad haremos uso del siguiente resultado, cuya demostración puede encontrarse en el ejercicio I.3.9 de [Ruiz].
+
+  \begin{lema}
+    Sea $M$ una variedad diferenciable. Existe una función $f\in C^{\infty}(M)$ tal que todos sus conjuntos de nivel son compactos.
+  \end{lema}
+   Sea ahora $\xi: C^{\infty}(M)\rightarrow \RR$. Tomemos una función $f\in C^{\infty}(M)$ con superficies de nivel compactas y llamemos $\lambda=\xi(f)$. Supongamos que para ningún $x\in f^{-1}(\lambda)$ se tiene que $\bar{x}=\xi$. Entonces existe una familia de funciones $\left\{ f_x: x\in f^{-1}(\lambda) \right\}$ tal que $f_x(x)\neq \xi (f_x)$. Consideramos entonces un recubrimiento de $f^{-1}(\lambda)$ por la familia de abiertos $\left\{ U_x : x\in f^{-1}(\lambda) \right\}$, con $$U_x= \left\{ y\in M:f_x(y)\neq \xi(f_x) \right\}.$$
+  Como $f^{-1}(\lambda)$ es compacto, existe un subrecubrimiento finito $U_{x_1},\dots,U_{x_m}$. Podemos definir entonces la función
+  \begin{equation*}
+    g=(f-\lambda)^{2}+\sum_{k=1}^m(f_{x_k}-\xi(f_{x_k}))^2,
+  \end{equation*}
+  que no se anula en ningún punto de $f^{-1}(\lambda)$, por lo que la función $1/g$ está bien definida en todo este conjunto. Ahora,
+  \begin{equation*}
+    \xi(g)=(\xi(f)-\lambda)^2+\sum_{k=1}^m(\xi(f_{x_k})-\xi(f_{x_k}))^2=0,
+  \end{equation*}
+  mientras que, como $\xi$ es un homomorfismo de álgebras, $\xi(1)=1$. Sin embargo,
+  \begin{equation*}
+    \xi(1)=\xi\left(g\cdot \frac{1}{g}\right)=\xi(g) \times \xi\left(\frac{1}{g}\right)=0,
+  \end{equation*}
+  y llegamos a una contradicción. Por tanto, debe existir un $x\in f^{-1}(\lambda)$ tal que $\bar{x}=\xi$.
+\end{proof}
+
+\begin{corol}
+  El funtor
+  \begin{align*}
+    C^{\infty}:\mathbf{Diff} &\longrightarrow  \mathbf{Alg}_\RR^{op}\\ 
+    M &\longmapsto  C^{\infty}(M)\\
+    f\in \mathbf{Diff}(M,N) &\longmapsto  f^{*}\in \mathbf{Alg}_\RR(C^{\infty}(N),C^{\infty}(M)),\\
+    \end{align*}
+    con
+    \begin{equation*}
+      f^*\varphi=\varphi \circ f \in C^{\infty}(M),
+    \end{equation*}
+    para $\varphi \in C^{\infty}(N)$, es plenamente fiel.
+  \end{corol}
+\begin{proof}
+  Hay que probar que, para cualesquiera $M$ y $N$ variedades diferenciables, la aplicación $f\mapsto f^*$ es biyectiva. 
+
+  Veamos en primer lugar que es inyectiva. Dadas dos funciones $f,g:M\rightarrow N$, si $f\neq g$ entonces debe existir al menos un punto $x\in M$ tal que $f(x)\neq g(x)$. Tomando entonces una función $\varphi:N\rightarrow \RR$ tal que $\varphi(f(x))=1$ y $\varphi(g(x))=0$ (por ejemplo, una función meseta), tenemos
+  \begin{align*}
+    f^*\varphi (x)&= \varphi \circ f (x) = 1, \\
+    g^*\varphi (x)&= \varphi \circ g (x) = 0,
+  \end{align*}
+  luego $f^* \neq g^*$.
+
+  Veamos ahora la sobreyectividad. Sea un homomorfismo de $\RR$-álgebras $\xi:C^{\infty}(N)\rightarrow C^{\infty}(M)$. Tomemos un punto $x\in M$ y consideremos el homomorfismo 
+  \begin{align*}
+    \bar{x} :C^{\infty}(M)&\longrightarrow \RR\\ 
+      f &\longmapsto f(x). 
+    \end{align*}
+    Tenemos entonces que $\bar{x} \circ \xi: C^{\infty}(N) \rightarrow \RR$ es un homomorfismo de $\RR$-álgebras, luego $\bar{x}\circ \xi \in C^{\infty}(N)^*$ y, en virtud de la proposición, le corresponde un único $y \in N$ tal que $\bar{y}=\bar{x} \circ \xi$, con 
+  \begin{align*}
+    \bar{y} :C^{\infty}(N)&\longrightarrow \RR\\ 
+      g &\longmapsto g(y). 
+    \end{align*}
+    Es decir, para cada $x \in M$ podemos considerar el punto $y_x \in N$ tal que el siguiente diagrama conmuta
+    \begin{center}
+      \begin{tikzcd}
+	C^{\infty}(N)	\arrow{r}{\xi}\arrow{rd}[anchor=north,rotate=-30]{\bar{y_x}} & C^{\infty}(M)\arrow{d}[anchor=west]{\bar{x}} \\ 
+	 &\RR,
+       \end{tikzcd}
+     \end{center}
+     de modo que podemos definir la función $f_{\xi}:M\rightarrow N$ tal que $f_{\xi}(x)=y_x$, para cada $x\in M$.
+
+\end{proof}
+\begin{obs}
+Nótese que estos últimos resultados son muy particulares de la categoría diferenciable, ya que en el corazón de la prueba están las particiones diferenciables de la unidad. Por tanto, no podemos esperar un resultado similar en otras categorías como la holomorfa o la analítica. De hecho, se puede probar que las únicas funciones holomorfas globalmente definidas en una variedad compleja compacta son las constantes.
+\end{obs}
 
     \section{Variedades sumergidas}
     \begin{defn}\label{difsumergida}
@@ -578,6 +661,9 @@ M	  \arrow{r}{f}\arrow{d}[anchor=east]{\varphi_M} & N\arrow{d}[anchor=west]{\var
     \end{proof}
 
     En resumen, a lo largo de este capítulo hemos definido tres categorías: $\mathbf{Diff}$, $C^\infty\mathbf{-Man}$ y $\mathbf{RegMan}$, que han resultado ser equivalentes. Es decir, las tres categorías representan el mismo concepto matemático: espacios localmente modelados por $\mathbf{CartSp}$, o sea, espacios donde se puede hacer cálculo diferencial. A la vista de esto, a lo largo del texto, trabajaremos con las tres categorías indistintamente: una variedad diferenciable significará para nosotros un objeto de alguna de estas tres categorías, según nos sea conveniente.
+
+
+
 	  \section{Variedades con borde}
 	  Para terminar el capítulo, vamos a considerar una clase de objetos ligeramente más general que las variedades diferenciables. En esta clase queremos incluir objetos que puedan «tener borde». Intuitivamente estamos pensando en objetos como un semiplano que contiene a la recta delimitante, discos con frontera, cilindros, bandas, etc. 
 
@@ -681,12 +767,26 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	    \end{align*}
 	   la \emph{derivada de $f$ en $x$}.
 	  \section{Derivaciones}
-	  Hemos definido el espacio tangente para variedades sumergidas, pero cabe preguntarse ahora si se puede hacer una construcción análoga para el caso de una variedad diferenciable cualquiera, en principio no sumergida. Esta construcción puede hacerse, usando el concepto de \textit{derivación} de un álgebra.
+	  Hemos definido el espacio tangente para variedades sumergidas, pero cabe preguntarse ahora si se puede hacer una construcción análoga para el caso de una variedad diferenciable cualquiera, en principio no sumergida. Esta construcción puede hacerse, usando el concepto de \textit{derivación} de un álgebra. La idea es considerar la variedad diferenciable como una $C^\infty$-variedad y tratar de estudiar el aspecto \textit{infinitesimal} del haz de estructura en un punto de la variedad. La manera de hacer este estudio es por medio de las \textit{espigas} del haz. 
 
 	    Sea $\FF$ un prehaz sobre un espacio topológico $X$. Consideramos un punto $x\in X$ y el sistema directo de los entornos de $x$ respecto a la inclusión. Se define la \emph{espiga} de $\FF$ en $x$ como
+
 	    \begin{equation*}
 	      \FF_x = \varinjlim_{p\in U \subset M} \FF(U).
 	    \end{equation*}
+	  \begin{ejemplo}
+	    Un ejemplo de por qué la espiga de un haz codifica la información infinitesimal de éste aparece si estudiamos el caso \textit{analítico}. En este caso tomamos como espacio topológico simplemente la recta real $\RR$ y consideramos el haz $\mathscr{A}_\RR$ que a cada abierto $U\subset \RR$ le asigna el conjunto de las funciones analíticas $f:U\rightarrow \RR$. Es decir, que existe un punto $x_0\in U$ tal que
+	    \begin{equation*}
+	      f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n,
+	    \end{equation*}
+	    para todo $x\in U$.
+	    La espiga de $\mathscr{A}_\RR$ es simplemente el conjunto 
+	    \begin{equation*}
+	      \mathscr{A}_\RR= \left(\bigsqcup_{U \text{ entorno de } 0} \mathscr{A}_{\RR} (U)\right) /\sim,
+	    \end{equation*}
+	    con $\sim$ la relación de equivalencia que identifica dos funciones si y sólo si éstas coinciden en algún entorno de $0$.
+	  \end{ejemplo}
+
 	    En el caso en que nos incumbe, si $M$ es una variedad diferenciable de dimensión $n$ y $C^\infty_M$ denota su haz de funciones diferenciables, entonces la espiga de $C^\infty_M$ en un punto $x\in M$ es simplemente el conjunto de las funciones $f:M\rightarrow \RR$ que son diferenciables en algún entorno de $x$. Este conjunto se denota $C^\infty_{M,x}$ y se llama el \emph{álgebra de gérmenes de funciones diferenciables en $x$}. Cada conjunto $C^\infty_M(U)$ es una $\RR$-álgebra, donde las operaciones son simplemente la suma y el producto de funciones. Por tanto, las espigas $C^\infty_{M,x}$ también serán $\RR$-álgebras. 
 
 	    \begin{defn}
@@ -886,6 +986,43 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  
 	  \appendix
 	  \chapter{Topología de variedades}
+	  \section{Particiones diferenciables de la unidad}
+\begin{defn}
+  Una \emph{partición diferenciable de la unidad} (abreviado PDU) en una variedad diferenciable $M$ es una familia $\Theta$ de funciones diferenciables en $M\rightarrow \RR$ tal que
+  \begin{enumerate}
+    \item $\theta \geq 0$ para todo $\theta \in \Theta$,
+    \item es \emph{localmente finita}, es decir, cada punto $x\in M$ tiene un entorno $U\subset M$ en el que se anulan todas las $\theta \in \Theta$ salvo una cantidad finita y
+    \item $\sum_{\theta\in \Theta} \theta=1$.
+  \end{enumerate}
+
+  Si $\mathcal{U}$ es un recubrimiento abierto de $M$, una partición diferenciable de la unidad \emph{subordinada a $\mathcal{U}$} es una PDU de la forma $\left\{ \theta_U : U\in \mathcal{U} \right\}$ tal que, para cada $U\in \mathcal{U}$, $\theta_U$ se anula fuera de $U$.
+\end{defn}
+
+\begin{defn}
+  Sea $M\subset \RR^n$ una variedad diferenciable. 
+  \begin{enumerate}
+    \item Sean $A\subset M$ un conjunto cerrado y $U$ un entorno abierto de $A$. Una \emph{función meseta} (diferenciable) en $A$ es una función diferenciable y no negativa $\theta:M\rightarrow \RR$ que vale constantemente $1$ en $A$ y se anula fuera de $U$.
+    \item Sean $A$ y $B$ dos cerrados disjuntos de $M$. Una \emph{función separante de Uryshon} (diferenciable) de $A$ y $B$ es una función diferenciable y no negativa $\theta:M\rightarrow \RR$ que vale constantemente $1$ en $A$ y $0$ en $B$.
+  \end{enumerate}
+\end{defn}
+
+La existencia de funciones meseta diferenciables en $\RR^n$
+garantiza la existencia de funciones meseta, separantes de Uryshon y particiones diferenciables de la unidad en las variedades diferenciables [ver apéndice]. Cabe destacar que en estas construcciones es crucial estar trabajando en la categoría diferenciable, ya que no existen funciones meseta analíticas, puesto que si una función analítica se anula en un abierto entonces debe ser idénticamente nula..
+
+Las PDU son una herramienta realmente útil en toda la teoría de variedades diferenciables ya que nos permiten hacer construcciones globales a partir de construcciones locales. El ejemplo más claro de esto es el siguiente resultado:
+
+\begin{prop}[Teorema de extensión de Tietze diferenciable]
+  Sean $M$ una variedad dieferenciable, $A\subset M$ un cerrado y $f:A\rightarrow \RR$ una función diferenciable. Entonces existe una función diferenciable $F: M\rightarrow \RR$ tal que $F|_A=f$.
+\end{prop}
+
+\begin{proof}
+  Por comodidad, supondremos $M$ sumergida en esta demostración. Tomamos un recubrimiento abierto $\mathcal{U}$ de $A$ y elegimos extensiones locales diferenciables $F_U:U\rightarrow \RR$ de $f|_{A\cap U}$, para cada $U\in \mathcal{U}$. Consideramos una PDU subordinada al recubrimiento $\mathcal{U} \cup \left\{ M-A \right\}$ y la función $F=\sum_{U\in \mathcal{U}} \theta_U F_U$. Ahora, si $x\in A$,
+  $$
+    F(x)=\sum_{U\in \mathcal{U}} \theta_U(x) F_U(x)=f(x) \sum_{U\in \mathcal{U}} \theta_U(x) = f(x).
+    $$
+    Con lo que $F|_A = f$.
+\end{proof}
+
 		      \end{document}
 
 
