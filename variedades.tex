@@ -20,6 +20,7 @@
 \usepackage{titlepic}
 \usepackage{graphicx}
 \usepackage[mathscr]{eucal}
+\usepackage{epigraph}
 
 %Fuente Times:
 \usepackage{newtxtext}
@@ -80,7 +81,12 @@
 
 		      \begin{document}
 		      \maketitle
+		      \newpage\null\thispagestyle{empty}
+		      \newpage\null\thispagestyle{empty}
+		      \epigraph{\textit{Los Hobbits se deleitan con esas cosas, si son exactas; les encanta tener libros colmados de cosas que ya saben, expuestas sin contradicciones y honradamente.}}{}
+		      \newpage\null\thispagestyle{empty}
 		      \tableofcontents
+		      
 		      \chapter{Variedades diferenciables}
 		      \section{El modelo local}
 
@@ -478,7 +484,7 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 	  \end{proof}
 
 	  Más aún, podemos probar que podemos recuperar toda la información sobre la variedad a partir del conjunto de sus funciones diferenciables:
-	  \begin{prop}[Ejercicio de Milnor]
+	  \begin{prop}
  Sea $M$ una variedad diferenciables y $C^\infty(M):=C_M^\infty(M)$ la $\RR$-álgebra de funciones diferenciables $M\rightarrow \RR$.  La aplicación
   \begin{align*}
     M&\longrightarrow C^{\infty}(M)^*\\ 
@@ -493,12 +499,9 @@ U\subset M	  \arrow{rr}{f}\arrow{dd}[anchor=east]{\varphi} && V\subset N\arrow{d
 \end{prop}
 \begin{proof}\leavevmode
 
-  Sean $x,y \in M$, $x\neq y$. Para probar la inyectividad basta tomar una función separante $\theta\in C^{\infty}(M)$ tal que $\theta(x)=1$ y $\theta(y)=0$. Para probar la sobreyectividad haremos uso del siguiente resultado, cuya demostración puede encontrarse en el ejercicio I.3.9 de [Ruiz].
+  Sean $x,y \in M$, $x\neq y$. Para probar la inyectividad basta tomar una función separante $\theta\in C^{\infty}(M)$ tal que $\theta(x)=1$ y $\theta(y)=0$. 
 
-  \begin{lema}
-    Sea $M$ una variedad diferenciable. Existe una función $f\in C^{\infty}(M)$ tal que todos sus conjuntos de nivel son compactos.
-  \end{lema}
-   Sea ahora $\xi: C^{\infty}(M)\rightarrow \RR$. Tomemos una función $f\in C^{\infty}(M)$ con superficies de nivel compactas y llamemos $\lambda=\xi(f)$. Supongamos que para ningún $x\in f^{-1}(\lambda)$ se tiene que $\bar{x}=\xi$. Entonces existe una familia de funciones $\left\{ f_x: x\in f^{-1}(\lambda) \right\}$ tal que $f_x(x)\neq \xi (f_x)$. Consideramos entonces un recubrimiento de $f^{-1}(\lambda)$ por la familia de abiertos $\left\{ U_x : x\in f^{-1}(\lambda) \right\}$, con $$U_x= \left\{ y\in M:f_x(y)\neq \xi(f_x) \right\}.$$
+  Sea ahora $\xi: C^{\infty}(M)\rightarrow \RR$. Tomemos una función $f\in C^{\infty}(M)$ propia [apéndice] y llamemos $\lambda=\xi(f)$. Supongamos que para ningún $x\in f^{-1}(\lambda)$ se tiene que $\bar{x}=\xi$. Entonces existe una familia de funciones $\left\{ f_x: x\in f^{-1}(\lambda) \right\}$ tal que $f_x(x)\neq \xi (f_x)$. Consideramos entonces un recubrimiento de $f^{-1}(\lambda)$ por la familia de abiertos $\left\{ U_x : x\in f^{-1}(\lambda) \right\}$, con $$U_x= \left\{ y\in M:f_x(y)\neq \xi(f_x) \right\}.$$
   Como $f^{-1}(\lambda)$ es compacto, existe un subrecubrimiento finito $U_{x_1},\dots,U_{x_m}$. Podemos definir entonces la función
   \begin{equation*}
     g=(f-\lambda)^{2}+\sum_{k=1}^m(f_{x_k}-\xi(f_{x_k}))^2,
@@ -772,22 +775,10 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	    Sea $\FF$ un prehaz sobre un espacio topológico $X$. Consideramos un punto $x\in X$ y el sistema directo de los entornos de $x$ respecto a la inclusión. Se define la \emph{espiga} de $\FF$ en $x$ como
 
 	    \begin{equation*}
-	      \FF_x = \varinjlim_{p\in U \subset M} \FF(U).
+	      \FF_x = \varinjlim_{x\in U \subset M} \FF(U).
 	    \end{equation*}
-	  \begin{ejemplo}
-	    Un ejemplo de por qué la espiga de un haz codifica la información infinitesimal de éste aparece si estudiamos el caso \textit{analítico}. En este caso tomamos como espacio topológico simplemente la recta real $\RR$ y consideramos el haz $\mathscr{A}_\RR$ que a cada abierto $U\subset \RR$ le asigna el conjunto de las funciones analíticas $f:U\rightarrow \RR$. Es decir, que existe un punto $x_0\in U$ tal que
-	    \begin{equation*}
-	      f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n,
-	    \end{equation*}
-	    para todo $x\in U$.
-	    La espiga de $\mathscr{A}_\RR$ es simplemente el conjunto 
-	    \begin{equation*}
-	      \mathscr{A}_\RR= \left(\bigsqcup_{U \text{ entorno de } 0} \mathscr{A}_{\RR} (U)\right) /\sim,
-	    \end{equation*}
-	    con $\sim$ la relación de equivalencia que identifica dos funciones si y sólo si éstas coinciden en algún entorno de $0$.
-	  \end{ejemplo}
 
-	    En el caso en que nos incumbe, si $M$ es una variedad diferenciable de dimensión $n$ y $C^\infty_M$ denota su haz de funciones diferenciables, entonces la espiga de $C^\infty_M$ en un punto $x\in M$ es simplemente el conjunto de las funciones $f:M\rightarrow \RR$ que son diferenciables en algún entorno de $x$. Este conjunto se denota $C^\infty_{M,x}$ y se llama el \emph{álgebra de gérmenes de funciones diferenciables en $x$}. Cada conjunto $C^\infty_M(U)$ es una $\RR$-álgebra, donde las operaciones son simplemente la suma y el producto de funciones. Por tanto, las espigas $C^\infty_{M,x}$ también serán $\RR$-álgebras. 
+	    En el caso que nos incumbe, si $M$ es una variedad diferenciable de dimensión $n$ y $C^\infty_M$ denota su haz de funciones diferenciables, entonces la espiga de $C^\infty_M$ en un punto $x\in M$ es simplemente el conjunto de las funciones $f:M\rightarrow \RR$ que son diferenciables en algún entorno de $x$. Este conjunto se denota $C^\infty_{M,x}$ y se llama el \emph{álgebra de gérmenes de funciones diferenciables en $x$}. Cada conjunto $C^\infty_M(U)$ es una $\RR$-álgebra, donde las operaciones son simplemente la suma y el producto de funciones. Por tanto, las espigas $C^\infty_{M,x}$ también serán $\RR$-álgebras. 
 
 	    \begin{defn}
 	      Una \emph{derivación} en $x\in M$ es una aplicación lineal $D:C^\infty_{M,x} \rightarrow \RR$ que satisface la \emph{regla de Leibniz}:
@@ -941,7 +932,7 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  (Campos y 1-formas)
 	  \section{Referencias móviles}
 
-	  \chapter{Ecuaciones diferenciales}
+	  \chapter{Ecuaciones diferenciales en variedades}
 	  \section{Flujos completos}
 	  \section{Flujos}
 	  \section{Integración de campos}
@@ -966,26 +957,94 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  \section{Diferencial exterior}
 	  \section{Fórmulas de Cartan}
 	  \section{Cohomología de de Rham}
-	  \section{Lema de Poincaré}
-	  \section{Cohomología de las esferas}
+	  Lema de Poincaré
+	  Cohomología de las esferas
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
 	  \section{Orientación de variedades}
 	  \section{Orientación de hipersuperficies}
 	  \section{Orientación del borde}
+	  \chapter{El teorema de de Rham}
+	  \section{Cadenas diferenciables}
+	  \begin{defn}
+	    Sean $M$ una variedad diferenciable y el intervalo $I=[0,1]$. Un \emph{$k$-cubo singular} en $M$ es una aplicación continua $c:I^k\rightarrow M$. Una \emph{$k$-cadena singular} en $M$ es una combinación entera formal de cubos singulares, es decir, un elemento de $C_k(M)$ el grupo abeliano generado por los $k$-cubos en $M$.
+	  \end{defn}
+
+	  Si consideramos $M$ como variedad sumergida podemos dar una noción de cubo diferenciable usando la noción de diferenciabilidad de la Definición \ref{difsumergida}. Así, un \emph{$k$-cubo diferenciable} es simplemente una aplicación diferenciable $c:I^k\rightarrow M$. Análogamente, definimos las \emph{$k$-cadenas singulares diferenciables} como el grupo abeliano generado por los $k$-cubos singulares diferenciables, que denotamos también $C_k(M)$, puesto que a partir de ahora tan solo consideraremos cubos y cadenas diferenciables.
+
+	  Sea $C\in C_k(M)$ una $k$-cadena, se define la \emph{cara delantera $i$-ésima} como la $k-1$-cadena
+	  \begin{equation*}
+	    (F_i C)(t_1,\dots,t_{k-1})=C(t_1,\dots,t_{i-1},1,t_i,\dots,t_{k-1})
+	  \end{equation*}
+	  y la \emph{cara trasera $i$-ésima} como la $k-1$-cadena
+	  \begin{equation*}
+	    (B_i C)(t_1,\dots,t_{k-1})=C(t_1,\dots,t_{i-1},0,t_i,\dots,t_{k-1}).
+	  \end{equation*}
+	  Definimos el \emph{borde} de una $k$-cadena $C$ como la $k-1$-cadena
+	  \begin{equation*}
+	    \partial C= \sum_{i=1}^k (-1)^i (F_i C - B_i C).
+	  \end{equation*}
+	  \begin{prop}
+	    Si $C$ es una $k$-cadena en $M$, $\partial(\partial C)=0$.
+	  \end{prop}
+\begin{proof}
+  Basta comprobar las siguientes identidades, 
+  \begin{align*}
+    F_iF_j(C)&= F_{j-1}F_i(C)\\
+    B_iB_j(C)&= B_{j-1}B_i(C)\\
+    A_iB_j(C)&= B_{j-1}A_i(C)\\
+    B_iA_j(C)&= A_{j-1}B_i(C),
+  \end{align*}
+  para $1\leq i < j \leq k$. Utilizando esto, el resultado se sigue de escribir la definición.
+\end{proof}
+
+Esta proposición nos informa de que, si consideramos el homomorfismo 
+\begin{align*}
+  \partial_k:C_{k}(M)&\longrightarrow C_{k-1}(M)\\ 
+    C &\longmapsto \partial C, 
+  \end{align*}
+  entonces $\partial_{k-1}\circ \partial_k=0$. Esto implica que $\im \partial_{k+1} \subset \ker \partial_k$ y podemos definir el cociente
+  \begin{equation*}
+    H_k(M)=\frac{\ker \partial_k}{\im \partial_{k+1}}.
+  \end{equation*}
+  Este cociente se denomina \emph{$k$-ésimo grupo de homología singular (diferenciable) de $M$}.
+
+Supongamos ahora que $G$ es un grupo abeliano. Podemos entonces considerar el grupo abeliano formado por los homomorfismos de grupos $C_k(M)\rightarrow G$, que denotamos
+\begin{equation*}
+  C^k(M;G)=\mathbf{Ab}(C_k(M),G).
+\end{equation*}
+Un elemento $\alpha \in C^k(M;G)$ se llama una \emph{$k$-cocadena singular (diferenciable) en $M$ con coeficientes en $G$}. El homomorfismo borde induce un homomorfismo \emph{coborde}, $\delta_k:C^k(M;G)\rightarrow C^{k+1}(M;G)$, de forma que, si $\alpha\in C^k(M;G)$ es una $k$-cocadena entonces el siguiente diagrama conmuta
+\begin{center}
+  \begin{tikzcd}
+    C_{k+1}(M) \arrow{r}{\partial_{k+1}} \arrow{d}{\delta_k\alpha}  & C_k(M) \arrow{dl}{\alpha}  \\ 
+    G.
+  \end{tikzcd}
+\end{center}
+Claramente, si $\alpha \in C^{k}(M;G)$ y $C\in C^{k+2}(M;G)$, entonces $$\delta_{k}(\delta_{k-1} \alpha)(C)=\delta_{k-1} \alpha (\partial_{k+1} C)=\alpha(\partial_{k} (\partial_{k+1}(C)))=0.$$
+Por tanto, $\im \delta_{k-1} \subset \ker \delta_k$, con lo que podemos definir el cociente
+\begin{equation*}
+  H^k(M;G)=\frac{\ker \delta_k}{\im \delta_{k-1}}.
+\end{equation*}
+Este cociente se denomina \emph{$k$-ésimo grupo de cohomología singular (diferenciable) de $M$ con coeficientes en $G$}.
+
+
+	  \section{Integración en cadenas}
+	  \section{Cohomología de \v{C}ech}
+	  \section{Resoluciones de haces}
 	  \chapter{Integración}
-	  \section{Integral de una forma diferencial}
+	  \section{Integral de una forma diferencial en una variedad}
 	  \section{Teorema de Stokes}
 	  \section{Elemento de volumen}
 	  \section{Los teoremas clásicos}
-	  \chapter{Introducción a la teoría del grado}
-	  \section{Cohomología con soportes compactos}
-	  \section{Cohomología de grado máximo}
-	  \section{Grado de una aplicación diferenciable}
+	  \section{Cohomología e integración}
+	  Cohomología con soportes compactos
+	  Cohomología de grado máximo
+	  Grado de una aplicación diferenciablex
 
 	  
 	  \appendix
 	  \chapter{Topología de variedades}
+	  \epigraph{\textit{Desde las Fronteras del Oeste, al pie de las Colinas de la Torre, hasta el Puente del Brandivino había unas cuarenta leguas y casi cincuenta desde los páramos del norte hasta los pantanos del sur. Los Hobbits denominaron a estas tierras la Comarca. [\dots] Allí, en ese placentero rincón del mundo, llevaron una vida ordenada y dieron cada vez menos importancia al mundo exterior, donde se movían unas cosas oscuras\dots}}{}
 	  \section{Particiones diferenciables de la unidad}
 \begin{defn}
   Una \emph{partición diferenciable de la unidad} (abreviado PDU) en una variedad diferenciable $M$ es una familia $\Theta$ de funciones diferenciables en $M\rightarrow \RR$ tal que
@@ -1023,6 +1082,10 @@ Las PDU son una herramienta realmente útil en toda la teoría de variedades dif
     Con lo que $F|_A = f$.
 \end{proof}
 
+\chapter{Nociones básicas de teoría de categorías}
+\epigraph{\textit{Habla, amigo y entra}}{Inscripción en las Puertas de Durin, Señor de Moria}
+\chapter{Resultados de ecuaciones diferenciales}
+\epigraph{\textit{Muchos de los que viven merecen morir y algunos de los que mueren merecen la vida. ¿Puedes devolver la vida? Entonces no te apresures a dispensar la muerte, pues ni el más sabio conoce el fin de todos los caminos. [\dots] El corazón me dice que todavía tiene un papel que desempeñar, para bien o para mal, antes del fin y cuando éste llegue\dots}}{Gandalf a Frodo, sobre Gollum}
 		      \end{document}
 
 

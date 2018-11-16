@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  14 NOV 2018 13:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  16 NOV 2018 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -978,6 +978,13 @@ Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip57
+\afterepigraphskip=\skip58
+\epigraphwidth=\skip59
+\epigraphrule=\skip60
+)
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxtext.sty
 Package: newtxtext 2016/01/31 v1.465
 
@@ -1275,48 +1282,48 @@ LaTeX Info: Redefining \% on input line 20.
 )
 \openout1 = `variedades.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 81.
-LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 81
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 82.
+LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 82
 .
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 81.
-LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 81
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 82.
+LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 82
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/omsntxsy.fd
 File: omsntxsy.fd 2012/11/14 Fontinst v1.933 font definitions for OMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 81.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 81.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 82.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 82.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 81.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Info: Redefining \. on input line 81.
-LaTeX Info: Redefining \% on input line 81.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1382,7 +1389,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring ON on input line 81.
+Package hyperref Info: Link coloring ON on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1392,9 +1399,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 81.
-LaTeX Info: Redefining \pageref on input line 81.
-LaTeX Info: Redefining \nameref on input line 81.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 
 (./variedades.out) (./variedades.out)
 \@outlinefile=\write4
@@ -1403,44 +1410,44 @@ LaTeX Info: Redefining \nameref on input line 81.
 \c@mv@tabular=\count152
 \c@mv@boldtabular=\count153
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 82.
+(Font)              scaled to size 20.74pt on input line 83.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 82.
+(Font)              scaled to size 14.4pt on input line 83.
 LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 8
-2.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 82.
+(Font)              scaled to size 14.4pt on input line 83.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.5pt on input line 82.
+(Font)              scaled to size 10.5pt on input line 83.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.9pt on input line 82.
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+(Font)              scaled to size 7.9pt on input line 83.
+LaTeX Font Info:    Try loading font information for U+msa on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 82.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 83.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 82.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 83.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 82.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 83.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
@@ -1448,18 +1455,24 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/sl' will be
-(Font)              scaled to size 12.0pt on input line 83.
- [2
-
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 83.
+(Font)              scaled to size 10.95pt on input line 86.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 86.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 86.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 86.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 86.
+ [3] [4]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 24.88pt on input line 88.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 83.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 83.
+(Font)              scaled to size 24.88pt on input line 88.
  (./variedades.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1473,227 +1486,253 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 3.
- [3])
+ [5
+
+])
 \tf@toc=\write5
 \openout5 = `variedades.toc'.
 
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
- [4]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/sl' will be
+(Font)              scaled to size 12.0pt on input line 90.
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+ [6]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <15> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 15.0pt on input line 85.
-LaTeX Font Info:    Try loading font information for T1+qhv on input line 85.
+(Font)              scaled to size 15.0pt on input line 91.
+LaTeX Font Info:    Try loading font information for T1+qhv on input line 91.
 (/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <15> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 13.49991pt on input line 85.
+(Font)              scaled to size 13.49991pt on input line 91.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 87.
+(Font)              scaled to size 12.0pt on input line 93.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/it' in size <12> not available
-(Font)              Font shape `T1/ntxtlf/b/it' tried instead on input line 89.
+(Font)              Font shape `T1/ntxtlf/b/it' tried instead on input line 95.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 89.
+(Font)              scaled to size 12.0pt on input line 95.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 97.
+(Font)              scaled to size 12.0pt on input line 103.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.8pt on input line 97.
+(Font)              scaled to size 8.8pt on input line 103.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.6pt on input line 97.
- [5
+(Font)              scaled to size 6.6pt on input line 103.
+ [7
 
 ]
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
- [6]
-LaTeX Info: Redefining \. on input line 193.
-LaTeX Info: Redefining \% on input line 193.
- [7]
-LaTeX Info: Redefining \. on input line 243.
-LaTeX Info: Redefining \% on input line 243.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
  [8]
-LaTeX Info: Redefining \. on input line 293.
-LaTeX Info: Redefining \% on input line 293.
+LaTeX Info: Redefining \. on input line 199.
+LaTeX Info: Redefining \% on input line 199.
  [9]
-LaTeX Info: Redefining \. on input line 328.
-LaTeX Info: Redefining \% on input line 328.
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
  [10]
-LaTeX Font Info:    Calculating math sizes for size <15> on input line 360.
+LaTeX Info: Redefining \. on input line 299.
+LaTeX Info: Redefining \% on input line 299.
+ [11]
+LaTeX Info: Redefining \. on input line 334.
+LaTeX Info: Redefining \% on input line 334.
+ [12]
+LaTeX Font Info:    Calculating math sizes for size <15> on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 15.0pt on input line 360.
+(Font)              scaled to size 15.0pt on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.94994pt on input line 360.
+(Font)              scaled to size 10.94994pt on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.25005pt on input line 360.
+(Font)              scaled to size 8.25005pt on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 15.0pt on input line 360.
+(Font)              scaled to size 15.0pt on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.94994pt on input line 360.
+(Font)              scaled to size 10.94994pt on input line 366.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.25005pt on input line 360.
+(Font)              scaled to size 8.25005pt on input line 366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 360.
+(hyperref)                removing `math shift' on input line 366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 360.
+(hyperref)                removing `superscript' on input line 366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 360.
+(hyperref)                removing `\infty' on input line 366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 360.
+(hyperref)                removing `math shift' on input line 366.
 
-LaTeX Info: Redefining \. on input line 364.
-LaTeX Info: Redefining \% on input line 364.
-[11]
-LaTeX Font Info:    Try loading font information for U+eus on input line 372.
+LaTeX Info: Redefining \. on input line 370.
+LaTeX Info: Redefining \% on input line 370.
+[13]
+LaTeX Font Info:    Try loading font information for U+eus on input line 378.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-LaTeX Info: Redefining \. on input line 422.
-LaTeX Info: Redefining \% on input line 422.
- [12]
+LaTeX Info: Redefining \. on input line 428.
+LaTeX Info: Redefining \% on input line 428.
+ [14]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 449.
+(Font)              scaled to size 8.8pt on input line 455.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 449.
-LaTeX Info: Redefining \. on input line 467.
-LaTeX Info: Redefining \% on input line 467.
- [13]
-LaTeX Info: Redefining \. on input line 493.
-LaTeX Info: Redefining \% on input line 493.
-
-[14]
-LaTeX Info: Redefining \. on input line 537.
-LaTeX Info: Redefining \% on input line 537.
+(Font)              scaled to size 6.6pt on input line 455.
+LaTeX Info: Redefining \. on input line 473.
+LaTeX Info: Redefining \% on input line 473.
  [15]
-LaTeX Info: Redefining \. on input line 577.
-LaTeX Info: Redefining \% on input line 577.
- [16]
-LaTeX Info: Redefining \. on input line 621.
-LaTeX Info: Redefining \% on input line 621.
+LaTeX Info: Redefining \. on input line 499.
+LaTeX Info: Redefining \% on input line 499.
+
+[16]
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
  [17]
-LaTeX Info: Redefining \. on input line 661.
-LaTeX Info: Redefining \% on input line 661.
+LaTeX Info: Redefining \. on input line 583.
+LaTeX Info: Redefining \% on input line 583.
  [18]
-LaTeX Info: Redefining \. on input line 695.
-LaTeX Info: Redefining \% on input line 695.
+LaTeX Info: Redefining \. on input line 626.
+LaTeX Info: Redefining \% on input line 626.
  [19]
-LaTeX Info: Redefining \. on input line 701.
-LaTeX Info: Redefining \% on input line 701.
+LaTeX Info: Redefining \. on input line 667.
+LaTeX Info: Redefining \% on input line 667.
  [20]
-Cap\'{\i }tulo 2.
-[21
-
-]
-LaTeX Info: Redefining \. on input line 781.
-LaTeX Info: Redefining \% on input line 781.
+LaTeX Info: Redefining \. on input line 700.
+LaTeX Info: Redefining \% on input line 700.
+ [21]
+LaTeX Info: Redefining \. on input line 704.
+LaTeX Info: Redefining \% on input line 704.
  [22]
-LaTeX Info: Redefining \. on input line 827.
-LaTeX Info: Redefining \% on input line 827.
- [23]
-LaTeX Info: Redefining \. on input line 867.
-LaTeX Info: Redefining \% on input line 867.
+Cap\'{\i }tulo 2.
+[23
+
+]
+LaTeX Info: Redefining \. on input line 785.
+LaTeX Info: Redefining \% on input line 785.
  [24]
-LaTeX Info: Redefining \. on input line 900.
-LaTeX Info: Redefining \% on input line 900.
+LaTeX Info: Redefining \. on input line 829.
+LaTeX Info: Redefining \% on input line 829.
  [25]
-LaTeX Info: Redefining \. on input line 936.
-LaTeX Info: Redefining \% on input line 936.
+LaTeX Info: Redefining \. on input line 870.
+LaTeX Info: Redefining \% on input line 870.
  [26]
+LaTeX Info: Redefining \. on input line 909.
+LaTeX Info: Redefining \% on input line 909.
+ [27]
+LaTeX Info: Redefining \. on input line 927.
+LaTeX Info: Redefining \% on input line 927.
+ [28]
 Cap\'{\i }tulo 3.
-[27
+[29
 
 ]
-LaTeX Info: Redefining \. on input line 944.
-LaTeX Info: Redefining \% on input line 944.
- [28
-
-]
-Cap\'{\i }tulo 4.
-[29]
-LaTeX Info: Redefining \. on input line 950.
-LaTeX Info: Redefining \% on input line 950.
+LaTeX Info: Redefining \. on input line 935.
+LaTeX Info: Redefining \% on input line 935.
  [30
 
 ]
-Cap\'{\i }tulo 5.
+Cap\'{\i }tulo 4.
 [31]
-LaTeX Info: Redefining \. on input line 955.
-LaTeX Info: Redefining \% on input line 955.
+LaTeX Info: Redefining \. on input line 941.
+LaTeX Info: Redefining \% on input line 941.
  [32
 
 ]
-Cap\'{\i }tulo 6.
+Cap\'{\i }tulo 5.
 [33]
-LaTeX Info: Redefining \. on input line 962.
-LaTeX Info: Redefining \% on input line 962.
+LaTeX Info: Redefining \. on input line 946.
+LaTeX Info: Redefining \% on input line 946.
  [34
 
 ]
-Cap\'{\i }tulo 7.
+Cap\'{\i }tulo 6.
 [35]
-LaTeX Info: Redefining \. on input line 971.
-LaTeX Info: Redefining \% on input line 971.
+LaTeX Info: Redefining \. on input line 953.
+LaTeX Info: Redefining \% on input line 953.
  [36
 
 ]
-Cap\'{\i }tulo 8.
+Cap\'{\i }tulo 7.
 [37]
-LaTeX Info: Redefining \. on input line 976.
-LaTeX Info: Redefining \% on input line 976.
+LaTeX Info: Redefining \. on input line 962.
+LaTeX Info: Redefining \% on input line 962.
  [38
 
 ]
-Cap\'{\i }tulo 9.
+Cap\'{\i }tulo 8.
 [39]
-LaTeX Info: Redefining \. on input line 981.
-LaTeX Info: Redefining \% on input line 981.
+LaTeX Info: Redefining \. on input line 967.
+LaTeX Info: Redefining \% on input line 967.
  [40
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 9.
 [41]
-LaTeX Info: Redefining \. on input line 988.
-LaTeX Info: Redefining \% on input line 988.
- [42
+
+Package hyperref Warning: Composite letter `\textasciicaron+C'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 1032.
+
+LaTeX Info: Redefining \. on input line 1034.
+LaTeX Info: Redefining \% on input line 1034.
+[42]
+Cap\'{\i }tulo 10.
+[43
+
+]
+LaTeX Info: Redefining \. on input line 1046.
+LaTeX Info: Redefining \% on input line 1046.
+ [44
 
 ]
 Ap\'{e}ndice A.
-[43]
-LaTeX Info: Redefining \. on input line 1026.
-LaTeX Info: Redefining \% on input line 1026.
- [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1026.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1026.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 1047.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 1047.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 6.1pt on input line 1047.
+[45]
+LaTeX Info: Redefining \. on input line 1085.
+LaTeX Info: Redefining \% on input line 1085.
+ [46]
+Ap\'{e}ndice B.
+[47
+
+]
+LaTeX Info: Redefining \. on input line 1087.
+LaTeX Info: Redefining \% on input line 1087.
+ [48
+
+]
+Ap\'{e}ndice C.
+[49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1089.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1089.
  (./variedades.aux
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1026.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1026.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1089.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1089.
 
 Package rerunfilecheck Info: File `variedades.out' has not changed.
-(rerunfilecheck)             Checksum: 8A08C0C9ACC1372D1F3830E5374ECE7A;4096.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1026.
+(rerunfilecheck)             Checksum: 6C8464D4E09613622915C3ECFF68094E;4243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1089.
  ) 
 Here is how much of TeX's memory you used:
- 23481 strings out of 494850
- 433217 string characters out of 6178023
- 485474 words of memory out of 5000000
- 26124 multiletter control sequences out of 15000+600000
- 101913 words of font info for 188 fonts, out of 8000000 for 9000
+ 23614 strings out of 494850
+ 435516 string characters out of 6178023
+ 486321 words of memory out of 5000000
+ 26242 multiletter control sequences out of 15000+600000
+ 123050 words of font info for 228 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  56i,14n,84p,1469b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -1718,10 +1757,10 @@ y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr
 ive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on variedades.pdf (44 pages, 337381 bytes).
+Output written on variedades.pdf (49 pages, 347876 bytes).
 PDF statistics:
- 666 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
- 147 named destinations out of 1000 (max. 500000)
- 477 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 700 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

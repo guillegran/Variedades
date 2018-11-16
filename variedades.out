@@ -15,7 +15,7 @@
 \BOOKMARK [1][-]{section.3.2}{Secciones de un fibrado vectorial}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.3}{El fibrado tangente y el fibrado cotangente}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.4}{Referencias m\363viles}{chapter.3}% 17
-\BOOKMARK [0][-]{chapter.4}{Ecuaciones diferenciales}{}% 18
+\BOOKMARK [0][-]{chapter.4}{Ecuaciones diferenciales en variedades}{}% 18
 \BOOKMARK [1][-]{section.4.1}{Flujos completos}{chapter.4}% 19
 \BOOKMARK [1][-]{section.4.2}{Flujos}{chapter.4}% 20
 \BOOKMARK [1][-]{section.4.3}{Integraci\363n de campos}{chapter.4}% 21
@@ -38,21 +38,23 @@
 \BOOKMARK [1][-]{section.7.4}{Diferencial exterior}{chapter.7}% 38
 \BOOKMARK [1][-]{section.7.5}{F\363rmulas de Cartan}{chapter.7}% 39
 \BOOKMARK [1][-]{section.7.6}{Cohomolog\355a de de Rham}{chapter.7}% 40
-\BOOKMARK [1][-]{section.7.7}{Lema de Poincar\351}{chapter.7}% 41
-\BOOKMARK [1][-]{section.7.8}{Cohomolog\355a de las esferas}{chapter.7}% 42
-\BOOKMARK [0][-]{chapter.8}{Orientaci\363n}{}% 43
-\BOOKMARK [1][-]{section.8.1}{Orientaci\363n de un espacio vectorial}{chapter.8}% 44
-\BOOKMARK [1][-]{section.8.2}{Orientaci\363n de variedades}{chapter.8}% 45
-\BOOKMARK [1][-]{section.8.3}{Orientaci\363n de hipersuperficies}{chapter.8}% 46
-\BOOKMARK [1][-]{section.8.4}{Orientaci\363n del borde}{chapter.8}% 47
-\BOOKMARK [0][-]{chapter.9}{Integraci\363n}{}% 48
-\BOOKMARK [1][-]{section.9.1}{Integral de una forma diferencial}{chapter.9}% 49
-\BOOKMARK [1][-]{section.9.2}{Teorema de Stokes}{chapter.9}% 50
-\BOOKMARK [1][-]{section.9.3}{Elemento de volumen}{chapter.9}% 51
-\BOOKMARK [1][-]{section.9.4}{Los teoremas cl\341sicos}{chapter.9}% 52
-\BOOKMARK [0][-]{chapter.10}{Introducci\363n a la teor\355a del grado}{}% 53
-\BOOKMARK [1][-]{section.10.1}{Cohomolog\355a con soportes compactos}{chapter.10}% 54
-\BOOKMARK [1][-]{section.10.2}{Cohomolog\355a de grado m\341ximo}{chapter.10}% 55
-\BOOKMARK [1][-]{section.10.3}{Grado de una aplicaci\363n diferenciable}{chapter.10}% 56
+\BOOKMARK [0][-]{chapter.8}{Orientaci\363n}{}% 41
+\BOOKMARK [1][-]{section.8.1}{Orientaci\363n de un espacio vectorial}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.2}{Orientaci\363n de variedades}{chapter.8}% 43
+\BOOKMARK [1][-]{section.8.3}{Orientaci\363n de hipersuperficies}{chapter.8}% 44
+\BOOKMARK [1][-]{section.8.4}{Orientaci\363n del borde}{chapter.8}% 45
+\BOOKMARK [0][-]{chapter.9}{El teorema de de Rham}{}% 46
+\BOOKMARK [1][-]{section.9.1}{Cadenas diferenciables}{chapter.9}% 47
+\BOOKMARK [1][-]{section.9.2}{Integraci\363n en cadenas}{chapter.9}% 48
+\BOOKMARK [1][-]{section.9.3}{Cohomolog\355a de Cech}{chapter.9}% 49
+\BOOKMARK [1][-]{section.9.4}{Resoluciones de haces}{chapter.9}% 50
+\BOOKMARK [0][-]{chapter.10}{Integraci\363n}{}% 51
+\BOOKMARK [1][-]{section.10.1}{Integral de una forma diferencial en una variedad}{chapter.10}% 52
+\BOOKMARK [1][-]{section.10.2}{Teorema de Stokes}{chapter.10}% 53
+\BOOKMARK [1][-]{section.10.3}{Elemento de volumen}{chapter.10}% 54
+\BOOKMARK [1][-]{section.10.4}{Los teoremas cl\341sicos}{chapter.10}% 55
+\BOOKMARK [1][-]{section.10.5}{Cohomolog\355a e integraci\363n}{chapter.10}% 56
 \BOOKMARK [0][-]{appendix.Alph1}{Topolog\355a de variedades}{}% 57
 \BOOKMARK [1][-]{section.Alph1.1}{Particiones diferenciables de la unidad}{appendix.Alph1}% 58
+\BOOKMARK [0][-]{appendix.Alph2}{Nociones b\341sicas de teor\355a de categor\355as}{}% 59
+\BOOKMARK [0][-]{appendix.Alph3}{Resultados de ecuaciones diferenciales}{}% 60
