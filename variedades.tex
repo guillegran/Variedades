@@ -42,6 +42,7 @@
 \def\CC{\mathbb{C}}
 \def\ZZ{\mathbb{Z}}
 \def\RR{\mathbb{R}}
+\def\KK{\mathbb{K}}
 \def\SF{\mathbb{S}}
 \def\TT{\mathbb{T}}
 \def\NN{\mathbb{N}}
@@ -82,10 +83,11 @@
 		      \begin{document}
 		      \maketitle
 		      \newpage\null\thispagestyle{empty}
+		      \chapter*{Prefacio}
+		      \newpage\null\thispagestyle{empty}\newpage
 		      \newpage\null\thispagestyle{empty}
-		      \epigraph{\textit{Los Hobbits se deleitan con esas cosas, si son exactas; les encanta tener libros colmados de cosas que ya saben, expuestas sin contradicciones y honradamente.}}{}
+		      \epigraph{\textit{Hay otra cosa entre los antiguos Hobbits que merece mencionarse; un hábito sorprendente: absorbían o inhalaban, a través de pipas de arcilla o madera, el humo de la combustión de una hierba llamada hoja o hierba para pipa, quizás una variedad de la} Nicotiana\textit{. Hay mucho misterio en el origen de esta costumbre peculiar, o de este «arte», como los Hobbits preferían llamarlo.}}{}
 		      \newpage\null\thispagestyle{empty}
-		      \tableofcontents
 		      
 		      \chapter{Variedades diferenciables}
 		      \section{El modelo local}
@@ -1027,6 +1029,33 @@ Por tanto, $\im \delta_{k-1} \subset \ker \delta_k$, con lo que podemos definir 
 \end{equation*}
 Este cociente se denomina \emph{$k$-ésimo grupo de cohomología singular (diferenciable) de $M$ con coeficientes en $G$}.
 
+Vamos a relacionar ahora los grupos de homología con los de cohomología. En particular, nos interesa el caso en el que el grupo de coeficientes es un cuerpo, $G=K$. En tal caso, es posible dotar a los grupos de cohomología de la estructura de $K$-espacio vectorial, simplemente, si $\alpha, \beta \in C^k(M;K)$ son dos cocadenas y $\lambda, \mu \in K$, definimos
+\begin{equation*}
+  (\lambda \alpha + \mu \beta)(C)=\lambda \alpha(C) + \mu \beta(C).
+\end{equation*}
+Más aún, a nosotros nos va interesar el caso de coeficientes reales, $K=\RR$, aunque los resultados que vamos a usar son ciertos para cualquier otro cuerpo de característica $0$, por ejemplo $\CC$ o $\mathbb{Q}$. El siguiente lema de teoría de grupos nos ayudará en lo que sigue:
+\begin{lema}
+  Sea $\KK$ un cuerpo de característica 0. Si $G$ es un grupo abeliano, cualquier homomorfismo de grupos de un subgrupo de $G$ a $\KK$ se puede extender a $G$.
+\end{lema}
+
+\begin{proof}
+  Supongamos que $H<G$ es un subgrupo y $f:H\rightarrow \KK$ es un homomorfismo. Consideramos el conjunto $\mathscr{P}$ de los pares $(H',f')$, con $H<H'<G$ y $f':H'\rightarrow \KK$ una extensión de $f$. Definimos un orden parcial en $\mathscr{P}$ declarando $(H',f')\leq(H'',f'')$ si $H'<H''$ y $f''|_{H'}=f'$. Si $\mathscr{T}\subset \mathscr{P}$ es una subconjunto linealmente ordenado, definimos $\tilde{H}$ como la unión de los $H'$ tales que $(H',f')\in \mathscr{T}$ y el homomorfismo (que es único) $\tilde{f}:\tilde{H}\rightarrow \KK$ tal que $\tilde{f}(h) = f'(h)$, con $(H',f') \in \mathscr{T}$ y $h\in H'$. El par $(\tilde{H},\tilde{f})$ es una cota superior de $\mathscr{T}$. Por tanto, por el Lema de Zorn, existe un elemento maximal en $\mathscr{P}$ que denotaremos $(H_0,f_0)$.
+
+  Si $H_0=G$ hemos terminado. En caso contrario, existe un elemento $g\in G$ tal que $g\not\in H_0$. Sea $H_g$ el subgrupo $H_0+g\ZZ<G$. El grupo cociente $H_g/H_0=g\ZZ$. Si $H_g/H_0$ es infinito, entonces $m g \not\in H_0$ para todo $m\in \ZZ$ y podemos definir una extensión $f'_0$ de $f_0$ haciendo $f'_0(h+mg)=f_0(h)$, para $h\in H_0$ y $m\in \ZZ$. Por otra parte, si $H_g/H_0$ es finito, llamamos $n$ a su orden, de modo que $mg\in H_0$ si y sólo si $m\in n\ZZ$. Ahora, como $\KK$ es de característica $0$, hay una aplicación inyectiva $\ZZ \hookrightarrow \KK$ e identificamos $\ZZ$ con su imagen por esta aplicación. Consideramos entonces el elemento $k=f_0(ng)/n \in \KK$ y definimos una extensión $f_0'$ de $f_0$ por
+  \begin{equation*}
+    f_0'(h+mg)=f_0(h)+mk.
+  \end{equation*}
+  Para ver que está bien definida, consideremos dos elementos $h,h' \in H_0$ tales que existen $m,m'\in \ZZ$ con $h+gm=h'+gm'$. Tenemos entonces que $(m-m')g=h'-h\in H_0$, luego $m-m'=jn$ para cierto $j\in \ZZ$. Ahora,
+  \begin{align*}
+    f_0'(h+mg)-f_0'(h'+m'g)&=(f_0(h)+mk)-(f_0(h')+m'k)\\&=f_0(h-h')+(m-m')k=f_0(-jng)+jnk =0.
+  \end{align*}
+En cualquier caso, hemos encontrado una extensión $f_0'$ de $f_0$ a un grupo que contiene estrictamente a $H_0$, lo que contradice la maximalidad de $(H_0,f_0)$. Por tanto, $H_0=G$.
+\end{proof}
+
+\begin{prop}
+  Sea $\KK$ un cuerpo de característica $0$ y $M$ una variedad diferenciable. Entonces $H^k(M;\KK)$ es un espacio vectorial isomorfo a $\mathbf{Ab}(H_k(M),\KK)$.
+\end{prop}
+
 
 	  \section{Integración en cadenas}
 	  \section{Cohomología de \v{C}ech}
@@ -1044,7 +1073,7 @@ Este cociente se denomina \emph{$k$-ésimo grupo de cohomología singular (difer
 	  
 	  \appendix
 	  \chapter{Topología de variedades}
-	  \epigraph{\textit{Desde las Fronteras del Oeste, al pie de las Colinas de la Torre, hasta el Puente del Brandivino había unas cuarenta leguas y casi cincuenta desde los páramos del norte hasta los pantanos del sur. Los Hobbits denominaron a estas tierras la Comarca. [\dots] Allí, en ese placentero rincón del mundo, llevaron una vida ordenada y dieron cada vez menos importancia al mundo exterior, donde se movían unas cosas oscuras\dots}}{}
+	  \epigraph{\textit{Desde las Fronteras del Oeste, al pie de las Colinas de la Torre, hasta el Puente del Brandivino había unas cuarenta leguas y casi cincuenta desde los páramos del norte hasta los pantanos del sur. Los Hobbits denominaron a estas tierras la Comarca.} [...] \textit{Allí, en ese placentero rincón del mundo, llevaron una vida ordenada y dieron cada vez menos importancia al mundo exterior, donde se movían unas cosas oscuras\dots}}{}
 	  \section{Particiones diferenciables de la unidad}
 \begin{defn}
   Una \emph{partición diferenciable de la unidad} (abreviado PDU) en una variedad diferenciable $M$ es una familia $\Theta$ de funciones diferenciables en $M\rightarrow \RR$ tal que
@@ -1082,10 +1111,14 @@ Las PDU son una herramienta realmente útil en toda la teoría de variedades dif
     Con lo que $F|_A = f$.
 \end{proof}
 
-\chapter{Nociones básicas de teoría de categorías}
+\chapter{Teoría de categorías}
 \epigraph{\textit{Habla, amigo y entra}}{Inscripción en las Puertas de Durin, Señor de Moria}
-\chapter{Resultados de ecuaciones diferenciales}
-\epigraph{\textit{Muchos de los que viven merecen morir y algunos de los que mueren merecen la vida. ¿Puedes devolver la vida? Entonces no te apresures a dispensar la muerte, pues ni el más sabio conoce el fin de todos los caminos. [\dots] El corazón me dice que todavía tiene un papel que desempeñar, para bien o para mal, antes del fin y cuando éste llegue\dots}}{Gandalf a Frodo, sobre Gollum}
+\chapter{Prerrequisitos algebraicos}
+		      \epigraph{\textit{Los Hobbits se deleitan con esas cosas, si son exactas; les encanta tener libros colmados de cosas que ya saben, expuestas sin contradicciones y honradamente.}}{}
+\chapter{Prerrequisitos analíticos}
+\epigraph{\textit{Muchos de los que viven merecen morir y algunos de los que mueren merecen la vida. ¿Puedes devolver la vida? Entonces no te apresures a dispensar la muerte, pues ni el más sabio conoce el fin de todos los caminos.} [...] \textit{El corazón me dice que todavía tiene un papel que desempeñar, para bien o para mal, antes del fin y cuando éste llegue\dots}}{Gandalf a Frodo, sobre Gollum}
+		      \newpage\null\thispagestyle{empty}
+		      \tableofcontents
 		      \end{document}
 
 
