@@ -961,11 +961,6 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  \section{Cohomología de de Rham}
 	  Lema de Poincaré
 	  Cohomología de las esferas
-	  \chapter{Orientación}
-	  \section{Orientación de un espacio vectorial}
-	  \section{Orientación de variedades}
-	  \section{Orientación de hipersuperficies}
-	  \section{Orientación del borde}
 	  \chapter{El teorema de de Rham}
 	  \section{Cadenas diferenciables}
 	  \begin{defn}
@@ -974,17 +969,17 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 
 	  Si consideramos $M$ como variedad sumergida podemos dar una noción de cubo diferenciable usando la noción de diferenciabilidad de la Definición \ref{difsumergida}. Así, un \emph{$k$-cubo diferenciable} es simplemente una aplicación diferenciable $c:I^k\rightarrow M$. Análogamente, definimos las \emph{$k$-cadenas singulares diferenciables} como el grupo abeliano generado por los $k$-cubos singulares diferenciables, que denotamos también $C_k(M)$, puesto que a partir de ahora tan solo consideraremos cubos y cadenas diferenciables.
 
-	  Sea $C\in C_k(M)$ una $k$-cadena, se define la \emph{cara delantera $i$-ésima} como la $k-1$-cadena
+	  Sea $C\in C_k(M)$ una $k$-cadena, se define la \emph{cara delantera $i$-ésima} como la $(k-1)$-cadena
 	  \begin{equation*}
 	    (F_i C)(t_1,\dots,t_{k-1})=C(t_1,\dots,t_{i-1},1,t_i,\dots,t_{k-1})
 	  \end{equation*}
-	  y la \emph{cara trasera $i$-ésima} como la $k-1$-cadena
+	  y la \emph{cara trasera $i$-ésima} como la $(k-1)$-cadena
 	  \begin{equation*}
 	    (B_i C)(t_1,\dots,t_{k-1})=C(t_1,\dots,t_{i-1},0,t_i,\dots,t_{k-1}).
 	  \end{equation*}
-	  Definimos el \emph{borde} de una $k$-cadena $C$ como la $k-1$-cadena
+	  Definimos el \emph{borde} de una $k$-cadena $C$ como la $(k-1)$-cadena
 	  \begin{equation*}
-	    \partial C= \sum_{i=1}^k (-1)^i (F_i C - B_i C).
+	    \partial C= \sum_{i=1}^k (-1)^{i-1} (F_i C - B_i C).
 	  \end{equation*}
 	  \begin{prop}
 	    Si $C$ es una $k$-cadena en $M$, $\partial(\partial C)=0$.
@@ -1056,10 +1051,129 @@ En cualquier caso, hemos encontrado una extensión $f_0'$ de $f_0$ a un grupo qu
   Sea $\KK$ un cuerpo de característica $0$ y $M$ una variedad diferenciable. Entonces $H^k(M;\KK)$ es un espacio vectorial isomorfo a $\mathbf{Ab}(H_k(M),\KK)$.
 \end{prop}
 
+\begin{proof}
+  Una $k$-cocadena $\alpha$ tal que $\delta \alpha = 0$ define un homomorfismo
+  \begin{align*}
+    \tilde{\alpha}:H_k(M)&\longrightarrow \KK\\ 
+     [C] &\longmapsto \alpha(C),
+    \end{align*}
+    que está bien definido porque $\alpha(\partial B)=\delta \alpha(B)=0$. Ahora, si $\alpha=\delta \beta$, entonces $\alpha(C)=\delta \beta (C)=\beta (\partial C)=0$, luego, si llamamos
+    \begin{align*}
+      \psi_k :\ker \delta_k&\longrightarrow \mathbf{Ab}(H_k(M),\KK)\\ 
+      \alpha &\longmapsto \tilde{\alpha}, 
+      \end{align*}
+    tenemos que
+    $\im \delta_{k-1} \subset \ker \psi_k$, para cada $k\in \NN$. Por tanto, $\psi_k$ desciende a un homomorfismo 
+    \begin{align*}
+      \psi :H^k(M;\KK)&\longrightarrow \mathbf{Ab}(H_k(M),\KK)\\ 
+      [\alpha] &\longmapsto \tilde{\alpha}. 
+      \end{align*}
+Vamos a probar que $\psi$ es de hecho un isomorfismo.
+
+Sea un homomorfismo $f\in \mathbf{Ab}(H_k(M),\KK)$. Denotamos por $\pi:\ker \delta_k \rightarrow H^k(M;\KK)$ la proyección canónica al cociente. Podemos considerar entonces el homomorfismo $f\circ \pi: \ker \delta_k \rightarrow \KK$, que por el Lema se extiende a un homomorfismo $\alpha_f:C_k(X)\rightarrow \KK$, es decir, $\alpha_f$ es una $k$-cocadena. Más aún,
+\begin{equation*}
+  \delta \alpha_f (C)=\alpha_f (\partial C) = f\circ \pi (\partial C) =f [\partial C] = f(0) =0.
+\end{equation*}
+Tenemos entonces que $$\psi([\alpha_f])([C])=\tilde{\alpha_f}([C])=\alpha_f(C)=f\circ \pi (C)=f[C].$$ Con lo cual, $\psi([\alpha_f])=f$, luego $\psi$ es sobreyectiva. 
+
+Para ver que $\psi$ es inyectiva, tomemos $[\alpha] \in H^k(M; \KK)$ tal que $\psi[\alpha]=0$. Esto significa que $\alpha \in C^k(M; \KK)$ cumple $\alpha(C)=0$ para todo $C\in C_k(M)$ con $\partial C = 0$. Es decir, $\ker \partial_k \subset \ker \alpha$. Por tanto,  $\alpha$ desciende a un homomorfismo $\tilde{\alpha}:C_k(M)/\ker \partial_k \rightarrow \KK$. Por otra parte, $\partial_k$ desciende a un isomorfismo
+$\tilde{\partial}_k :C_k(M)/\ker \partial_k\rightarrow \im \partial_k$. Podemos componer para obtener un homomorfismo $\tilde{\alpha}\circ \tilde{\partial}_k^{-1}: \im \partial_k \rightarrow \KK$ que, por el Lema, se extiende a un homomorfismo $\beta:C_{k-1}(M) \rightarrow \KK$. Ahora, si $C\in C_k(M)$,
+\begin{equation*}
+  \delta \beta(C)=\beta(\partial C)=\tilde{\alpha}\circ \tilde{\partial}_k^{-1}(\partial C)=\alpha(C),
+\end{equation*}
+con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es inyectiva.
+\end{proof}
+\begin{obs}
+  Todos los resultados expuestos en esta sección son válidos también si $X$ es un espacio topológico cualquiera y consideramos cadenas no diferenciables en $X$ y sus respectivos grupos de homología y cohomología singular no diferenciables. Sin embargo, a nosotros sólo nos va interesar trabajar con cadenas diferenciables.
+\end{obs}
 
 	  \section{Integración en cadenas}
+	  Entendemos por una forma diferenciable en el cubo $I^k$ una forma diferenciable en algún entorno suyo $U\supset I^k$. Si $\omega$ es una $k$-forma en $I^k$, entonces existe una función $f:I^k \rightarrow \RR$ diferenciable (en el sentido de la definición \ref{difsumergida}) tal que $\omega=f dx^1\wedge\dots\wedge dx^k$. Definimos entonces la \emph{integral de $\omega$ en $I^k$} como 
+	  \begin{equation*}
+	    \int_{I^k} \omega = \int_{I^k}f= \int_{I^k} f(x^1,\dots,x^k) dx^1\dots dx^k.
+	  \end{equation*}
+
+	  Ahora, si $c:I^k \rightarrow M$ es un $k$-cubo diferenciable en una variedad diferenciable $M$, entonces por definición existe una aplicación diferenciable $\tilde{c}:U\subset \RR^k\rightarrow M$, con $U$ un entorno abierto de $I^k$ tal que $\tilde{c}|_{I^k}=c$. Puedo considerar entonces la pullback $\tilde{c}^*:\Omega^k(M)\rightarrow \Omega^k(U)$. Ahora, si $\omega \in \Omega^k(M)$, denotamos $c^* \omega=\tilde{c}^* \omega |_{I^k}$, que, con nuestra definición, es una forma diferenciable en $I^k$. Podemos definir enotnces la \emph{integral de $\omega$ en $c$} como
+	  \begin{equation*}
+	    \int_c \omega = \int_{I^k} c^* \omega.
+	  \end{equation*}
+	  Nótese que la continuidad de las derivadas garantiza que las definiciones no dependan de la elección de la extensión $\tilde{c}$, ya que para cualquier extensión las derivadas en el borde deben coincidir.
+
+	  Finalmente, si $C=\sum_i a_i c_i \subset C_k(M)$ es una $k$-cadena diferenciable y $\omega \in \Omega^k(M)$ es una $k$-forma diferenciable, definimos la \emph{integral de $\omega$ en $C$} como
+	  \begin{equation*}
+	    \int_C \omega = \sum_i a_i \int_{c_i}\omega.
+	  \end{equation*}
+
+	  \begin{thm}[Teorema de Stokes para cadenas]
+	    Sea $\omega \in \Omega^{k-1}(M)$ una $(k-1)$-forma diferenciable en una variedad diferenciable $M$ y $C\in C_k(M)$ una $k$-cadena diferenciable en $M$. Entonces
+	    \begin{equation*}
+	      \int_C d\omega = \int_{\partial C}\omega.
+	    \end{equation*}
+	  \end{thm}
+	  \begin{proof}
+	    Veamos primero que el resultado es cierto para el \emph{$k$-cubo estándar} $i_k:I^k\hookrightarrow \RR^k$ y para $\omega$ una $(k-1)$-forma en $I^k$. Tenemos que $\omega$ puede escribirse en la forma
+	    \begin{equation*}
+	      \omega= \sum_i f_i dx^1 \wedge\cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k,
+	    \end{equation*}
+	    donde el circunflejo denota que ese término se omite. Basta entonces probar el resultado para cada uno de estos términos. 
+	    Nótese que
+	    \begin{equation*}
+	      \int_{I^{k-1}} (F_ji_k)^*(f_i dx^1 \wedge\cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k)= 
+	      \begin{cases}
+		0 & \text{si } j \neq i, \\
+		\int_{I^k}f_i(x^1,\dots,1,\dots,x^k)dx^1\cdots dx^k & \text{si } j=i,
+	      \end{cases}
+	    \end{equation*}
+	    y que
+	    \begin{equation*}
+	      \int_{I^{k-1}} (B_ji_k)^*(f_i dx^1 \wedge\cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k)= 
+	      \begin{cases}
+		0 & \text{si } j \neq i, \\
+		\int_{I^k}f_i(x^1,\dots,0,\dots,x^k)dx^1\cdots dx^k & \text{si } j=i,
+	      \end{cases}
+	    \end{equation*}
+	    Por tanto
+	    \begin{align*}
+	      \int_{\partial i_k}f_i dx^1 \wedge \cdots \wedge &\hat{dx^i} \wedge \cdots \wedge dx^k = \sum_{j=1}^k (-1)^{j-1} (F_j i_k - B_j i_k)^*(f_i dx^1 \wedge \cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k) \\
+	      &=(-1)^{i-1}  \int_{I^k} [f_i (x^1,\dots,1,\dots,x^k)- f_i(x^1,\dots,0,\dots,x^k)]dx^1\cdots dx^k .
+	    \end{align*}
+
+	    Por otra parte, 
+	    \begin{align*}
+	      \int_{I_k} d(f_i dx^1 & \wedge \cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k) =  \\ & \int_{I^k} \frac{\partial f_i}{\partial x^i} dx^i \wedge dx^1 \wedge \cdots \wedge \hat{dx^i} \wedge \cdots \wedge dx^k = (-1)^{i-1}\int_{I^k}\frac{\partial f_i}{\partial x^i}.
+	    \end{align*}
+	    Ahora, usando el teorema fundamental del cálculo, tenemos que
+	    \begin{align*}
+	      (-1)^{i-1}&\int_{I^k}  \frac{\partial f_i}{\partial x^i}= (-1)^{i-1}\int_0^1 \overset{(k-1)}{\cdots} \int_0^1 \left(\int_0^1 \frac{\partial f_i}{\partial x^i} dx^i \right) dx^1\cdots \hat{dx^i} \cdots dx^k \\
+&= (-1)^{i-1}\int_0^1 \overset{(k-1)}{\cdots} \int_0^1 \left(f_i(x^1,\dots,1,\dots,x^k)-f_i(x^1,\dots,0,\dots,x^k) \right) dx^1\cdots \hat{dx^i} \cdots dx^k \\
+&=(-1)^{i-1}  \int_{I^k} [f_i (x^1,\dots,1,\dots,x^k)- f_i(x^1,\dots,0,\dots,x^k)]dx^1\cdots dx^k .
+	    \end{align*}
+	    Hemos probado entonces
+	    \begin{equation*}
+	      \int_{i_k} d\omega = \int_{\partial i_k} \omega.
+	    \end{equation*}
+
+	    Ahora, si $c$ es un $k$-cubo, como $c=c\circ i_k$, es fácil comprobar que $\partial c= c \circ  \partial i_k$, de modo que
+	    \begin{equation*}
+	      \int_{\partial c} \omega = \int_{\partial i_k} c^* \omega.
+	    \end{equation*}
+	    Por tanto
+	    \begin{equation*}
+	      \int_c d\omega = \int_{i_k} c^* (d\omega) = \int_{i_k} d(c^*\omega)=\int_{\partial i_k} c^*\omega = \int_{\partial c} \omega.
+	    \end{equation*}
+	    Finalmente, si $C=\sum_i a_i c_i$ es una $k$-cadena, entonces $\partial C=\sum_i a_i \partial c_i$, luego 
+	    \begin{equation*}
+	      \int_C d\omega = \sum_i a_i \int_{c_i} d\omega = \sum_i a_i \int_{\partial c_i} \omega = \int_{\partial C} \omega.
+	    \end{equation*}
+
+	  \end{proof}
 	  \section{Cohomología de \v{C}ech}
 	  \section{Resoluciones de haces}
+	  \chapter{Orientación}
+	  \section{Orientación de un espacio vectorial}
+	  \section{Orientación de variedades}
+	  \section{Orientación de hipersuperficies}
+	  \section{Orientación del borde}
 	  \chapter{Integración}
 	  \section{Integral de una forma diferencial en una variedad}
 	  \section{Teorema de Stokes}
