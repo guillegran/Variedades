@@ -962,7 +962,7 @@ M=	    \left\{ x\in B: F(x)=F(a) \right\}
 	  Lema de Poincaré
 	  Cohomología de las esferas
 	  \chapter{El teorema de de Rham}
-	  \section{Cadenas diferenciables}
+	  \section{Cadenas y cocadenas}
 	  \begin{defn}
 	    Sean $M$ una variedad diferenciable y el intervalo $I=[0,1]$. Un \emph{$k$-cubo singular} en $M$ es una aplicación continua $c:I^k\rightarrow M$. Una \emph{$k$-cadena singular} en $M$ es una combinación entera formal de cubos singulares, es decir, un elemento de $C_k(M)$ el grupo abeliano generado por los $k$-cubos en $M$.
 	  \end{defn}
@@ -1165,9 +1165,59 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 	    \begin{equation*}
 	      \int_C d\omega = \sum_i a_i \int_{c_i} d\omega = \sum_i a_i \int_{\partial c_i} \omega = \int_{\partial C} \omega.
 	    \end{equation*}
-
 	  \end{proof}
+
+	  Nótese que la integral nos permite definir un homomorfismo de grupos
+	  \begin{align*}
+	     \Omega^k(M)&\longrightarrow C^k(M;\RR)\\ 
+	      \omega &\longmapsto \int_\bullet \omega, 
+	    \end{align*}
+	    con 
+	    \begin{align*}
+	      \int_\bullet \omega :C_k(M)&\longrightarrow \RR\\ 
+	        C &\longmapsto \int_C \omega. 
+	      \end{align*}
+	      Más aún, a la vista del teorema de Stokes, podemos hacer que este homomorfismo descienda a las cohomologías,
+	      \begin{align*}
+		\mathcal{I}:	H_{dR}^k(M)&\longrightarrow H^k(M; \RR)\\ 
+		[\omega] &\longmapsto \left[\int_\bullet \omega\right]. 
+		\end{align*}
+		En efecto, esta aplicación está bien definida ya que, si $\omega, \omega' \in Z^k(M)$ son $k$-formas cerradas con $\omega-\omega'=d\alpha$ y $C\in C_k(M)$ es una $k$-cadena con $\partial C=0$, entonces, por el teorema de Stokes
+		\begin{equation*}
+		  \int_C \omega - \int_C \omega' = \int_C \omega-\omega' = \int_C d\alpha = \int_{\partial C} \omega =0.
+		\end{equation*}
+		Por tanto, $\int_\bullet \omega$ = $\int_\bullet \omega'$.
+
+		Por otra parte, $\left[ \int_\bullet \omega \right]$ es simplemente la aplicación
+		\begin{align*}
+		  H_k(M) &\longrightarrow \RR\\ 
+		  [C] &\longmapsto \int_C \omega, 
+		  \end{align*}
+		  que está bien definida porque, si $C,C'\in C_k(M)$ son dos $k$-cadenas con $C-C'=\partial B$ y $\omega \in Z^k(M)$ es una forma cerrada, entonces, de nuevo por el teorema de Stokes
+		  \begin{equation*}
+		    \int_C \omega - \int_{C'}\omega = \int_{I^k} C^*\omega - C'^*\omega = \int_{C-C'} \omega=\int_{\partial B} \omega = \int_{B} d\omega =0.
+		  \end{equation*}
+		  
+		  El teorema de de Rham afirma que el homomorfismo $\mathcal{I}$ es, de hecho, un isomorfismo. El resto de este capítulo está dedicado a desarrollar los conceptos necesarios para la demostración de este teorema.
 	  \section{Cohomología de \v{C}ech}
+	  Sea $\mathcal{U}$ un recubrimiento abierto de una variedad diferenciable $M$. Una colección ordenada $(U_0,\dots,U_k)$ de miembros del recubrimiento tales que $U_0 \cap \cdots \cap U_k \neq \varnothing$ se llama un \emph{$k$-simplejo}. Si $\sigma=(U_0,\dots,U_k)$ es un $k$-simplejo, su \emph{soporte} $|\sigma|$ se define como
+	  \begin{equation*}
+	    |\sigma|=U_0 \cap \dots \cap U_q.
+	  \end{equation*}
+	  La \emph{$i$-ésima cara} de un $k$-simplejo $\sigma=(U_0,\dots,U_k)$ es el $(k-1)$-simplejo $$\sigma_i=(U_0,\dots,U_{i-1},U_{i+1},\dots,U_k).$$ 
+	  \begin{defn}
+	    Sea $M$ una variedad diferenciable, $\FF$ un haz en $M$ y $\mathcal{U}$ un recubrimiento abierto de $M$. Una \emph{$k$-cocadena de \v{C}ech} es una función $\alpha$ que a cada $k$-simplejo $\sigma$ le asocia un elemento de $\FF(|\sigma|)$. El conjunto de las $k$-cocadenas de \v{C}ech es un grupo abeliano que denotamos por $\check{C}^k(\mathcal{U},\FF)$.
+	    Si $\alpha$ es una $k$-cocadena, se define el \emph{coborde} de $\alpha$ como la $(k+1)$-cocadena
+	    \begin{equation*}
+	      d\alpha (\sigma) = \sum_{i=0}^k (-1)^i \mathrm{res}^{|\sigma|}_{|\sigma_i|} (\alpha(\sigma_i)),
+	    \end{equation*}
+	    con $\sigma$ un $(k+1)$-simplejo.
+	    Es fácil comprobar que $d$ induce un homomorfismo de grupos $d_k:\check{C}^k(\mathcal{U},\FF) \rightarrow \check{C}^{k+1}(\mathcal{U},\FF)$ y que $d_{k+1}\circ d_k=0$. Definimos entonces \emph{$k$-ésimo grupo de cohomología de \v{C}ech con coeficientes en $\FF$ con respecto al recubrimiento $\mathcal{U}$} como el cociente
+	    \begin{equation*}
+	      \check{H}^k(\mathcal{U},\FF)=\frac{\ker d_k}{ \im d_{k-1}}.
+	    \end{equation*}
+	  \end{defn}
+	  
 	  \section{Resoluciones de haces}
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
