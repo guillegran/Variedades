@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  18 NOV 2018 18:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.28)  18 NOV 2018 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1684,86 +1684,92 @@ Package hyperref Warning: Composite letter `\textasciicaron+C'
 LaTeX Info: Redefining \. on input line 1206.
 LaTeX Info: Redefining \% on input line 1206.
 [44]
-LaTeX Info: Redefining \. on input line 1232.
-LaTeX Info: Redefining \% on input line 1232.
+LaTeX Info: Redefining \. on input line 1250.
+LaTeX Info: Redefining \% on input line 1250.
  [45]
-LaTeX Info: Redefining \. on input line 1232.
-LaTeX Info: Redefining \% on input line 1232.
- [46
-
-]
-Cap\'{\i }tulo 9.
-[47]
-LaTeX Info: Redefining \. on input line 1237.
-LaTeX Info: Redefining \% on input line 1237.
+LaTeX Info: Redefining \. on input line 1295.
+LaTeX Info: Redefining \% on input line 1295.
+ [46]
+LaTeX Info: Redefining \. on input line 1301.
+LaTeX Info: Redefining \% on input line 1301.
+ [47]
+LaTeX Info: Redefining \. on input line 1301.
+LaTeX Info: Redefining \% on input line 1301.
  [48
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 9.
 [49]
-LaTeX Info: Redefining \. on input line 1249.
-LaTeX Info: Redefining \% on input line 1249.
+LaTeX Info: Redefining \. on input line 1306.
+LaTeX Info: Redefining \% on input line 1306.
  [50
+
+]
+Cap\'{\i }tulo 10.
+[51]
+LaTeX Info: Redefining \. on input line 1318.
+LaTeX Info: Redefining \% on input line 1318.
+ [52
 
 ]
 Ap\'{e}ndice A.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1250.
+(Font)              scaled to size 10.95pt on input line 1319.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 1250.
+(Font)              scaled to size 8.0pt on input line 1319.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.1pt on input line 1250.
-[51]
-LaTeX Info: Redefining \. on input line 1288.
-LaTeX Info: Redefining \% on input line 1288.
- [52]
+(Font)              scaled to size 6.1pt on input line 1319.
+[53]
+LaTeX Info: Redefining \. on input line 1357.
+LaTeX Info: Redefining \% on input line 1357.
+ [54]
 Ap\'{e}ndice B.
-[53
+[55
 
 ]
-LaTeX Info: Redefining \. on input line 1290.
-LaTeX Info: Redefining \% on input line 1290.
- [54
-
-]
-Ap\'{e}ndice C.
-[55]
-LaTeX Info: Redefining \. on input line 1292.
-LaTeX Info: Redefining \% on input line 1292.
+LaTeX Info: Redefining \. on input line 1359.
+LaTeX Info: Redefining \% on input line 1359.
  [56
 
 ]
+Ap\'{e}ndice C.
+[57]
+LaTeX Info: Redefining \. on input line 1361.
+LaTeX Info: Redefining \% on input line 1361.
+ [58
+
+]
 Ap\'{e}ndice D.
-[57] [58] (./variedades.toc
+[59] [60] (./variedades.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [59
+ [61
 
 ])
 \tf@toc=\write5
 \openout5 = `variedades.toc'.
 
-LaTeX Info: Redefining \. on input line 1296.
-LaTeX Info: Redefining \% on input line 1296.
- [60]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1296.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1296.
+LaTeX Info: Redefining \. on input line 1365.
+LaTeX Info: Redefining \% on input line 1365.
+ [62]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1365.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1365.
  (./variedades.aux
 LaTeX Info: Redefining \. on input line 20.
 LaTeX Info: Redefining \% on input line 20.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1296.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1296.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1365.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1365.
 
 Package rerunfilecheck Info: File `variedades.out' has not changed.
 (rerunfilecheck)             Checksum: 4E402A003BA84EA05A2269D96E1D3EA4;4274.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1296.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1365.
  ) 
 Here is how much of TeX's memory you used:
- 23633 strings out of 494850
- 435669 string characters out of 6178023
+ 23672 strings out of 494850
+ 436558 string characters out of 6178023
  486327 words of memory out of 5000000
- 26244 multiletter control sequences out of 15000+600000
+ 26278 multiletter control sequences out of 15000+600000
  123050 words of font info for 228 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  56i,14n,84p,1469b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1789,10 +1795,10 @@ y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr
 ive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on variedades.pdf (60 pages, 376062 bytes).
+Output written on variedades.pdf (62 pages, 383435 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
- 669 compressed objects within 7 object streams
- 171 named destinations out of 1000 (max. 500000)
+ 772 PDF objects out of 1000 (max. 8388607)
+ 680 compressed objects within 7 object streams
+ 176 named destinations out of 1000 (max. 500000)
  501 words of extra memory for PDF output out of 10000 (max. 10000000)
 

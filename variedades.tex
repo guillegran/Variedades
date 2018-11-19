@@ -1209,7 +1209,7 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 	    Sea $M$ una variedad diferenciable, $\FF$ un haz en $M$ y $\mathcal{U}$ un recubrimiento abierto de $M$. Una \emph{$k$-cocadena de \v{C}ech} es una función $\alpha$ que a cada $k$-simplejo $\sigma$ le asocia un elemento de $\FF(|\sigma|)$. El conjunto de las $k$-cocadenas de \v{C}ech es un grupo abeliano que denotamos por $\check{C}^k(\mathcal{U},\FF)$.
 	    Si $\alpha$ es una $k$-cocadena, se define el \emph{coborde} de $\alpha$ como la $(k+1)$-cocadena
 	    \begin{equation*}
-	      d\alpha (\sigma) = \sum_{i=0}^k (-1)^i \mathrm{res}^{|\sigma|}_{|\sigma_i|} (\alpha(\sigma_i)),
+	      d\alpha (\sigma) = \sum_{i=0}^k (-1)^i \mathrm{res}^{|\sigma_i|}_{|\sigma|} (\alpha(\sigma_i)),
 	    \end{equation*}
 	    con $\sigma$ un $(k+1)$-simplejo.
 	    Es fácil comprobar que $d$ induce un homomorfismo de grupos $d_k:\check{C}^k(\mathcal{U},\FF) \rightarrow \check{C}^{k+1}(\mathcal{U},\FF)$ y que $d_{k+1}\circ d_k=0$. Definimos entonces \emph{$k$-ésimo grupo de cohomología de \v{C}ech con coeficientes en $\FF$ con respecto al recubrimiento $\mathcal{U}$} como el cociente
@@ -1227,7 +1227,76 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 	      \check{H}^0(\mathcal{U},\FF)=\FF(M).
 	    \end{equation*}
 	  \end{obs}
-	  
+	  \begin{defn}
+	    Sean $\mathcal{U}$ y $\mathcal{V}$ recubrimientos abiertos de $M$. Decimos que $\mathcal{V}$ es un \emph{refinamiento} de $\mathcal{U}$ si cada elemento de $\mathcal{V}$ está contenido en un elemento de $\mathcal{U}$. Llamamos una \emph{aplicación de refinamiento} a una $\mu: \mathcal{V} \rightarrow \mathcal{U}$ tal que $V\subset \mu(V)$ para cada $V\in \mathcal{V}$.
+	  \end{defn}
+	  Supongamos que $\mathcal{V}$ es un refinamiento de un recubrimiento $\mathcal{U}$ con aplicación de refinamiento $\mu$. Si $\sigma=(V_0,\dots,V_k)$ es un $k$-simplejo del recubrimiento $\mathcal{V}$, entonces denotamos $\mu(\sigma)=(\mu(V_0),\dots,\mu(V_k))$, que es un $k$-simplejo de $\mathcal{U}$. Tenemos entonces que $\mu$ induce una aplicación en las cocadenas $\mu_k:C^k(\mathcal{U},\FF) \rightarrow C^k(\mathcal{V},\FF)$ por
+	  \begin{equation*}
+	    \mu_k(\alpha)(\sigma)=\mathrm{res}^{|\mu(\sigma)|}_{|\sigma|} \alpha(\mu(\sigma)),
+	  \end{equation*}
+	  con $\alpha \in C^k(\mathcal{U},\FF)$ y $\sigma$ un $k$-simplejo de $\mathcal{V}$.
+	  Esta aplicación en las cocadenas desciende a las cohomologías
+	  \begin{equation*}
+	    \mu_k^*:\check{H}^k(\mathcal{U},\FF) \rightarrow \check{H}^k(\mathcal{V},\FF).
+	  \end{equation*}
+
+	  Ahora, si $\mu$ y $\tau$ son aplicaciones de refinamiento y $\sigma=(V_0,\dots,V_{k-1})$ es un $(k-1)$-simplejo de $\mathcal{V}$, definimos
+	  \begin{equation*}
+	    \tilde{\sigma}_j=(\mu(V_0),\dots,\mu(V_j),\tau(V_j),\dots,\tau(V_{k-1}),
+	  \end{equation*}
+	  y el homomorfismo $h_k:C^k(\mathcal{U},\FF)\rightarrow C^{k-1}(\mathcal{V},\FF)$ por
+	  \begin{equation*}
+	    h_k(\alpha)(\sigma)=\sum_{j=0}^{k-1}(-1)^j \mathrm{res}^{|\tilde{\sigma}_j|}_{|\sigma|}\alpha(\tilde{\sigma}_j).
+	  \end{equation*}
+	  Un cálculo directo muestra que
+	  \begin{equation*}
+	    h_{k+1}\circ d + d \circ h_k = \tau_k -\mu_k.
+	  \end{equation*}
+	  Por tanto, si $[\sigma] \in \check{H}^k(\mathcal{U},\FF)$, entonces
+	  \begin{equation*}
+	\tau_k^*([\sigma])-\mu_k^*([\sigma])=    h^*_{k+1}(d[\sigma])+d(h^*_k[\sigma])= h^*_{k+1}([d\sigma])+[d(h_k(\sigma)]=0,
+	  \end{equation*}
+	  con lo que $\tau_k^*=\mu_k^*$. Tenemos entonces que el sistema parcialmente ordenado de los recubrimientos abiertos con respecto al refinamiento, induce un orden parcial en las cohomologías de \v{C}ech mediante los morfismos inducidos por las aplicaciones de refinamiento. Más aún, si $\mathcal{W}$ es un refinamiento de un refinamiento $\mathcal{V}$ de $\mathcal{U}$, entonces el siguiente diagrama conmuta
+	  \begin{center}
+	    \begin{tikzcd}
+	      \check{H}^k(\mathcal{U},\FF) \arrow{r} \arrow[bend left]{rr} &\check{H}^k(\mathcal{V},\FF) \arrow{r} &\check{H}^k(\mathcal{W},\FF),
+	    \end{tikzcd}
+	  \end{center}
+	  con lo que tenemos un sistema directo en las cohomologías según el refinamiento y podemos considerar el límite directo
+	  \begin{equation*}
+	    \check{H}^k(M,\FF)=\varinjlim_{\mathcal{U}} \check{H}^k(\mathcal{U},\FF).
+	  \end{equation*}
+	  Este grupo $\check{H}^k(M,\FF)$ se denomina el \emph{$k$-ésimo grupo de cohomología de \v{C}ech de $M$ con coeficientes en $\FF$}.
+	  \begin{defn}
+	    Un haz $\FF$ en una variedad diferenciable $M$ se dice \emph{fino} si para cada abierto $U\subset M$ y para cada recubrimiento $\mathcal{V}$ localmente finito de $U$, existen aplicaciones de \emph{extensión} $\theta_U^V:\FF(V)\rightarrow \FF(U)$ tales que
+	    \begin{equation*}
+	      \sum_{V\in \mathcal{V}}\theta^V_U\circ \mathrm{res}^U_V=\id_{\FF(U)}.
+	    \end{equation*}
+	  \end{defn}
+	  \begin{ejemplo}
+	    Si $M$ es una variedad diferenciable y $U\subset M$ un abierto, por ser $M$ localmente compacta, todo recubrimiento abierto de $U$ admite un refinamiento $\mathcal{V}$ localmente finito. Sea $\Theta=\left\{ \theta_V:V\in \mathcal{V} \right\}$ una PDU subordinada a $\mathcal{V}$. Podemos considerar entonces los siguientes haces:
+	    \begin{itemize}
+	      \item Si consideramos el haz de funciones diferenciables $C^\infty_M$, entonces a cada función $f\in C^\infty_M(V)$ le podemos asignar la función 
+		\begin{equation*}
+		  \tilde{f}=
+		  \begin{cases}
+		    \theta_V f & \text{en } V \\
+		    0 & \text{en } U-V.
+		  \end{cases}
+		\end{equation*}
+		Ahora, por ser $\Theta$ una PDU, si $F\in \FF(U)$, entonces $$\sum_{V\in \mathcal{V}} \theta_V(x) F|_{V}(x) =F(x)\sum_{V\in \mathcal{V}}\theta(x)=F(x),$$ de modo que que $C^\infty_M$ es un haz fino.
+	      \item Si consideramos el haz de $k$-formas diferenciales $\Omega^k_M$ que a cada $V\subset M$ le asigna $\Omega^k(V)$, a cada $k$-forma $\omega \in \Omega^k(U)$ le podemos asignar la $k$-forma
+		\begin{equation*}
+		  \tilde{\omega}=
+		  \begin{cases}
+		    \theta_V \omega & \text{en } V \\
+		    0 & \text{en } U-V.
+		  \end{cases}
+		\end{equation*}
+		Igual que antes, si $\eta \in \Omega^k(U)$, entonces $\sum_{V\in \mathcal{V}} \theta_V \eta|_{V}=\eta$, de modo que $\Omega^k_M$ es un haz fino.
+	      \item Podemos considerar el haz de $k$-cocadenas singulares (diferenciables) con coeficientes en $\RR$, $C^k_M(\RR)$ que a cada $V \subset M$ le asigna $C^k(M;\RR)=\mathbf{Ab}(C_k(U),\RR)$.
+	    \end{itemize}
+	  \end{ejemplo}
 	  \section{Resoluciones de haces}
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
