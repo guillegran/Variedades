@@ -49,7 +49,7 @@
 \def\HH{\mathbb{H}}
 \def\PP{\mathbb{P}}
 \def\id{\mathrm{id}}
-\def\im{\mathrm{im}}
+\def\im{\mathrm{im}\ }
 \def\pr{\mathrm{pr}}
 \def\cc{\mathbf{c}}
 \def\xx{\mathtt{x}}
@@ -1084,8 +1084,9 @@ $\tilde{\partial}_k :C_k(M)/\ker \partial_k\rightarrow \im \partial_k$. Podemos 
 con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es inyectiva.
 \end{proof}
 \begin{obs}
-  Todos los resultados expuestos en esta sección son válidos también si $X$ es un espacio topológico cualquiera y consideramos cadenas no diferenciables en $X$ y sus respectivos grupos de homología y cohomología singular no diferenciables. Sin embargo, a nosotros sólo nos va interesar trabajar con cadenas diferenciables.
+  Todos los resultados expuestos hasta ahora en esta sección son válidos también si $X$ es un espacio topológico cualquiera y consideramos cadenas no diferenciables en $X$ y sus respectivos grupos de homología y cohomología singular no diferenciables. Sin embargo, a nosotros sólo nos va interesar trabajar con cadenas diferenciables.
 \end{obs}
+
 
 	  \section{Integración en cadenas}
 	  Entendemos por una forma diferenciable en el cubo $I^k$ una forma diferenciable en algún entorno suyo $U\supset I^k$. Si $\omega$ es una $k$-forma en $I^k$, entonces existe una función $f:I^k \rightarrow \RR$ diferenciable (en el sentido de la definición \ref{difsumergida}) tal que $\omega=f dx^1\wedge\dots\wedge dx^k$. Definimos entonces la \emph{integral de $\omega$ en $I^k$} como 
@@ -1252,9 +1253,9 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 	  \begin{equation*}
 	    h_{k+1}\circ d + d \circ h_k = \tau_k -\mu_k.
 	  \end{equation*}
-	  Por tanto, si $[\sigma] \in \check{H}^k(\mathcal{U},\FF)$, entonces
+	  Por tanto, si $[\alpha] \in \check{H}^k(\mathcal{U},\FF)$, entonces
 	  \begin{equation*}
-	\tau_k^*([\sigma])-\mu_k^*([\sigma])=    h^*_{k+1}(d[\sigma])+d(h^*_k[\sigma])= h^*_{k+1}([d\sigma])+[d(h_k(\sigma)]=0,
+	\tau_k^*([\alpha])-\mu_k^*([\alpha])=    h^*_{k+1}(d[\alpha])+d(h^*_k[\alpha])= h^*_{k+1}([d\alpha])+[d(h_k(\alpha))]=0,
 	  \end{equation*}
 	  con lo que $\tau_k^*=\mu_k^*$. Tenemos entonces que el sistema parcialmente ordenado de los recubrimientos abiertos con respecto al refinamiento, induce un orden parcial en las cohomologías de \v{C}ech mediante los morfismos inducidos por las aplicaciones de refinamiento. Más aún, si $\mathcal{W}$ es un refinamiento de un refinamiento $\mathcal{V}$ de $\mathcal{U}$, entonces el siguiente diagrama conmuta
 	  \begin{center}
@@ -1268,15 +1269,15 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 	  \end{equation*}
 	  Este grupo $\check{H}^k(M,\FF)$ se denomina el \emph{$k$-ésimo grupo de cohomología de \v{C}ech de $M$ con coeficientes en $\FF$}.
 	  \begin{defn}
-	    Un haz $\FF$ en una variedad diferenciable $M$ se dice \emph{fino} si para cada abierto $U\subset M$ y para cada recubrimiento $\mathcal{V}$ localmente finito de $U$, existen aplicaciones de \emph{extensión} $\theta_U^V:\FF(V)\rightarrow \FF(U)$ tales que
+	    Un haz $\FF$ de grupos abelianos en una variedad diferenciable $M$ se dice \emph{fino} si para cada abierto $U\subset M$ y para cada recubrimiento $\mathcal{V}$ localmente finito de $U$, existen aplicaciones de \emph{extensión} $\theta_V^U:\FF(V)\rightarrow \FF(U)$ tales que
 	    \begin{equation*}
-	      \sum_{V\in \mathcal{V}}\theta^V_U\circ \mathrm{res}^U_V=\id_{\FF(U)}.
+	      \sum_{V\in \mathcal{V}}\theta_V^U\circ \mathrm{res}^U_V=\id_{\FF(U)}.
 	    \end{equation*}
 	  \end{defn}
 	  \begin{ejemplo}
-	    Si $M$ es una variedad diferenciable y $U\subset M$ un abierto, por ser $M$ localmente compacta, todo recubrimiento abierto de $U$ admite un refinamiento $\mathcal{V}$ localmente finito. Sea $\Theta=\left\{ \theta_V:V\in \mathcal{V} \right\}$ una PDU subordinada a $\mathcal{V}$. Podemos considerar entonces los siguientes haces:
-	    \begin{itemize}
-	      \item Si consideramos el haz de funciones diferenciables $C^\infty_M$, entonces a cada función $f\in C^\infty_M(V)$ le podemos asignar la función 
+	    Si $M$ es una variedad diferenciable y $U\subset M$ un abierto todo recubrimiento abierto de $U$ admite un refinamiento $\mathcal{V}$ localmente finito. Sea $\Theta=\left\{ \theta_V:V\in \mathcal{V} \right\}$ una PDU subordinada a $\mathcal{V}$. Podemos considerar entonces los siguientes haces:
+
+	      (1) Si consideramos el haz de funciones diferenciables $C^\infty_M$, entonces a cada función $f\in C^\infty_M(V)$ le podemos asignar la función 
 		\begin{equation*}
 		  \tilde{f}=
 		  \begin{cases}
@@ -1285,7 +1286,8 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 		  \end{cases}
 		\end{equation*}
 		Ahora, por ser $\Theta$ una PDU, si $F\in \FF(U)$, entonces $$\sum_{V\in \mathcal{V}} \theta_V(x) F|_{V}(x) =F(x)\sum_{V\in \mathcal{V}}\theta(x)=F(x),$$ de modo que que $C^\infty_M$ es un haz fino.
-	      \item Si consideramos el haz de $k$-formas diferenciales $\Omega^k_M$ que a cada $V\subset M$ le asigna $\Omega^k(V)$, a cada $k$-forma $\omega \in \Omega^k(U)$ le podemos asignar la $k$-forma
+	      
+		(2) Si consideramos el haz de $k$-formas diferenciales $\Omega^k_M$ que a cada $V\subset M$ le asigna $\Omega^k(V)$, a cada $k$-forma $\omega \in \Omega^k(V)$ le podemos asignar la $k$-forma
 		\begin{equation*}
 		  \tilde{\omega}=
 		  \begin{cases}
@@ -1294,10 +1296,108 @@ con lo que $\alpha = \delta \beta$, luego $[\alpha]=0$. Por tanto, $\psi$ es iny
 		  \end{cases}
 		\end{equation*}
 		Igual que antes, si $\eta \in \Omega^k(U)$, entonces $\sum_{V\in \mathcal{V}} \theta_V \eta|_{V}=\eta$, de modo que $\Omega^k_M$ es un haz fino.
-	      \item Podemos considerar el haz de $k$-cocadenas singulares (diferenciables) con coeficientes en $\RR$, $C^k_M(\RR)$ que a cada $V \subset M$ le asigna $C^k(M;\RR)=\mathbf{Ab}(C_k(U),\RR)$.
-	    \end{itemize}
+	      
+		(3) Podemos dotar a las $k$-cocadenas con coeficientes en $\RR$ de la estructura de $C^\infty(M)$~-módulo, simplemente definiendo
+  \begin{equation*}
+    (f\cdot \alpha + g\cdot \beta)(c)=f(c(0,\dots,0)) \cdot \alpha(c) + g(c(0,\dots,0)) \cdot \beta(c),
+  \end{equation*}
+  con $f,g\in C^\infty(M)$, $\alpha, \beta \in C^k(M;\RR)$ y $c$ un $k$-cubo.
+  Si consideramos el haz de $k$-cocadenas en $M$ con coeficientes en $\RR$, $C^k_M(\RR)$, que a cada $V \subset M$ le asigna $C^k(V;\RR)$, con las restricciones $$\mathrm{res}^U_V (\alpha)=\alpha|_{C_k(V)},$$ a cada $k$-cocadena $\alpha \in C^k(V;\RR)$ le podemos asignar la $k$-cocadena
+  \begin{equation*}
+    \tilde{\alpha}(c)=
+    \begin{cases}
+      \theta_V(c(0,\dots,0)) \cdot \alpha(c) &\text{si } c(I^k) \subset V\\
+      0 &\text{en caso contrario},
+    \end{cases}
+  \end{equation*}
+  con $c$ un $k$-cubo en $U$. Ahora, si $\beta \in C^k(U;\RR)$, entonces
+  \begin{equation*}
+    \sum_{V\in \mathcal{V}}\theta_V(c(0,\dots,0)) \beta|_{C_k(V)}(c)=\beta(c) \sum_{V\in \mathcal{V}}\theta_V(c(0,\dots,0)) = \beta(c).
+  \end{equation*}
+  Tenemos entonces que $C^k_M(\RR)$ también es un haz fino.
 	  \end{ejemplo}
+	  \begin{prop}
+	    Si $\FF$ es un haz fino en $M$, entonces $\check{H}^k(M,\FF)=0$ para todo $k\in \NN$.
+	  \end{prop}
+	  \begin{proof}
+	    Como todo recubrimiento de una variedad diferenciable $M$ admite un refinamiento localmente finito, basta probar que $\check{H}^k(\mathcal{U},\FF)=0$ para cada recubrimiento localmente finito $\mathcal{U}$ de $M$. Sea $\alpha \in \check{C}^k(\mathcal{U},\FF)$ y sea $\sigma=(U_0,\dots,U_{k-1})$ un $(k-1)$-simplejo de $\mathcal{U}$. Podemos considerar ahora la $(k-1)$-cocadena de \v{C}ech 
+	    \begin{equation*}
+	      h_k(\alpha)(\sigma)=\sum_{U\in\mathcal{U}}\left(\mathrm{res}^U_{U\cap|\sigma|}\circ \theta^U_{U\cap |\sigma|}\right)(\alpha(U,U_0,\dots,U_{k-1})).
+	    \end{equation*}
+	    Un cálculo directo muestra que
+	    \begin{equation*}
+	       h_{k+1}\circ d +d\circ h_k = \id.
+	    \end{equation*}
+	    Por tanto, si $[\alpha]\in \check{H}^k(\mathcal{U},\FF)$, entonces
+	    \begin{equation*}
+	[\alpha]=    h^*_{k+1}(d[\alpha])+d(h^*_k[\alpha])= h^*_{k+1}([d\alpha])+[d(h_k(\alpha))]=0,
+	    \end{equation*}
+	    luego $\check{H}^k(\mathcal{U},\FF)=0$.
+	  \end{proof}
 	  \section{Resoluciones de haces}
+	  \begin{defn}
+	    Sean $\FF$ y $\mathscr{G}$ dos haces sobre un espacio topológico $X$. Un \emph{morfismo de haces}  $h:\FF\rightarrow \mathscr{G}$ es simplemente una transformación natural entre los prehaces subyacentes, es decir, una colección de aplicaciones $h_U:\FF(U)\rightarrow \mathscr{G}(U)$ para cada abierto $U\subset X$ tal que el siguiente diagrama conmuta
+	    \begin{center}
+	      \begin{tikzcd}
+		\FF(U)		\arrow{rr}{h_U}\arrow{dd}[anchor=east]{\mathrm{res}^U_V} && \mathscr{G}(U)\arrow{dd}[anchor=west]{\mathrm{res}^U_V} \\ 
+		 && \\
+		 \FF(V)\arrow{rr}[anchor=south]{h_V} && \mathscr{G}(V),
+	       \end{tikzcd}
+	     \end{center}
+	     con $V\subset U \subset X$ abiertos.
+	  \end{defn}
+	  \begin{defn}
+	    Si $\mathscr{A}$, $\mathscr{B}$ y $\mathscr{C}$ son haces de grupos abelianos en un espacio topológico $X$ y 
+	    \begin{center}
+	      \begin{tikzcd}
+		\mathscr{A} \arrow{r}{g}& \mathscr{B} \arrow{r}{h} &\mathscr{C}
+	      \end{tikzcd}
+	    \end{center}
+	    es una sucesión de morfismos de haces, entonces decimos que esta sucesión es \emph{exacta} en $\mathscr{B}$ si, para cada $x\in X$, la sucesión inducida en las espigas
+	    \begin{center}
+	      \begin{tikzcd}
+		\mathscr{A}_x \arrow{r}{g_x}& \mathscr{B}_x \arrow{r}{h_x} &\mathscr{C}_x
+	      \end{tikzcd}
+	    \end{center}
+	    es exacta en $\mathscr{B}_x$, es decir, si $\ker h_x = \im g_x$. 
+	  \end{defn}
+	  \begin{defn}
+	    Sea $X$ un espacio topológico y $G$ un grupo abeliano. Se define el \emph{haz constante} $G_X$ como aquel que a cada abierto $U\subset X$ le asigna el propio grupo $G$ y donde las aplicaciones de restricción son simplemente la identidad.
+	  \end{defn}
+	  \begin{defn}
+	    Sea $M$ una variedad diferenciable. Una \emph{resolución fina} de un haz $\FF$ de grupos abelianos en $M$ es una sucesión exacta de haces de la forma
+	    \begin{center}
+	      \begin{tikzcd}
+		0_M\arrow{r}& \mathscr{F} \arrow{r}& \mathscr{F}^0 \arrow{r} &\mathscr{F}^1 \arrow{r} & \cdots \arrow{r} & \mathscr{F}^m \arrow{r}& \cdots,
+	      \end{tikzcd}
+	    \end{center}
+	    con los $\mathscr{F}^i$ haces finos de grupos abelianos en $M$. Brevemente, esta resolución se denota
+	    \begin{center}
+	      \begin{tikzcd}
+		0_M\arrow{r}& \mathscr{F} \arrow{r}& \mathscr{F}^*. 	      \end{tikzcd}
+	    \end{center}
+	  \end{defn}
+	  \begin{thm}
+	    Sea $\FF$ un haz de grupos abelianos en una variedad diferenciable $M$ y sea
+	    \begin{center}
+	      \begin{tikzcd}
+		0_M\arrow{r}& \mathscr{F} \arrow{r}& \mathscr{F}^*,  
+	      \end{tikzcd}
+	    \end{center}
+	    una resolución fina de $\FF$. Supongamos que $\mathcal{U}$ es un recubrimiento abierto de $M$ tal que, para cada $k$-simplejo $\sigma$ y para cada $j\in \NN$, la sucesión 
+	    \begin{center}
+	      \begin{tikzcd}
+		\FF^{j-1}(|\sigma|)\arrow{r}& \mathscr{F}^j(|\sigma|) \arrow{r}& \mathscr{F}^{j+1}(|\sigma|),  
+	      \end{tikzcd}
+	    \end{center}
+	    es exacta en $\FF^j(|\sigma|)$. Entonces
+	    \begin{equation*}
+	      \check{H}^k(\mathcal{U},\FF)\cong \frac{\ker (\FF^k(M)\rightarrow \FF^{k+1}(M))}{\im (\FF^{k-1}(M) \rightarrow \FF^{k}(M))}.
+	    \end{equation*}
+	  \end{thm}
+	  \begin{proof}
+	    
+	  \end{proof}
 	  \chapter{Orientación}
 	  \section{Orientación de un espacio vectorial}
 	  \section{Orientación de variedades}
